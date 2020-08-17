@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Backstage Blog</title>
+        <link>https://backstage.io/blog</link>
+        <description>The best place to stay up-to-date with the latest Backstage news and events.</description>
+        <lastBuildDate>Wed, 05 Aug 2020 06:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>Backstage Blog</title>
+            <url>https://backstage.io/undefined</url>
+            <link>https://backstage.io/blog</link>
+        </image>
+        <copyright>Copyright © 2020 Spotify AB</copyright>
+        <item>
+            <title><![CDATA[Announcing Backstage Software Templates]]></title>
+            <link>https://backstage.io/blog/2020/08/05/announcing-backstage-software-templates.html</link>
+            <guid>https://backstage.io/blog/2020/08/05/announcing-backstage-software-templates.html</guid>
+            <pubDate>Wed, 05 Aug 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><strong>TL;DR</strong> Today we are announcing a new Backstage feature: Software Templates. Simplify setup, standardize tooling, and deploy with the click of a button. Using automated templates, your engineers can spin up a new microservice, website, or other software component with your organization’s best practices built-in, right from the start.</p>
+<video width="100%" height="100%" controls>
+  <source src="/blog/assets/2020-08-05/feature.mp4" type="video/mp4">
+</video>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[How to enable authentication in Backstage using Passport]]></title>
+            <link>https://backstage.io/blog/2020/07/01/how-to-enable-authentication-in-backstage-using-passport.html</link>
+            <guid>https://backstage.io/blog/2020/07/01/how-to-enable-authentication-in-backstage-using-passport.html</guid>
+            <pubDate>Wed, 01 Jul 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><img src="/blog/assets/20-07-01/auth-landing.png" alt="auth-landing-page"></p>
+<p>Getting authentication right is important. It helps keep your platform safe, it’s one of the first things users will interact with, and there are many different authentication providers to support. To this end, we chose to use <a href="http://www.passportjs.org/">Passport</a> to provide an easy-to-use, out-of-the-box experience that can be extended to your own, pre-existing authentication providers (known as strategies). The Auth APIs in Backstage serve two purposes: identify the user and provide a way for plugins to request access to third-party services on behalf of the user. We’ve already implemented Google and GitHub authentication to provide examples and to get you started.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Backstage Service Catalog released in alpha]]></title>
+            <link>https://backstage.io/blog/2020/06/22/backstage-service-catalog-alpha.html</link>
+            <guid>https://backstage.io/blog/2020/06/22/backstage-service-catalog-alpha.html</guid>
+            <pubDate>Mon, 22 Jun 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><strong>TL;DR</strong> Today we are announcing the availability of the Backstage Service Catalog in alpha. This has been the community’s most requested feature. Even if the catalog is not ready for production yet, we think this release already demonstrates how Backstage can provide value for your company right out of the box. With your early input and feedback, we hope to create a stronger generally available product.</p>
+<p><img src="/blog/assets/6/header.png" alt="img"></p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Starting Phase 2: The Service Catalog]]></title>
+            <link>https://backstage.io/blog/2020/05/22/phase-2-service-catalog.html</link>
+            <guid>https://backstage.io/blog/2020/05/22/phase-2-service-catalog.html</guid>
+            <pubDate>Fri, 22 May 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><strong>TL;DR</strong> Thanks to the help from the Backstage community, we’ve made excellent progress and are now moving into Phase 2 of Backstage — building out a Service Catalog and the surrounding systems that will help unify the tools you use to manage your software.</p>
+<p>We released the open source version of Backstage a little less than two months ago, and have been thrilled to see so many people jumping in and contributing to the project in its early stages. We’re excited to see what the community can build together as we progress through <a href="https://github.com/spotify/backstage#project-roadmap">each phase of Backstage</a>.</p>
+<p><img src="/blog/assets/20-05-20/Service_Catalog_MVP.png" alt="img"></p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Weaveworks’ COVID-19 app uses Backstage UI]]></title>
+            <link>https://backstage.io/blog/2020/05/14/weaveworks-covid-19-app-uses-backstage-ui.html</link>
+            <guid>https://backstage.io/blog/2020/05/14/weaveworks-covid-19-app-uses-backstage-ui.html</guid>
+            <pubDate>Thu, 14 May 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><img src="/blog/assets/20-05-14/weaveworks-firekube-covid-19-spotify-backstage.png" alt="fk-covid-screenshot"></p>
+<p>One of the great things about the open source community is once you put your work out there, you really never know where it might end up. That’s certainly the case here.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Introducing Tech Radar for Backstage]]></title>
+            <link>https://backstage.io/blog/2020/05/14/tech-radar-plugin.html</link>
+            <guid>https://backstage.io/blog/2020/05/14/tech-radar-plugin.html</guid>
+            <pubDate>Thu, 14 May 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><img src="/blog/assets/5/lead.png" alt="image illustrating the Tech Radar plugin for Backstage"></p>
+<p>Just a few weeks ago, we released our internal plugin for [Lighthouse website audits] as our first open source plugin, so the whole community could use it. Today, we’re excited to add a new plugin to that list — say hello to the [Tech Radar plugin]!</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[How to quickly set up Backstage]]></title>
+            <link>https://backstage.io/blog/2020/04/30/how-to-quickly-set-up-backstage.html</link>
+            <guid>https://backstage.io/blog/2020/04/30/how-to-quickly-set-up-backstage.html</guid>
+            <pubDate>Thu, 30 Apr 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>We wanted to make getting started with Backstage as easy as possible. Even though Backstage is still in the early phases of its development, we believe it is important for our users to get a feel for what Backstage really is.</p>
+<p>We want users to be able to create their own version of Backstage quickly and easily, so that they can take advantage of all the infrastructure that we’ve built into it — and start exploring.</p>
+<p>In this blog post we’ll look at what a Backstage app is and how to create one using our <a href="https://www.npmjs.com/package/@backstage/cli">CLI</a>.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Introducing Lighthouse for Backstage]]></title>
+            <link>https://backstage.io/blog/2020/04/06/lighthouse-plugin.html</link>
+            <guid>https://backstage.io/blog/2020/04/06/lighthouse-plugin.html</guid>
+            <pubDate>Mon, 06 Apr 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><img src="/blog/assets/3/lead.png" alt="image illustrating the Lighthouse plugin for Backstage"></p>
+<p>We’re proud to announce that our first internal plugin at Spotify has been open-sourced as part of Backstage. This plugin works with the newly open-sourced <a href="https://github.com/spotify/lighthouse-audit-service">lighthouse-audit-service</a> to run and track Lighthouse audits for your websites.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[What the heck is Backstage anyway?]]></title>
+            <link>https://backstage.io/blog/2020/03/18/what-is-backstage.html</link>
+            <guid>https://backstage.io/blog/2020/03/18/what-is-backstage.html</guid>
+            <pubDate>Wed, 18 Mar 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><img src="/blog/assets/2/spotify-labs-header.png" alt="img"></p>
+<p>Two days ago, we released the open source version of <a href="https://backstage.io/">Backstage</a>, our homegrown developer portal. And we learned a thing or two via the feedback we received. So, I wanted to take this opportunity to further explain what we’re trying to do with Backstage — and more importantly, what we want to give to the greater engineering community beyond Spotify.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Announcing Backstage]]></title>
+            <link>https://backstage.io/blog/2020/03/16/announcing-backstage.html</link>
+            <guid>https://backstage.io/blog/2020/03/16/announcing-backstage.html</guid>
+            <pubDate>Mon, 16 Mar 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<h2><a class="anchor" aria-hidden="true" id="what-is-backstage"></a><a href="#what-is-backstage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is Backstage?</h2>
+<p>Backstage is Spotify's open source platform for building developer portals.</p>
+<p>It’s the first open source infrastructure platform by Spotify that allows you to focus on building your application instead of reinventing the button. With an elegant and unified, yet opinionated UI/UX for all your tooling and infrastructure, Backstage enables engineers to get up and running faster, which ultimately makes their lives easier and more productive.</p>
+<p><img src="/blog/assets/blog_1.png" alt="img"></p>
+]]></description>
+        </item>
+    </channel>
+</rss>

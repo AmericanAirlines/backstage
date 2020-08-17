@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>reference/utility-apis/OAuthRequestApi · Backstage</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# OAuthRequestApi"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="reference/utility-apis/OAuthRequestApi · Backstage"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="# OAuthRequestApi"/><meta property="og:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><link rel="shortcut icon" href="/img/favicon.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-48912878-10', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/spotify/backstage#backstage" target="_self">GitHub</a></li><li class=""><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="/background" target="_self">The Spotify story</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">reference/utility-apis/OAuthRequestApi</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="oauthrequestapi"></a><a href="#oauthrequestapi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OAuthRequestApi</h1>
+<p>The OAuthRequestApi type is defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/apis/definitions/OAuthRequestApi.ts#L99">packages/core-api/src/apis/definitions/OAuthRequestApi.ts:99</a>.</p>
+<p>The following Utility API implements this type:
+<a href="/docs/reference/utility-apis/README#oauthrequest">oauthRequestApiRef</a></p>
+<h2><a class="anchor" aria-hidden="true" id="members"></a><a href="#members" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Members</h2>
+<h3><a class="anchor" aria-hidden="true" id="createauthrequester"></a><a href="#createauthrequester" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>createAuthRequester()</h3>
+<p>A utility for showing login popups or similar things, and merging together
+multiple requests for different scopes into one request that inclues all scopes.</p>
+<p>The passed in options provide information about the login provider, and how to
+handle auth requests.</p>
+<p>The returned AuthRequester function is used to request login with new scopes.
+These requests are merged together and forwarded to the auth handler, as soon as
+a consumer of auth requests triggers an auth flow.</p>
+<p>See AuthRequesterOptions, AuthRequester, and handleAuthRequests for more info.</p>
+<pre>
+createAuthRequester&lt;AuthResponse&gt;(
+    options: <a href="#authrequesteroptions">AuthRequesterOptions</a>&lt;AuthResponse&gt;,
+  ): <a href="#authrequester">AuthRequester</a>&lt;AuthResponse&gt;
+</pre>
+<h3><a class="anchor" aria-hidden="true" id="authrequest"></a><a href="#authrequest" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>authRequest$()</h3>
+<p>Observers panding auth requests. The returned observable will emit all current
+active auth request, at most one for each created auth requester.</p>
+<p>Each request has its own info about the login provider, forwarded from the auth
+requester options.</p>
+<p>Depending on user interaction, the request should either be rejected, or used to
+trigger the auth handler. If the request is rejected, all pending AuthRequester
+calls will fail with a &quot;RejectedError&quot;. If a auth is triggered, and the auth
+handler resolves successfully, then all currently pending AuthRequester calls
+will resolve to the value returned by the onAuthRequest call.</p>
+<pre>
+authRequest$(): <a href="#observable">Observable</a>&lt;<a href="#pendingauthrequest">PendingAuthRequest</a>[]&gt;
+</pre>
+<h2><a class="anchor" aria-hidden="true" id="supporting-types"></a><a href="#supporting-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Supporting types</h2>
+<p>These types are part of the API declaration, but may not be unique to this API.</p>
+<h3><a class="anchor" aria-hidden="true" id="authprovider"></a><a href="#authprovider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AuthProvider</h3>
+<p>Information about the auth provider that we're requesting a login towards.</p>
+<p>This should be shown to the user so that they can be informed about what login
+is being requested before a popup is shown.</p>
+<pre>
+export type AuthProvider = {
+  /**
+   * Title for the auth provider, for example "GitHub"
+   */
+  title: string;
+<p>/**</p>
+<ul>
+<li>Icon for the auth provider.
+*/
+icon: IconComponent;
+}</li>
+</ul>
+</pre>
+<p>Defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/apis/definitions/OAuthRequestApi.ts#L27">packages/core-api/src/apis/definitions/OAuthRequestApi.ts:27</a>.</p>
+<p>Referenced by: <a href="#authrequesteroptions">AuthRequesterOptions</a>,
+<a href="#pendingauthrequest">PendingAuthRequest</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="authrequester"></a><a href="#authrequester" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AuthRequester</h3>
+<p>Function used to trigger new auth requests for a set of scopes.</p>
+<p>The returned promise will resolve to the same value returned by the
+onAuthRequest in the AuthRequesterOptions. Or rejected, if the request is
+rejected.</p>
+<p>This function can be called multiple times before the promise resolves. All
+calls will be merged into one request, and the scopes forwarded to the
+onAuthRequest will be the union of all requested scopes.</p>
+<pre>
+export type AuthRequester&lt;AuthResponse&gt; = (
+  scopes: Set&lt;string&gt;,
+) =&gt; Promise&lt;AuthResponse&gt;
+</pre>
+<p>Defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/apis/definitions/OAuthRequestApi.ts#L66">packages/core-api/src/apis/definitions/OAuthRequestApi.ts:66</a>.</p>
+<p>Referenced by: <a href="#createauthrequester">createAuthRequester</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="authrequesteroptions"></a><a href="#authrequesteroptions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AuthRequesterOptions</h3>
+<p>Describes how to handle auth requests. Both how to show them to the user, and
+what to do when the user accesses the auth request.</p>
+<pre>
+export type AuthRequesterOptions&lt;AuthResponse&gt; = {
+  /**
+   * Information about the auth provider, which will be forwarded to auth requests.
+   */
+  provider: <a href="#authprovider">AuthProvider</a>;
+<p>/**</p>
+<ul>
+<li>Implementation of the auth flow, which will be called synchronously when</li>
+<li>trigger() is called on an auth requests.
+*/
+onAuthRequest(scopes: Set&lt;string&gt;): Promise&lt;AuthResponse&gt;;
+}</li>
+</ul>
+</pre>
+<p>Defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/apis/definitions/OAuthRequestApi.ts#L43">packages/core-api/src/apis/definitions/OAuthRequestApi.ts:43</a>.</p>
+<p>Referenced by: <a href="#createauthrequester">createAuthRequester</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="observable"></a><a href="#observable" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Observable</h3>
+<p>Observable sequence of values and errors, see TC39.</p>
+<p><a href="https://github.com/tc39/proposal-observable">https://github.com/tc39/proposal-observable</a></p>
+<p>This is used as a common return type for observable values and can be created
+using many different observable implementations, such as zen-observable or
+RxJS 5.</p>
+<pre>
+export type Observable&lt;T&gt; = {
+  /**
+   * Subscribes to this observable to start receiving new values.
+   */
+  subscribe(observer: <a href="#observer">Observer</a>&lt;T&gt;): <a href="#subscription">Subscription</a>;
+  subscribe(
+    onNext: (value: T) =&gt; void,
+    onError?: (error: Error) =&gt; void,
+    onComplete?: () =&gt; void,
+  ): <a href="#subscription">Subscription</a>;
+}
+</pre>
+<p>Defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/types.ts#L53">packages/core-api/src/types.ts:53</a>.</p>
+<p>Referenced by: <a href="#authrequest">authRequest$</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="observer"></a><a href="#observer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Observer</h3>
+<p>This file contains non-react related core types used throught Backstage.</p>
+<p>Observer interface for consuming an Observer, see TC39.</p>
+<pre>
+export type Observer&lt;T&gt; = {
+  next?(value: T): void;
+  error?(error: Error): void;
+  complete?(): void;
+}
+</pre>
+<p>Defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/types.ts#L24">packages/core-api/src/types.ts:24</a>.</p>
+<p>Referenced by: <a href="#observable">Observable</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="pendingauthrequest"></a><a href="#pendingauthrequest" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PendingAuthRequest</h3>
+<p>An pending auth request for a single auth provider. The request will remain in
+this pending state until either reject() or trigger() is called.</p>
+<p>Any new requests for the same provider are merged into the existing pending
+request, meaning there will only ever be a single pending request for a given
+provider.</p>
+<pre>
+export type PendingAuthRequest = {
+  /**
+   * Information about the auth provider, as given in the AuthRequesterOptions
+   */
+  provider: <a href="#authprovider">AuthProvider</a>;
+<p>/**</p>
+<ul>
+<li>Rejects the request, causing all pending AuthRequester calls to fail with &quot;RejectedError&quot;.
+*/
+reject: () =&gt; void;</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>Trigger the auth request to continue the auth flow, by for example showing a popup.</li>
+<li></li>
+<li>Synchronously calls onAuthRequest with all scope currently in the request.
+*/
+trigger(): Promise&lt;void&gt;;
+}</li>
+</ul>
+</pre>
+<p>Defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/apis/definitions/OAuthRequestApi.ts#L77">packages/core-api/src/apis/definitions/OAuthRequestApi.ts:77</a>.</p>
+<p>Referenced by: <a href="#authrequest">authRequest$</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="subscription"></a><a href="#subscription" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Subscription</h3>
+<p>Subscription returned when subscribing to an Observable, see TC39.</p>
+<pre>
+export type Subscription = {
+  /**
+   * Cancels the subscription
+   */
+  unsubscribe(): void;
+<p>/**</p>
+<ul>
+<li>Value indicating whether the subscription is closed.
+*/
+readonly closed: Boolean;
+}</li>
+</ul>
+</pre>
+<p>Defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/types.ts#L33">packages/core-api/src/types.ts:33</a>.</p>
+<p>Referenced by: <a href="#observable">Observable</a>.</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#members">Members</a><ul class="toc-headings"><li><a href="#createauthrequester">createAuthRequester()</a></li><li><a href="#authrequest">authRequest$()</a></li></ul></li><li><a href="#supporting-types">Supporting types</a><ul class="toc-headings"><li><a href="#authprovider">AuthProvider</a></li><li><a href="#authrequester">AuthRequester</a></li><li><a href="#authrequesteroptions">AuthRequesterOptions</a></li><li><a href="#observable">Observable</a></li><li><a href="#observer">Observer</a></li><li><a href="#pendingauthrequest">PendingAuthRequest</a></li><li><a href="#subscription">Subscription</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/create-a-plugin.md">Create a Plugin</a><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/structure-of-a-plugin.md">Structure of a Plugin</a><a href="https://github.com/spotify/backstage/tree/master/docs">API references</a><a href="https://github.com/spotify/backstage/blob/master/docs/FAQ.md">FAQ</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

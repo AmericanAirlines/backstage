@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>reference/utility-apis/ErrorApi · Backstage</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# ErrorApi"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="reference/utility-apis/ErrorApi · Backstage"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="# ErrorApi"/><meta property="og:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><link rel="shortcut icon" href="/img/favicon.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-48912878-10', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/spotify/backstage#backstage" target="_self">GitHub</a></li><li class=""><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="/background" target="_self">The Spotify story</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">reference/utility-apis/ErrorApi</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="errorapi"></a><a href="#errorapi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ErrorApi</h1>
+<p>The ErrorApi type is defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/apis/definitions/ErrorApi.ts#L53">packages/core-api/src/apis/definitions/ErrorApi.ts:53</a>.</p>
+<p>The following Utility API implements this type: <a href="/docs/reference/utility-apis/README#error">errorApiRef</a></p>
+<h2><a class="anchor" aria-hidden="true" id="members"></a><a href="#members" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Members</h2>
+<h3><a class="anchor" aria-hidden="true" id="post"></a><a href="#post" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>post()</h3>
+<p>Post an error for handling by the application.</p>
+<pre>
+post(error: <a href="#error">Error</a>, context?: <a href="#errorcontext">ErrorContext</a>): void
+</pre>
+<h3><a class="anchor" aria-hidden="true" id="error"></a><a href="#error" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>error$()</h3>
+<p>Observe errors posted by other parts of the application.</p>
+<pre>
+error$(): <a href="#observable">Observable</a>&lt;{ error: <a href="#error">Error</a>; context?: <a href="#errorcontext">ErrorContext</a> }&gt;
+</pre>
+<h2><a class="anchor" aria-hidden="true" id="supporting-types"></a><a href="#supporting-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Supporting types</h2>
+<p>These types are part of the API declaration, but may not be unique to this API.</p>
+<h3><a class="anchor" aria-hidden="true" id="error-1"></a><a href="#error-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Error</h3>
+<p>Mirrors the javascript Error class, for the purpose of providing documentation
+and optional fields.</p>
+<pre>
+type Error = {
+  name: string;
+  message: string;
+  stack?: string;
+}
+</pre>
+<p>Defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/apis/definitions/ErrorApi.ts#L24">packages/core-api/src/apis/definitions/ErrorApi.ts:24</a>.</p>
+<p>Referenced by: <a href="#post">post</a>, <a href="#error">error$</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="errorcontext"></a><a href="#errorcontext" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ErrorContext</h3>
+<p>Provides additional information about an error that was posted to the
+application.</p>
+<pre>
+export type ErrorContext = {
+  // If set to true, this error should not be displayed to the user. Defaults to false.
+  hidden?: boolean;
+}
+</pre>
+<p>Defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/apis/definitions/ErrorApi.ts#L33">packages/core-api/src/apis/definitions/ErrorApi.ts:33</a>.</p>
+<p>Referenced by: <a href="#post">post</a>, <a href="#error">error$</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="observable"></a><a href="#observable" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Observable</h3>
+<p>Observable sequence of values and errors, see TC39.</p>
+<p><a href="https://github.com/tc39/proposal-observable">https://github.com/tc39/proposal-observable</a></p>
+<p>This is used as a common return type for observable values and can be created
+using many different observable implementations, such as zen-observable or
+RxJS 5.</p>
+<pre>
+export type Observable&lt;T&gt; = {
+  /**
+   * Subscribes to this observable to start receiving new values.
+   */
+  subscribe(observer: <a href="#observer">Observer</a>&lt;T&gt;): <a href="#subscription">Subscription</a>;
+  subscribe(
+    onNext: (value: T) =&gt; void,
+    onError?: (error: Error) =&gt; void,
+    onComplete?: () =&gt; void,
+  ): <a href="#subscription">Subscription</a>;
+}
+</pre>
+<p>Defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/types.ts#L53">packages/core-api/src/types.ts:53</a>.</p>
+<p>Referenced by: <a href="#error">error$</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="observer"></a><a href="#observer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Observer</h3>
+<p>This file contains non-react related core types used throught Backstage.</p>
+<p>Observer interface for consuming an Observer, see TC39.</p>
+<pre>
+export type Observer&lt;T&gt; = {
+  next?(value: T): void;
+  error?(error: Error): void;
+  complete?(): void;
+}
+</pre>
+<p>Defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/types.ts#L24">packages/core-api/src/types.ts:24</a>.</p>
+<p>Referenced by: <a href="#observable">Observable</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="subscription"></a><a href="#subscription" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Subscription</h3>
+<p>Subscription returned when subscribing to an Observable, see TC39.</p>
+<pre>
+export type Subscription = {
+  /**
+   * Cancels the subscription
+   */
+  unsubscribe(): void;
+<p>/**</p>
+<ul>
+<li>Value indicating whether the subscription is closed.
+*/
+readonly closed: Boolean;
+}</li>
+</ul>
+</pre>
+<p>Defined at
+<a href="https://github.com/spotify/backstage/blob/f8780ff32509d0326bc513791ea60846d7614b34/packages/core-api/src/types.ts#L33">packages/core-api/src/types.ts:33</a>.</p>
+<p>Referenced by: <a href="#observable">Observable</a>.</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#members">Members</a><ul class="toc-headings"><li><a href="#post">post()</a></li><li><a href="#error">error$()</a></li></ul></li><li><a href="#supporting-types">Supporting types</a><ul class="toc-headings"><li><a href="#error-1">Error</a></li><li><a href="#errorcontext">ErrorContext</a></li><li><a href="#observable">Observable</a></li><li><a href="#observer">Observer</a></li><li><a href="#subscription">Subscription</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/create-a-plugin.md">Create a Plugin</a><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/structure-of-a-plugin.md">Structure of a Plugin</a><a href="https://github.com/spotify/backstage/tree/master/docs">API references</a><a href="https://github.com/spotify/backstage/blob/master/docs/FAQ.md">FAQ</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

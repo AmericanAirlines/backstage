@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Architecture overview · Backstage</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Overview"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Architecture overview · Backstage"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="## Overview"/><meta property="og:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><link rel="shortcut icon" href="/img/favicon.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-48912878-10', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/spotify/backstage#backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="/background" target="_self">The Spotify story</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Overview</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-terminology">Architecture terminology</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Running Backstage Locally</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/development-environment">Development Environment</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Deployment</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-other">Other</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Backstage Service Catalog (alpha)</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software creation templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Software Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-index">Extending the Scaffolder</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-templater">Creating your own Templater</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-publisher">Create your own Publisher</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-preparer">Create your own Preparer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Docs-like-code</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call existing API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">User Authentication and Authorization in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">Utility API References</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-router">createPlugin - router</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/">Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/support">Support and community</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Architecture overview</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
+<p>The following diagram shows how Backstage might look when deployed inside a
+company which uses the Tech Radar plugin, the Lighthouse plugin, the Circle CI
+plugin and the service catalog.</p>
+<p>There are 3 main components in this architecture:</p>
+<ol>
+<li>The core Backstage UI</li>
+<li>The UI plugins and their backing services</li>
+<li>Databases</li>
+</ol>
+<p>Running this architecture in a real environment typically involves
+containerising the components. Various commands are provided for accomplishing
+this.</p>
+<p><img src="../assets/architecture-overview/backstage-typical-architecture.png" alt="The architecture of a basic Backstage application"></p>
+<h2><a class="anchor" aria-hidden="true" id="the-ui"></a><a href="#the-ui" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The UI</h2>
+<p>The UI is a thin, client-side wrapper around a set of plugins. It provides some
+core UI components and libraries for shared activities such as config
+management. [<a href="https://backstage-demo.roadie.io/">live demo</a>]</p>
+<p><img src="../assets/architecture-overview/core-vs-plugin-components-highlighted.png" alt="UI with different components highlighted"></p>
+<p>Each plugin typically makes itself available in the UI on a dedicated URL. For
+example, the lighthouse plugin is registered with the UI on <code>/lighthouse</code>.
+[<a href="https://backstage-demo.roadie.io/lighthouse">live demo</a>]</p>
+<p><img src="../assets/architecture-overview/lighthouse-plugin.png" alt="The lighthouse plugin UI"></p>
+<p>The Circle CI plugin is available on <code>/circleci</code>.</p>
+<p><img src="../assets/architecture-overview/circle-ci.png" alt="Circle CI Plugin UI"></p>
+<h2><a class="anchor" aria-hidden="true" id="plugins-and-plugin-backends"></a><a href="#plugins-and-plugin-backends" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugins and plugin backends</h2>
+<p>Each plugin is a client side application which mounts itself on the UI. Plugins
+are written in TypeScript or JavaScript. They each live in their own directory
+in <code>backstage/plugins</code>. For example, the source code for the lighthouse plugin
+is available at
+<a href="https://github.com/spotify/backstage/tree/master/plugins/lighthouse">backstage/plugins/lighthouse</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="installing-plugins"></a><a href="#installing-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing plugins</h3>
+<p>Plugins are typically loaded by the UI in your Backstage applications
+<code>plugins.ts</code> file. For example,
+<a href="https://github.com/spotify/backstage/blob/master/packages/app/src/plugins.ts">here</a>
+is that file in the Backstage sample app.</p>
+<p>Plugins can be enabled, and passed configuration in <code>apis.ts</code>. For example,
+<a href="https://github.com/spotify/backstage/blob/master/packages/app/src/apis.ts">here</a>
+is that file in the Backstage sample app.</p>
+<p>This is how the lighthouse plugin would be enabled in a typical Backstage
+application:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">import</span> { ApiHolder, ApiRegistry } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/core'</span>;
+<span class="hljs-keyword">import</span> {
+  lighthouseApiRef,
+  LighthouseRestApi,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-lighthouse'</span>;
+
+<span class="hljs-keyword">const</span> builder = ApiRegistry.builder();
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> lighthouseApi = <span class="hljs-keyword">new</span> LighthouseRestApi(<span class="hljs-comment">/* URL of the lighthouse microservice! */</span>);
+builder.add(lighthouseApiRef, lighthouseApi);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> builder.build() <span class="hljs-keyword">as</span> ApiHolder;
+</code></pre>
+<p>As of this moment, there is no config based install procedure for plugins. Some
+code changes are required.</p>
+<h3><a class="anchor" aria-hidden="true" id="plugin-architecture"></a><a href="#plugin-architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugin architecture</h3>
+<p>Architecturally, plugins can take three forms:</p>
+<ol>
+<li>Standalone</li>
+<li>Service backed</li>
+<li>Third-party backed</li>
+</ol>
+<h4><a class="anchor" aria-hidden="true" id="standalone-plugins"></a><a href="#standalone-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Standalone plugins</h4>
+<p>Standalone plugins run entirely in the browser.
+<a href="https://backstage-demo.roadie.io/tech-radar">The tech radar plugin</a>, for
+example, simply renders hard-coded information. It doesn't make any API requests
+to other services.</p>
+<p><img src="../assets/architecture-overview/tech-radar-plugin.png" alt="tech radar plugin ui"></p>
+<p>The architecture of the Tech Radar installed into a Backstage app is very
+simple.</p>
+<p><img src="../assets/architecture-overview/tech-radar-plugin-architecture.png" alt="ui and tech radar plugin connected together"></p>
+<h4><a class="anchor" aria-hidden="true" id="service-backed-plugins"></a><a href="#service-backed-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Service backed plugins</h4>
+<p>Service backed plugins make API requests to a service which is within the
+purview of the organisation running Backstage.</p>
+<p>The lighthouse plugin, for example, makes requests to the
+<a href="https://github.com/spotify/lighthouse-audit-service">lighthouse-audit-service</a>.
+The lighthouse-audit-service is a microservice which runs a copy of Google's
+<a href="https://github.com/GoogleChrome/lighthouse/">Lighthouse library</a> and stores the
+results in a PostgreSQL database.</p>
+<p>Its architecture looks like this:</p>
+<p><img src="../assets/architecture-overview/lighthouse-plugin-architecture.png" alt="lighthouse plugin backed to microservice and database"></p>
+<p>The service catalog in Backstage is another example of a service backed plugin.
+It retrieves a list of services, or &quot;entities&quot;, from the Backstage Backend
+service and renders them in a table for the user.</p>
+<h3><a class="anchor" aria-hidden="true" id="third-party-backed-plugins"></a><a href="#third-party-backed-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Third-party backed plugins</h3>
+<p>Third-party backed plugins are similar to service backed plugins. The main
+difference is that the service which backs the plugin is hosted outside of the
+ecosystem of the company hosting Backstage.</p>
+<p>The Circle CI plugin is an example of a third-party backed plugin. Circle CI is
+a SaaS service which can be used without any knowledge of Backstage. It has an
+API which a Backstage plugin consumes to display content.</p>
+<p>Requests which go to Circle CI from the users browser are passed through a proxy
+service that Backstage provides. Without this, the requests would be blocked by
+Cross Origin Resource Sharing policies which prevent a browser page served at
+<a href="https://example.com">https://example.com</a> from serving resources hosted at
+<a href="https://circleci.com">https://circleci.com</a>.</p>
+<p><img src="../assets/architecture-overview/circle-ci-plugin-architecture.png" alt="CircleCi plugin talking to proxy talking to SaaS Circle CI"></p>
+<h2><a class="anchor" aria-hidden="true" id="databases"></a><a href="#databases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Databases</h2>
+<p>As we have seen, both the lighthouse-audit-service and catalog-backend require a
+database to work with.</p>
+<p>At the time of writing, the lighthouse-audit-service requires PostgreSQL to work
+with. The service catalog backend uses an in-memory Sqlite3 instance. This is a
+development oriented setup and there are plans to support other databases in the
+future.</p>
+<p>To learn more about the future of databases and Backstage, see the following two
+GitHub issues.</p>
+<p><a href="https://github.com/spotify/backstage/issues/1598">Knex + Plugins (Multiple vs Single Database) · Issue #1598 · spotify/backstage</a></p>
+<p><a href="https://github.com/spotify/backstage/pull/1527#discussion_r450374145">Update migrations to support postgres by dariddler · Pull Request #1527 · spotify/backstage</a></p>
+<h2><a class="anchor" aria-hidden="true" id="containerization"></a><a href="#containerization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Containerization</h2>
+<p>The example Backstage architecture shown above would Dockerize into three
+separate docker images.</p>
+<ol>
+<li>The frontend container</li>
+<li>The backend container</li>
+<li>The lighthouse audit service container</li>
+</ol>
+<p><img src="../assets/architecture-overview/containerised.png" alt="Boxes around the architecture to indicate how it is containerised"></p>
+<p>The frontend container can be built with a provided command.</p>
+<pre><code class="hljs css language-bash">yarn install
+yarn tsc
+yarn build
+yarn run docker-build
+</code></pre>
+<p>Running this will simply generate a Docker container containing the contents of
+the UIs <code>dist</code> directory. The resulting container will be about 50MB in size.</p>
+<p>The backend container can be built by running the following command in the
+<code>packages/backend</code> directory.</p>
+<pre><code class="hljs css language-bash">yarn run build-image
+</code></pre>
+<p>This will create a ~500MB container called <code>example-backend</code>.</p>
+<p>The lighthouse-audit-service container is already publicly available in Docker
+Hub and can be downloaded and ran with</p>
+<pre><code class="hljs css language-bash">docker run spotify/lighthouse-audit-service:latest
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/overview/what-is-backstage"><span class="arrow-prev">← </span><span>What is Backstage?</span></a><a class="docs-next button" href="/docs/overview/architecture-terminology"><span>Architecture terminology</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a></li><li><a href="#the-ui">The UI</a></li><li><a href="#plugins-and-plugin-backends">Plugins and plugin backends</a><ul class="toc-headings"><li><a href="#installing-plugins">Installing plugins</a></li><li><a href="#plugin-architecture">Plugin architecture</a></li><li><a href="#third-party-backed-plugins">Third-party backed plugins</a></li></ul></li><li><a href="#databases">Databases</a></li><li><a href="#containerization">Containerization</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/create-a-plugin.md">Create a Plugin</a><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/structure-of-a-plugin.md">Structure of a Plugin</a><a href="https://github.com/spotify/backstage/tree/master/docs">API references</a><a href="https://github.com/spotify/backstage/blob/master/docs/FAQ.md">FAQ</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

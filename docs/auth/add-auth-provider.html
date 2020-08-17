@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Adding authentication providers · Backstage</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Passport"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Adding authentication providers · Backstage"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="## Passport"/><meta property="og:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><link rel="shortcut icon" href="/img/favicon.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-48912878-10', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/spotify/backstage#backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="/background" target="_self">The Spotify story</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Auth and identity</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-terminology">Architecture terminology</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Running Backstage Locally</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/development-environment">Development Environment</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Deployment</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-other">Other</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Backstage Service Catalog (alpha)</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software creation templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Software Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-index">Extending the Scaffolder</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-templater">Creating your own Templater</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-publisher">Create your own Publisher</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-preparer">Create your own Preparer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Docs-like-code</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call existing API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">User Authentication and Authorization in Backstage</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">Utility API References</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-router">createPlugin - router</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/">Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/support">Support and community</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Adding authentication providers</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="passport"></a><a href="#passport" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Passport</h2>
+<p>We chose <a href="http://www.passportjs.org/">Passport</a> as our authentication platform
+due to its comprehensive set of supported authentication
+<a href="http://www.passportjs.org/packages/">strategies</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="how-to-add-a-new-strategy-provider"></a><a href="#how-to-add-a-new-strategy-provider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to add a new strategy provider</h2>
+<h3><a class="anchor" aria-hidden="true" id="quick-guide"></a><a href="#quick-guide" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quick guide</h3>
+<p><a href="#installing-the-dependencies">1.</a> Install the passport-js based provider
+package.</p>
+<p><a href="#create-implementation">2.</a> Create a new folder structure for the provider.</p>
+<p><a href="#adding-an-oauth-based-provider">3.</a> Implement the provider, extending the
+suitable framework if needed.</p>
+<p><a href="#hook-it-up-to-the-backend">4.</a> Add the provider to the backend.</p>
+<h3><a class="anchor" aria-hidden="true" id="installing-the-dependencies"></a><a href="#installing-the-dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing the dependencies:</h3>
+<pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> plugins/auth-backend
+yarn add passport-provider<span class="hljs-_">-a</span>
+yarn add @types/passport-provider<span class="hljs-_">-a</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="create-implementation"></a><a href="#create-implementation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create implementation</h3>
+<p>Make a new folder with the name of the provider following the below file
+structure:</p>
+<pre><code class="hljs css language-bash">plugins/auth-backend/src/providers/providerA
+├── index.ts
+└── provider.ts
+</code></pre>
+<p><strong><code>plugins/auth-backend/src/providers/providerA/provider.ts</code></strong> defines the
+provider class which implements a handler for the chosen framework.</p>
+<h4><a class="anchor" aria-hidden="true" id="adding-an-oauth-based-provider"></a><a href="#adding-an-oauth-based-provider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding an OAuth based provider</h4>
+<p>If we're adding an <code>OAuth</code> based provider we would implement the
+<a href="#OAuthProviderHandlers">OAuthProviderHandlers</a> interface.</p>
+<p>The provider class takes the provider's configuration as a class parameter. It
+also imports the <code>Strategy</code> from the passport package.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { Strategy <span class="hljs-keyword">as</span> ProviderAStrategy } <span class="hljs-keyword">from</span> <span class="hljs-string">'passport-provider-a'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ProviderAAuthProvider <span class="hljs-keyword">implements</span> OAuthProviderHandlers {
+  <span class="hljs-keyword">private</span> readonly providerConfig: AuthProviderConfig;
+  <span class="hljs-keyword">private</span> readonly _strategy: ProviderAStrategy;
+
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">providerConfig: AuthProviderConfig</span>) {
+    <span class="hljs-keyword">this</span>.providerConfig = providerConfig;
+    <span class="hljs-keyword">this</span>._strategy = <span class="hljs-keyword">new</span> ProviderAStrategy(
+      { ...providerConfig.options },
+      verifyFunction, <span class="hljs-comment">// See the "Verify Callback" section</span>
+    );
+  }
+
+  <span class="hljs-keyword">async</span> start() {}
+  <span class="hljs-keyword">async</span> handler() {}
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="adding-an-non-oauth-based-provider"></a><a href="#adding-an-non-oauth-based-provider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding an non-OAuth based provider</h4>
+<p><em><strong>Note</strong>: We have prioritized OAuth-based providers and non-OAuth providers
+should be considered experimental.</em></p>
+<p>An non-<code>OAuth</code> based provider could implement
+<a href="#AuthProviderRouteHandlers">AuthProviderRouteHandlers</a> instead.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ProviderAAuthProvider <span class="hljs-keyword">implements</span> AuthProviderRouteHandlers {
+  <span class="hljs-keyword">private</span> readonly providerConfig: AuthProviderConfig;
+  <span class="hljs-keyword">private</span> readonly _strategy: ProviderAStrategy;
+
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">providerConfig: AuthProviderConfig</span>) {
+    <span class="hljs-keyword">this</span>.providerConfig = providerConfig;
+    <span class="hljs-keyword">this</span>._strategy = <span class="hljs-keyword">new</span> ProviderAStrategy(
+      { ...providerConfig.options },
+      verifyFunction, <span class="hljs-comment">// See the "Verify Callback" section</span>
+    );
+  }
+
+  <span class="hljs-keyword">async</span> start() {}
+  <span class="hljs-keyword">async</span> frameHandler() {}
+  <span class="hljs-keyword">async</span> logout() {}
+  <span class="hljs-keyword">async</span> refresh() {} <span class="hljs-comment">// If supported</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="create-method"></a><a href="#create-method" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create method</h4>
+<p>Each provider exports a create method that creates the provider instance,
+optionally extending a supported authorization framework. This method exists to
+allow for flexibility if additional frameworks are supported in the future.</p>
+<p>Implementing OAuth by returning an instance of <code>OAuthProvider</code> based of the
+provider's class:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createProviderAProvider</span>(<span class="hljs-params">config: AuthProviderConfig</span>) </span>{
+  <span class="hljs-keyword">const</span> provider = <span class="hljs-keyword">new</span> ProviderAAuthProvider(config);
+  <span class="hljs-keyword">const</span> oauthProvider = <span class="hljs-keyword">new</span> OAuthProvider(provider, config.provider, <span class="hljs-literal">true</span>);
+  <span class="hljs-keyword">return</span> oauthProvider;
+}
+</code></pre>
+<p>Not extending with OAuth, the main difference here is that the create method is
+returning a instance of the class without adding the OAuth authorization
+framework to it.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createProviderAProvider</span>(<span class="hljs-params">config: AuthProviderConfig</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ProviderAAuthProvider(config);
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="verify-callback"></a><a href="#verify-callback" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verify Callback</h4>
+<blockquote>
+<p>Strategies require what is known as a verify callback. The purpose of a verify
+callback is to find the user that possesses a set of credentials. When
+Passport authenticates a request, it parses the credentials contained in the
+request. It then invokes the verify callback with those credentials as
+arguments [...]. If the credentials are valid, the verify callback invokes
+done to supply Passport with the user that authenticated.</p>
+<p>If the credentials are not valid (for example, if the password is incorrect),
+done should be invoked with false instead of a user to indicate an
+authentication failure.</p>
+<p><a href="http://www.passportjs.org/docs/configure/">http://www.passportjs.org/docs/configure/</a></p>
+</blockquote>
+<p><strong><code>plugins/auth-backend/src/providers/providerA/index.ts</code></strong> is simply
+re-exporting the create method to be used for hooking the provider up to the
+backend.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> { createProviderAProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">'./provider'</span>;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="hook-it-up-to-the-backend"></a><a href="#hook-it-up-to-the-backend" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hook it up to the backend</h3>
+<p><strong><code>plugins/auth-backend/src/providers/config.ts</code></strong> The provider needs to be
+configured properly so you need to add it to the list of configured providers,
+all of which implement <a href="#AuthProviderConfig">AuthProviderConfig</a>:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> providers = [
+  {
+    provider: <span class="hljs-string">'providerA'</span>,  # used <span class="hljs-keyword">as</span> an identifier
+    options: { ... },       # consult the provider documentation <span class="hljs-keyword">for</span> which options you should provide
+    disableRefresh: <span class="hljs-literal">true</span>    # <span class="hljs-keyword">if</span> the provider lacks refresh tokens
+  },
+</code></pre>
+<p><strong><code>plugins/auth-backend/src/providers/factories.ts</code></strong> When the <code>auth-backend</code>
+starts it sets up routing for all the available providers by calling
+<code>createAuthProviderRouter</code> on each provider. You need to import the create
+method from the provider and add it to the factory:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { createProviderAProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">'./providerA'</span>;
+<span class="hljs-keyword">const</span> factories: { [providerId: <span class="hljs-built_in">string</span>]: AuthProviderFactory } = {
+  providerA: createProviderAProvider,
+};
+</code></pre>
+<p>By doing this <code>auth-backend</code> automatically adds these endpoints:</p>
+<pre><code class="hljs css language-ts">router.get(<span class="hljs-string">'/auth/providerA/start'</span>);
+router.get(<span class="hljs-string">'/auth/providerA/handler/frame'</span>);
+router.post(<span class="hljs-string">'/auth/providerA/handler/frame'</span>);
+router.post(<span class="hljs-string">'/auth/providerA/logout'</span>);
+router.get(<span class="hljs-string">'/auth/providerA/refresh'</span>); <span class="hljs-comment">// if supported</span>
+</code></pre>
+<p>As you can see each endpoint is prefixed with both <code>/auth</code> and its provider
+name.</p>
+<h3><a class="anchor" aria-hidden="true" id="test-the-new-provider"></a><a href="#test-the-new-provider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test the new provider</h3>
+<p>You can <code>curl -i localhost:7000/auth/providerA/start</code> and which should provide a
+<code>302</code> redirect with a <code>Location</code> header. Paste the url from that header into a
+web browser and you should be able to trigger the authorization flow.</p>
+<hr>
+<h5><a class="anchor" aria-hidden="true" id="oauthproviderhandlers"></a><a href="#oauthproviderhandlers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OAuthProviderHandlers</h5>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> OAuthProviderHandlers {
+  start(req: express.Request, options: <span class="hljs-built_in">any</span>): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt;;
+  handler(req: express.Request): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt;;
+  refresh?(refreshToken: <span class="hljs-built_in">string</span>, scope: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt;;
+  logout?(): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt;;
+}
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="authproviderroutehandlers"></a><a href="#authproviderroutehandlers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AuthProviderRouteHandlers</h5>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> AuthProviderRouteHandlers {
+  start(req: express.Request, res: express.Response): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt;;
+  frameHandler(req: express.Request, res: express.Response): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt;;
+  refresh?(req: express.Request, res: express.Response): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt;;
+  logout(req: express.Request, res: express.Response): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt;;
+}
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="authproviderconfig"></a><a href="#authproviderconfig" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AuthProviderConfig</h5>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> AuthProviderConfig = {
+  provider: <span class="hljs-built_in">string</span>;
+  options: <span class="hljs-built_in">any</span>;
+  disableRefresh?: <span class="hljs-built_in">boolean</span>;
+};
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/auth/index"><span class="arrow-prev">← </span><span>User Authentication and Authorization in Backstage</span></a><a class="docs-next button" href="/docs/auth/auth-backend"><span>Auth backend</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#passport">Passport</a></li><li><a href="#how-to-add-a-new-strategy-provider">How to add a new strategy provider</a><ul class="toc-headings"><li><a href="#quick-guide">Quick guide</a></li><li><a href="#installing-the-dependencies">Installing the dependencies:</a></li><li><a href="#create-implementation">Create implementation</a></li><li><a href="#hook-it-up-to-the-backend">Hook it up to the backend</a></li><li><a href="#test-the-new-provider">Test the new provider</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/create-a-plugin.md">Create a Plugin</a><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/structure-of-a-plugin.md">Structure of a Plugin</a><a href="https://github.com/spotify/backstage/tree/master/docs">API references</a><a href="https://github.com/spotify/backstage/blob/master/docs/FAQ.md">FAQ</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

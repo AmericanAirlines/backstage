@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>features/software-templates/installation · Backstage</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# Installing in your Backstage App"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="features/software-templates/installation · Backstage"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="# Installing in your Backstage App"/><meta property="og:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><link rel="shortcut icon" href="/img/favicon.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-48912878-10', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/spotify/backstage#backstage" target="_self">GitHub</a></li><li class=""><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="/background" target="_self">The Spotify story</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">features/software-templates/installation</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="installing-in-your-backstage-app"></a><a href="#installing-in-your-backstage-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing in your Backstage App</h1>
+<p>The scaffolder plugin comes in two packages, <code>@backstage/plugin-scaffolder</code> and
+<code>@backstage/plugin-scaffolder-backend</code>. Each has their own installation steps,
+outlined below.</p>
+<p>The Scaffolder plugin also depends on the Software Catalog. Instructions for how
+to set that up can be found <a href="/docs/features/software-catalog/installation">here</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="installing-backstageplugin-scaffolder"></a><a href="#installing-backstageplugin-scaffolder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing @backstage/plugin-scaffolder</h2>
+<blockquote>
+<p><strong>Note that if you used <code>npx @backstage/create-app</code>, the plugin may already be
+present</strong></p>
+</blockquote>
+<p>The scaffolder frontend plugin should be installed in your <code>app</code> package, which
+is created as a part of <code>@backstage/create-app</code>. To install the package, run:</p>
+<pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> packages/app
+yarn add @backstage/plugin-scaffolder
+</code></pre>
+<p>Make sure the version of <code>@backstage/plugin-scaffolder</code> matches the version of
+other <code>@backstage</code> packages. You can update it in <code>packages/app/package.json</code> if
+it doesn't.</p>
+<h3><a class="anchor" aria-hidden="true" id="adding-the-plugin-to-your-packagesapp"></a><a href="#adding-the-plugin-to-your-packagesapp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding the Plugin to your <code>packages/app</code></h3>
+<p>Add the following entry to the head of your <code>packages/app/src/plugins.ts</code>:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> { plugin <span class="hljs-keyword">as</span> ScaffolderPlugin } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-scaffolder'</span>;
+</code></pre>
+<p>Add the following to your <code>packages/app/src/apis.ts</code>:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { scaffolderApiRef, ScaffolderApi } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-scaffolder'</span>;
+
+<span class="hljs-comment">// Inside the ApiRegistry builder function ...</span>
+
+builder.add(
+  scaffolderApiRef,
+  <span class="hljs-keyword">new</span> ScaffolderApi({
+    apiOrigin: backendUrl,
+    basePath: <span class="hljs-string">'/scaffolder/v1'</span>,
+  }),
+);
+</code></pre>
+<p>Where <code>backendUrl</code> is the <code>backend.baseUrl</code> from config, i.e.
+<code>const backendUrl = config.getString('backend.baseUrl')</code>.</p>
+<p>This is all that is needed for the frontend part of the Scaffolder plugin to
+work!</p>
+<h2><a class="anchor" aria-hidden="true" id="installing-backstageplugin-scaffolder-backend"></a><a href="#installing-backstageplugin-scaffolder-backend" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing @backstage/plugin-scaffolder-backend</h2>
+<blockquote>
+<p><strong>Note that if you used <code>npx @backstage/create-app</code>, the plugin may already be
+present</strong></p>
+</blockquote>
+<p>The scaffolder backend should be installed in your <code>backend</code> package, which is
+created as a part of <code>@backstage/create-app</code>. To install the package, run:</p>
+<pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> packages/backend
+yarn add @backstage/plugin-scaffolder-backend
+</code></pre>
+<p>Make sure the version of <code>@backstage/plugin-scaffolder-backend</code> matches the
+version of other <code>@backstage</code> packages. You can update it in
+<code>packages/backend/package.json</code> if it doesn't.</p>
+<h3><a class="anchor" aria-hidden="true" id="adding-the-plugin-to-your-packagesbackend"></a><a href="#adding-the-plugin-to-your-packagesbackend" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding the Plugin to your <code>packages/backend</code></h3>
+<p>You'll need to add the plugin to the <code>backend</code>'s router. You can do this by
+creating a file called <code>packages/backend/src/plugins/scaffolder.ts</code> with the
+following contents to get you up and running quickly.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> {
+  CookieCutter,
+  createRouter,
+  FilePreparer,
+  GithubPreparer,
+  Preparers,
+  GithubPublisher,
+  CreateReactAppTemplater,
+  Templaters,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-scaffolder-backend'</span>;
+<span class="hljs-keyword">import</span> { Octokit } <span class="hljs-keyword">from</span> <span class="hljs-string">'@octokit/rest'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { PluginEnvironment } <span class="hljs-keyword">from</span> <span class="hljs-string">'../types'</span>;
+<span class="hljs-keyword">import</span> Docker <span class="hljs-keyword">from</span> <span class="hljs-string">'dockerode'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createPlugin</span>(<span class="hljs-params">{ logger }: PluginEnvironment</span>) </span>{
+  <span class="hljs-keyword">const</span> cookiecutterTemplater = <span class="hljs-keyword">new</span> CookieCutter();
+  <span class="hljs-keyword">const</span> craTemplater = <span class="hljs-keyword">new</span> CreateReactAppTemplater();
+  <span class="hljs-keyword">const</span> templaters = <span class="hljs-keyword">new</span> Templaters();
+
+  <span class="hljs-comment">// Register default templaters</span>
+  templaters.register(<span class="hljs-string">'cookiecutter'</span>, cookiecutterTemplater);
+  templaters.register(<span class="hljs-string">'cra'</span>, craTemplater);
+
+  <span class="hljs-keyword">const</span> filePreparer = <span class="hljs-keyword">new</span> FilePreparer();
+  <span class="hljs-keyword">const</span> githubPreparer = <span class="hljs-keyword">new</span> GithubPreparer();
+  <span class="hljs-keyword">const</span> preparers = <span class="hljs-keyword">new</span> Preparers();
+
+  <span class="hljs-comment">// Register default preparers</span>
+  preparers.register(<span class="hljs-string">'file'</span>, filePreparer);
+  preparers.register(<span class="hljs-string">'github'</span>, githubPreparer);
+
+  <span class="hljs-comment">// Create Github client with your access token from environment variables</span>
+  <span class="hljs-keyword">const</span> githubClient = <span class="hljs-keyword">new</span> Octokit({ auth: process.env.GITHUB_ACCESS_TOKEN });
+  <span class="hljs-keyword">const</span> publisher = <span class="hljs-keyword">new</span> GithubPublisher({ client: githubClient });
+
+  <span class="hljs-keyword">const</span> dockerClient = <span class="hljs-keyword">new</span> Docker();
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> createRouter({
+    preparers,
+    templaters,
+    publisher,
+    logger,
+    dockerClient,
+  });
+}
+</code></pre>
+<p>Once the <code>scaffolder.ts</code> router setup file is in place, add the router to
+<code>packages/backend/src/index.ts</code>:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> scaffolder <span class="hljs-keyword">from</span> <span class="hljs-string">'./plugins/scaffolder'</span>;
+
+<span class="hljs-keyword">const</span> scaffolderEnv = useHotMemoize(<span class="hljs-keyword">module</span>, () =&gt; createEnv('scaffolder'));
+
+const service = createServiceBuilder(<span class="hljs-keyword">module</span>)
+  .loadConfig(configReader)
+  /** several different routers */
+  .addRouter('/scaffolder', await scaffolder(scaffolderEnv));
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="adding-templates"></a><a href="#adding-templates" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding Templates</h3>
+<p>At this point the scaffolder backend is installed in your backend package, but
+you will not have any templates available to use. These need to be added to the
+software catalog, as they are represented as entities of kind
+<a href="/docs/features/software-catalog/descriptor-format#kind-template">Template</a>. You can find
+out more about adding templates <a href="/docs/features/software-templates/adding-templates">here</a>.</p>
+<p>To get up and running and try out some templates quickly, you can add some of
+our example templates through static configuration. Add the following to the
+<code>catalog.locations</code> section in your <code>app-config.yaml</code>:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">catalog:</span>
+  <span class="hljs-attr">locations:</span>
+    <span class="hljs-comment"># Backstage Example Templates</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">github</span>
+      <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/spotify/backstage/blob/master/plugins/scaffolder-backend/sample-templates/react-ssr-template/template.yaml</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">github</span>
+      <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/spotify/backstage/blob/master/plugins/scaffolder-backend/sample-templates/springboot-grpc-template/template.yaml</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">github</span>
+      <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/spotify/backstage/blob/master/plugins/scaffolder-backend/sample-templates/create-react-app/template.yaml</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">github</span>
+      <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/spotify/cookiecutter-golang/blob/master/template.yaml</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="runtime-dependencies"></a><a href="#runtime-dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Runtime Dependencies</h3>
+<p>For the scaffolder backend plugin to function, it needs a GitHub access token,
+and access to a running Docker daemon. You can create a GitHub access token
+<a href="https://github.com/settings/tokens/new">here</a>, select <code>repo</code> scope only. Full
+docs on creating private GitHub access tokens is available
+<a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">here</a>.
+Note that the need for private GitHub access tokens will be replaced with GitHub
+Apps integration further down the line.</p>
+<blockquote>
+<p><strong>Right now it is only possible to scaffold repositories inside GitHub
+organizations, and not under personal accounts.</strong></p>
+</blockquote>
+<p>The GitHub access token is passed along using the <code>GITHUB_ACCESS_TOKEN</code>
+environment variable.</p>
+<h3><a class="anchor" aria-hidden="true" id="running-the-backend"></a><a href="#running-the-backend" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running the Backend</h3>
+<p>Finally, make sure you have a local Docker daemon running, and start up the
+backend with the new configuration:</p>
+<pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> packages/backend
+GITHUB_ACCESS_TOKEN=&lt;token&gt; yarn start
+</code></pre>
+<p>If you've also set up the frontend plugin, so you should be ready to go browse
+the templates at <a href="http://localhost:3000/create">localhost:3000/create</a> now!</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installing-backstageplugin-scaffolder">Installing @backstage/plugin-scaffolder</a><ul class="toc-headings"><li><a href="#adding-the-plugin-to-your-packagesapp">Adding the Plugin to your <code>packages/app</code></a></li></ul></li><li><a href="#installing-backstageplugin-scaffolder-backend">Installing @backstage/plugin-scaffolder-backend</a><ul class="toc-headings"><li><a href="#adding-the-plugin-to-your-packagesbackend">Adding the Plugin to your <code>packages/backend</code></a></li><li><a href="#adding-templates">Adding Templates</a></li><li><a href="#runtime-dependencies">Runtime Dependencies</a></li><li><a href="#running-the-backend">Running the Backend</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/create-a-plugin.md">Create a Plugin</a><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/structure-of-a-plugin.md">Structure of a Plugin</a><a href="https://github.com/spotify/backstage/tree/master/docs">API references</a><a href="https://github.com/spotify/backstage/blob/master/docs/FAQ.md">FAQ</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

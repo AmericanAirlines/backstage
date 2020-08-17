@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Testing with Jest · Backstage</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Backstage uses [Jest](https://facebook.github.io/jest/) for all our unit testing"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Testing with Jest · Backstage"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="Backstage uses [Jest](https://facebook.github.io/jest/) for all our unit testing"/><meta property="og:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><link rel="shortcut icon" href="/img/favicon.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-48912878-10', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/spotify/backstage#backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="/background" target="_self">The Spotify story</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Testing</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-terminology">Architecture terminology</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Running Backstage Locally</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/development-environment">Development Environment</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Deployment</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-other">Other</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Backstage Service Catalog (alpha)</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software creation templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Software Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-index">Extending the Scaffolder</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-templater">Creating your own Templater</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-publisher">Create your own Publisher</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-preparer">Create your own Preparer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Docs-like-code</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call existing API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">User Authentication and Authorization in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">Utility API References</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-router">createPlugin - router</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/">Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/support">Support and community</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Testing with Jest</h1></header><article><div><span><p>Backstage uses <a href="https://facebook.github.io/jest/">Jest</a> for all our unit testing
+needs.</p>
+<p>Jest is a Facebook-built unit testing framework specifically built for React. It
+follows in the footsteps of other classic Node.js unit testing-related
+frameworks and libraries like <a href="https://mochajs.org/">Mocha</a>,
+<a href="https://jasmine.github.io/">Jasmine</a>, and <a href="http://www.chaijs.com/">Chai</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="running-tests"></a><a href="#running-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running Tests</h2>
+<p>Running all tests:</p>
+<pre><code class="hljs">yarn test-react
+</code></pre>
+<p>Running an individual test (e.g. <code>MyComponent.test.js</code>):</p>
+<pre><code class="hljs">yarn test-react MyComponent
+</code></pre>
+<p>To run both <code>MyComponent.test.js</code> and <code>MyControl.test.js</code> suite of tests:</p>
+<pre><code class="hljs">yarn test-react MyCo
+</code></pre>
+<p>Note: if <code>console.logs</code> are not appearing, run only the individual test you are
+working on.
+<a href="https://github.com/facebook/jest/issues/2441">This is a bug in Jest</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="naming-test-files"></a><a href="#naming-test-files" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Naming Test Files</h2>
+<p>Tests should be name <code>[filename].test.js</code>.</p>
+<p>For example, the tests for <strong><code>Link.js</code></strong> exist in the file <strong><code>Link.test.js</code></strong>.</p>
+<h2><a class="anchor" aria-hidden="true" id="third-party-dependencies"></a><a href="#third-party-dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Third-Party Dependencies</h2>
+<p>Jest has its own built-in assertion library with <code>expect</code>, so there is no need
+to <code>import</code> a third-party library like some of the older frameworks required.
+However since assertion libraries simply throw errors, it would be feasible to
+import a third-party library if you needed (like Chai or
+<a href="http://sinonjs.org/">Sinon</a>).</p>
+<p>We use the light-weight
+<a href="https://github.com/kentcdodds/react-testing-library">react-testing-library</a> to
+render React components.</p>
+<h2><a class="anchor" aria-hidden="true" id="testing-utilities"></a><a href="#testing-utilities" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing Utilities</h2>
+<p>TODO.</p>
+<h1><a class="anchor" aria-hidden="true" id="writing-unit-tests"></a><a href="#writing-unit-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing Unit Tests</h1>
+<p>The following principles are good guides to determining if you are writing high
+quality frontend unit tests.</p>
+<h2><a class="anchor" aria-hidden="true" id="bad-unit-test-principle"></a><a href="#bad-unit-test-principle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bad Unit Test Principle</h2>
+<blockquote>
+<p>No unit test is better than a bad one.</p>
+</blockquote>
+<p>Writing a poor unit test:</p>
+<ul>
+<li>Gives the illusion your code is more secure or reliable than it actually is.</li>
+<li>Functions equivalent to a bad comment, in that it leads the next developer
+into erroneous assumptions.</li>
+<li>Adds to future work by requiring updates to the unit test for irrelevant code
+changes.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="inputoutput-principle"></a><a href="#inputoutput-principle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Input/Output Principle</h2>
+<blockquote>
+<p>A unit test verifies an output matches an expected input.</p>
+</blockquote>
+<p>For backend, this would be that when you provide configuration X, then the
+object responds with Y. For frontend, this would be that when you provide
+properties X to a component, then the visual functionality responds with Y.</p>
+<h2><a class="anchor" aria-hidden="true" id="blackbox-principle"></a><a href="#blackbox-principle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Blackbox Principle</h2>
+<blockquote>
+<p>A good unit test does not tell the object how it should do its job but should
+only compare inputs to outputs.</p>
+</blockquote>
+<p>Consider a unit test for a form. A good unit test would not test the order of
+the form fields. Instead, it would verify that the inputs to the form fields
+lead to a certain backend call when submit is clicked.</p>
+<h2><a class="anchor" aria-hidden="true" id="scalability-principle"></a><a href="#scalability-principle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scalability Principle</h2>
+<blockquote>
+<p>Unit test quality is directly proportionate to how much code can change
+without having to touch the unit test.</p>
+</blockquote>
+<p>This is often overlooked! A unit test is not a test to verify the code never
+changes. Poor unit tests are written so that every time you make a tiny change
+to the code, you have to update the unit test. A good unit test suite allows a
+lot of flexibility in <em>how</em> the code is written so that future refactoring can
+occur without having to touch the original unit tests.</p>
+<h2><a class="anchor" aria-hidden="true" id="increasing-complexity-principle"></a><a href="#increasing-complexity-principle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Increasing Complexity Principle</h2>
+<blockquote>
+<p>The ordering of unit tests in a suite should proceed from least specific to
+most specific.</p>
+</blockquote>
+<p>Jest runs all tests in the order in which they are provided, regardless of the
+depth of <code>describe()</code> blocks you provide. We can use this to help us write tests
+that will help the next developer debug what they broke.</p>
+<p>The idea here is that if they were to break a unit test, the next developer
+should be able to tell from the order in which the tests broke what they should
+do to fix things.</p>
+<p>For example, good unit tests will verify the arguments to a function in a test
+prior to a test that validates the output. If you do not test this, then simply
+throwing an error saying that output was incorrect will lead the next developer
+into thinking they may have broken the entire functionality of the object rather
+than simply letting them know they had an invalid input.</p>
+<h2><a class="anchor" aria-hidden="true" id="broken-functionality-principle"></a><a href="#broken-functionality-principle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Broken Functionality Principle</h2>
+<blockquote>
+<p>Generally, a unit test should not test exactly how the output appears, it
+should test that the functionality has an expected <em>general</em> response to an
+input change.</p>
+</blockquote>
+<p>This piggybacks the Scalability Principle and applies primarily to frontend
+development. As a general rule of thumb, frontends should be flexible enough so
+that the UX or design can change while touching the least amount of code
+possible. So for example, a poor unit test would verify the color of a button
+when it is hovered. This would be a poor unit test, because if you decide to
+test a slightly different color on the button the unit test will break. A better
+unit test would verify that the button's CSS classname is assigned properly on
+hover or test for something completely different.</p>
+<h2><a class="anchor" aria-hidden="true" id="example-loading-indicator"></a><a href="#example-loading-indicator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example: Loading Indicator</h2>
+<p>A classic unit test on frontends is verifying a loading indicator displays when
+a backend request is being made.</p>
+<p><strong>Here are some things we could test for <em>when data is loading</em>:</strong></p>
+<blockquote>
+<p>Did the internal <code>loading</code> state of the component change? (poor)</p>
+</blockquote>
+<p>This is not a great test because it does not actually test that the
+functionality (displaying a message to the user) actually happens. It also
+breaks the Blackbox Principle by expecting the internals of the component must
+work a certain way. This could be a good test on its own right, but it does not
+actually achieve the goal of verifying that if our input (loading data) occurs,
+then the output (displaying a message to the user) has happened.</p>
+<blockquote>
+<p>Did the text <code>&quot;Loading!&quot;</code> appear in the DOM? (better)</p>
+</blockquote>
+<p>This is a better test because it validates functionality, but it breaks the
+Scalability principle. By testing for <code>'Loading...'</code> we are linking our test
+code to the component's message. If we want to add internationalization or
+simply change the message to something more specific we will break our test and
+have to update code in two places.</p>
+<blockquote>
+<p>Did <code>&lt;Loading /&gt;</code> get mounted? (best)</p>
+</blockquote>
+<p>This is the best test of these examples (there could be more depending on your
+implementation).</p>
+<p>Verifying that <code>&lt;Loading /&gt;</code> is mounted when data is loading is the best test
+because it fulfills all the principles above:</p>
+<p>✓ <strong>Fulfills Input/Output Principle</strong>: Verifies the output changes when the
+input changes</p>
+<p>✓ <strong>Fufills Blackbox Principle</strong>: Does not verify <em>how</em> the <code>&lt;Loading /&gt;</code>
+component is mounted, just that it is mounted in response to the input.</p>
+<p>✓ <strong>Fulfills Scalability Principle</strong>: If we decide to refactor the entire way
+the loading indicator is displayed the test still works without touching it.</p>
+<p>✓ <strong>Fulfills Broken Functionality Principle</strong>: this test verifies the
+functionality (displaying an indicator) is working, rather than how it is
+working.</p>
+<p>The increasing complexity principle does not really apply to this example, so it
+was excluded. However if you were to place this test in a suite of other tests,
+it would be best to test first that when the component is instructed to load
+data then it actually does it. this way both tests fail if the data loading part
+breaks and the next developer immediately know the problem is that the data
+loading is broken, not that the loading indicator is broken.</p>
+<h1><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h1>
+<h2><a class="anchor" aria-hidden="true" id="utility-functions"></a><a href="#utility-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Utility Functions</h2>
+<p>A utility function is a function with no side effects. It takes in arguments and
+returns a result or displays an error or console message, like so:</p>
+<p><strong><code>StringUtil ellipsis</code></strong></p>
+<pre><code class="hljs">export function ellipsis(text, maxLength, midCharIx = 0, ellipsis = '...') {
+  // Do something blackbox. We should not care about the internals, only inputs and outputs.
+  ...
+  return someFinalValue;
+}
+</code></pre>
+<p>There are four things to test for in a utility function:</p>
+<ol>
+<li>Handle Invalid Input</li>
+<li>Verify default input arguments</li>
+<li>Verify output for expected input arguments</li>
+<li>Handle thrown errors</li>
+</ol>
+<blockquote>
+<p>Handle Invalid Input (handle thrown errors):</p>
+</blockquote>
+<pre><code class="hljs">it('Throws an error on improper arguments', () =&gt; {
+  expect(() =&gt; {
+    ellipsis();
+  }).toThrowError('Expected \'text\' to be defined');
+});
+</code></pre>
+<blockquote>
+<p>Verify default input arguments:</p>
+</blockquote>
+<pre><code class="hljs">it('Works with defaults', () =&gt; {
+  expect(ellipsis('Hello world', 3)).toBe('Hel...');
+  expect(ellipsis('', 3)).toBe('');
+  expect(ellipsis('H', 3)).toBe('H');
+  expect(ellipsis('Hello', 5)).toBe('Hello');
+});
+</code></pre>
+<blockquote>
+<p>Verify output for expected input arguments:</p>
+</blockquote>
+<p>This is especially true for edge cases!</p>
+<pre><code class="hljs">it('Works with midCharIx', () =&gt; {
+  expect(ellipsis('Hello world', 3, 6)).toBe('...o w...');
+  expect(ellipsis('', 3, 6)).toBe('');
+  expect(ellipsis('Backstage is amazing', 4, 10)).toBe('...e is...');
+});
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="non-react-classes"></a><a href="#non-react-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Non-React Classes</h2>
+<p>Testing a Javascript object which is <em>not</em> a React component follows a lot of
+the same principles as testing objects in other languages.</p>
+<h3><a class="anchor" aria-hidden="true" id="api-testing-principles"></a><a href="#api-testing-principles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API Testing Principles</h3>
+<p>Testing an API involves verifying four things:</p>
+<ol>
+<li>Invalid inputs are caught before being sent to the server.</li>
+<li>Valid inputs translate into a valid browser request.</li>
+<li>Server response is translated into an expected Javascript object.</li>
+<li>Server errors are handled gracefully.</li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="mocking-api-calls"></a><a href="#mocking-api-calls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mocking API Calls</h3>
+<p><a href="https://facebook.github.io/jest/docs/en/mock-functions.html">Mocking in jest</a>
+involves wrapping existing functions (like an API call function) with an
+alternative.</p>
+<p>For example:</p>
+<p><strong>./Api.js</strong></p>
+<pre><code class="hljs"><span class="hljs-selector-tag">export</span> {
+  <span class="hljs-attribute">fetchSomethingFromServer</span>: () =&gt; {
+    // Live production call to a URI. Must be avoided during testing!
+    return <span class="hljs-built_in">fetch</span>(<span class="hljs-string">'blah'</span>);
+  }
+};
+</code></pre>
+<p><strong>./__mocks__/Api.js</strong></p>
+<pre><code class="hljs"><span class="hljs-keyword">export</span> {
+  <span class="hljs-attr">fetchSomethingFromServer</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-comment">// Simulate a production call, but avoid jest and just use a promise</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-string">'some result object simulating server data here'</span>);
+  }
+}
+</code></pre>
+<p><strong>./Api.test.js</strong></p>
+<pre><code class="hljs"><span class="hljs-comment">/* eslint-disable import/first */</span>
+
+jest.mock('./MyApi'); <span class="hljs-comment">// Instruct Jest to swap all future imports of './MyApi.js' to './__mocks__/MyApi.js'</span>
+
+import MyApi from './MyApi'; <span class="hljs-comment">// Will actually return the contents of the file in the __mocks__ folder now</span>
+
+it<span class="hljs-function"> ('<span class="hljs-params">loads</span> <span class="hljs-params">data</span>', (<span class="hljs-params">done</span>) =&gt;</span> {
+  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">MyApi</span>.</span></span>fetch<span class="hljs-constructor">SomethingFromServer()</span>.<span class="hljs-keyword">then</span>(result =&gt; {
+    expect(result).<span class="hljs-keyword">to</span><span class="hljs-constructor">Be('<span class="hljs-params">some</span> <span class="hljs-params">result</span> <span class="hljs-params">object</span> <span class="hljs-params">simulating</span> <span class="hljs-params">server</span> <span class="hljs-params">data</span> <span class="hljs-params">here</span>')</span>;
+    <span class="hljs-keyword">done</span><span class="hljs-literal">()</span>;
+  });
+});
+</code></pre>
+<p>Note: make sure you disable the eslint <code>'import/first'</code> rule at the top of the
+file since technically you are not allowed by the default settings to have an
+import after the <code>jest.mock</code> call.</p>
+<h2><a class="anchor" aria-hidden="true" id="react-components"></a><a href="#react-components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>React Components</h2>
+<h3><a class="anchor" aria-hidden="true" id="working-with-the-react-lifecycle"></a><a href="#working-with-the-react-lifecycle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Working with the React Lifecycle</h3>
+<p>The <a href="https://reactjs.org/docs/state-and-lifecycle.html">React lifecycle</a> is
+asynchronous.</p>
+<p>When you call <code>setState</code> or update the <code>props</code> of a component, there are several
+asynchronous stages that must occur before a rerender. Note the following
+example:</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  load() {
+    <span class="hljs-keyword">this</span>.setState({<span class="hljs-attr">loading</span>: <span class="hljs-literal">true</span>});
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.state.loading ? <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Loading</span> /&gt;</span></span> : <span class="hljs-string">'Finished!'</span>;
+  }
+}
+
+...
+
+<span class="hljs-comment">// INCORRECT</span>
+it(<span class="hljs-string">'Test loading'</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> wrapper = mount(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> /&gt;</span></span>);
+  wrapper.load();
+  expect(wrapper.find(<span class="hljs-string">'Loading'</span>).length).toEqual(<span class="hljs-number">1</span>); <span class="hljs-comment">// Will fail</span>
+});
+
+<span class="hljs-comment">// CORRECT</span>
+it(<span class="hljs-string">'Test loading'</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> wrapper = mount(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> /&gt;</span></span>);
+  wrapper.load();
+  wrapper.update(); <span class="hljs-comment">// This tells the components to run through a render cycle</span>
+  expect(wrapper.find(<span class="hljs-string">'Loading'</span>).length).toEqual(<span class="hljs-number">1</span>);
+});
+</code></pre>
+<p>For more information:</p>
+<ul>
+<li><a href="https://reactjs.org/docs/state-and-lifecycle.html">React lifecycle</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="accessing-store-theme-routing-browser-history-etc"></a><a href="#accessing-store-theme-routing-browser-history-etc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accessing <code>store</code>, <code>theme</code>, routing, browser history, etc.</h3>
+<p>The Backstage application has several core providers at its root. To run your
+test wrapped in a &quot;dummy&quot; Backstage application, you can use our utility
+functions:</p>
+<p><strong><code>wrapInTestApp</code></strong></p>
+<pre><code class="hljs">import { wrapInTestApp } from '../../test-utils';
+...
+it('Definitely is not a coconut', () =&gt; {
+  const mangoWrapper = mount(wrapInTestApp(&lt;Mango /&gt;));
+
+  expect(mangoWrapper.context().store).toBeDefined();
+});
+</code></pre>
+<p>Note: wrapping in the test application <strong>requires</strong> you to do a <code>find()</code> or
+<code>dive()</code> since the wrapped component is now the application.</p>
+<h1><a class="anchor" aria-hidden="true" id="debugging-jest-tests"></a><a href="#debugging-jest-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debugging Jest Tests</h1>
+<p>Currently, debugging Jest tests using IntelliJ or <code>node-debugger</code> is possible
+but can be
+<a href="https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000634564-Debugging-Jest-unit-tests">problematic to set up.</a></p>
+<p>It is possible, but you might spend a decent amount of time configuring your
+IDE.</p>
+<p>In most cases, we have found that using <code>console.log</code> works well.</p>
+<p>Note: if your console.logs are not being displayed, focus your specific unit
+test from the command line by running them like so <code>yarn test-react MyTest</code>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/plugins/call-existing-api"><span class="arrow-prev">← </span><span>Call existing API</span></a><a class="docs-next button" href="/docs/plugins/publishing"><span>Publishing</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#running-tests">Running Tests</a></li><li><a href="#naming-test-files">Naming Test Files</a></li><li><a href="#third-party-dependencies">Third-Party Dependencies</a></li><li><a href="#testing-utilities">Testing Utilities</a></li><li><a href="#bad-unit-test-principle">Bad Unit Test Principle</a></li><li><a href="#inputoutput-principle">Input/Output Principle</a></li><li><a href="#blackbox-principle">Blackbox Principle</a></li><li><a href="#scalability-principle">Scalability Principle</a></li><li><a href="#increasing-complexity-principle">Increasing Complexity Principle</a></li><li><a href="#broken-functionality-principle">Broken Functionality Principle</a></li><li><a href="#example-loading-indicator">Example: Loading Indicator</a></li><li><a href="#utility-functions">Utility Functions</a></li><li><a href="#non-react-classes">Non-React Classes</a><ul class="toc-headings"><li><a href="#api-testing-principles">API Testing Principles</a></li><li><a href="#mocking-api-calls">Mocking API Calls</a></li></ul></li><li><a href="#react-components">React Components</a><ul class="toc-headings"><li><a href="#working-with-the-react-lifecycle">Working with the React Lifecycle</a></li><li><a href="#accessing-store-theme-routing-browser-history-etc">Accessing <code>store</code>, <code>theme</code>, routing, browser history, etc.</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/create-a-plugin.md">Create a Plugin</a><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/structure-of-a-plugin.md">Structure of a Plugin</a><a href="https://github.com/spotify/backstage/tree/master/docs">API references</a><a href="https://github.com/spotify/backstage/blob/master/docs/FAQ.md">FAQ</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

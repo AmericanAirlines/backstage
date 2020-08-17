@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Writing Backstage Configuration Files · Backstage</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## File Format"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Writing Backstage Configuration Files · Backstage"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="## File Format"/><meta property="og:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><link rel="shortcut icon" href="/img/favicon.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-48912878-10', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/spotify/backstage#backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="/background" target="_self">The Spotify story</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Configuration</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-terminology">Architecture terminology</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Running Backstage Locally</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/development-environment">Development Environment</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Deployment</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-other">Other</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Backstage Service Catalog (alpha)</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software creation templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Software Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-index">Extending the Scaffolder</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-templater">Creating your own Templater</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-publisher">Create your own Publisher</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-preparer">Create your own Preparer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Docs-like-code</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call existing API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">User Authentication and Authorization in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">Utility API References</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-router">createPlugin - router</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/">Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/support">Support and community</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Writing Backstage Configuration Files</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="file-format"></a><a href="#file-format" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File Format</h2>
+<p>Configuration is stored in YAML format in <code>app-config.yaml</code> files, looking
+something like this:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">app:</span>
+  <span class="hljs-attr">title:</span> <span class="hljs-string">Backstage</span> <span class="hljs-string">Example</span> <span class="hljs-string">App</span>
+  <span class="hljs-attr">baseUrl:</span> <span class="hljs-string">http://localhost:3000</span>
+
+<span class="hljs-attr">backend:</span>
+  <span class="hljs-attr">listen:</span> <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span><span class="hljs-string">:7000</span>
+  <span class="hljs-attr">baseUrl:</span> <span class="hljs-string">http://localhost:7000</span>
+
+<span class="hljs-attr">organization:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">Spotify</span>
+
+<span class="hljs-attr">proxy:</span>
+  <span class="hljs-string">/my/api:</span>
+    <span class="hljs-attr">target:</span> <span class="hljs-string">https://example.com/api/</span>
+    <span class="hljs-attr">changeOrigin:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">pathRewrite:</span>
+      <span class="hljs-string">^/proxy/my/api/:</span> <span class="hljs-string">/</span>
+</code></pre>
+<p>Configuration files are typically checked in and stored in the repo that houses
+the rest of the Backstage application.</p>
+<h2><a class="anchor" aria-hidden="true" id="environment-variable-overrides"></a><a href="#environment-variable-overrides" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment Variable Overrides</h2>
+<p>Individual configuration values can be overridden using environment variables
+prefixed with <code>APP_CONFIG_</code>. Everything following that prefix in the environment
+variable name will be used as the config key, with <code>_</code> replaced by <code>.</code>. For
+example, to override the <code>app.baseUrl</code> value, set the <code>APP_CONFIG_app_baseUrl</code>
+environment variable to the desired value.</p>
+<p>The value of the environment variable is parsed as JSON, but it will fall back
+to being interpreted as a string if it fails to parse. Note that if you for
+example want to pass on the string <code>&quot;false&quot;</code>, you need to wrap it in double
+quotes, e.g. <code>export APP_CONFIG_example='&quot;false&quot;'</code>.</p>
+<p>While it may be tempting to use environment variable overrides for supplying a
+lot of configuration values, we recommend using them sparingly. Try to stick to
+using configuration files, and only use environment variables for things like
+reusing deployment artifacts across staging and production environments.</p>
+<p>Note that environment variables work for frontend configuration too. They are
+picked up by the serve tasks of <code>@backstage/cli</code> for local development, and are
+injected by the entrypoint of the nginx container serving the frontend in a
+production build.</p>
+<h2><a class="anchor" aria-hidden="true" id="file-resolution"></a><a href="#file-resolution" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File Resolution</h2>
+<p>It is possible to have multiple configuration files, both to support different
+environments, but also to define configuration that is local to specific
+packages.</p>
+<p>All <code>app-config.yaml</code> files inside the monorepo root and package root are
+considered, as are files with additional <code>local</code> and environment affixes such as
+<code>development</code>, for example <code>app-config.local.yaml</code>,
+<code>app-config.production.yaml</code>, and <code>app-config.development.local.yaml</code>. Which
+environment config files are loaded is determined by the <code>NODE_ENV</code> environment
+variable. Local configuration files are always loaded, but are meant for local
+development overrides and should typically be <code>.gitignore</code>'d.</p>
+<p>All loaded configuration files are merged together using the following rules:</p>
+<ul>
+<li>Configurations have different priority, higher priority means you replace
+values from configurations with lower priority.</li>
+<li>Primitive values are completely replaced, as are arrays and all of their
+contents.</li>
+<li>Objects are merged together deeply, meaning that if any of the included
+configs contain a value for a given path, it will be found.</li>
+</ul>
+<p>The priority of the configurations is determined by the following rules, in
+order:</p>
+<ul>
+<li>Configuration from the <code>APP_CONFIG_</code> environment variables has the highest
+priority, followed by files.</li>
+<li>Files inside package directories have higher priority than those in the root
+directory.</li>
+<li>Files with environment affixes have higher priority than ones without.</li>
+<li>Files with the <code>local</code> affix have higher priority than ones without.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="secrets"></a><a href="#secrets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Secrets</h2>
+<p>Secrets are supported via a special <code>$secret</code> key, which in turn provides a
+number of different ways to read in secrets. To load a configuration value as a
+secret, supply an object with a single <code>$secret</code> key, and within that supply an
+object that describes how the secret is loaded. For example, the following will
+read the config key <code>backend.mySecretKey</code> from the environment variable
+<code>MY_SECRET_KEY</code>:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">backend:</span>
+  <span class="hljs-attr">mySecretKey:</span>
+    <span class="hljs-string">$secret:</span>
+      <span class="hljs-attr">env:</span> <span class="hljs-string">MY_SECRET_KEY</span>
+</code></pre>
+<p>With the above configuration, calling <code>config.getString('backend.mySecretKey')</code>
+will return the value of the environment variable <code>MY_SECRET_KEY</code> when the
+backend started up. All secrets are loaded at startup, so changing the contents
+of secret files or environment variables will not be reflected at runtime.</p>
+<p>Note that secrets will never be included in the frontend bundle or development
+builds. When loading configuration you have to explicitly enable reading of
+secrets, which is only done for the backend configuration.</p>
+<p>As hinted at, secrets can be loaded from a bunch of different sources, and can
+be extended with more. Below is a list of the currently supported methods for
+loading secrets.</p>
+<h3><a class="anchor" aria-hidden="true" id="env-secrets"></a><a href="#env-secrets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Env Secrets</h3>
+<p>This reads a secret from an environment variable. For example, the following
+config loads the secret from the <code>MY_SECRET</code> env var.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-string">$secret:</span>
+  <span class="hljs-attr">env:</span> <span class="hljs-string">MY_SECRET</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="file-secrets"></a><a href="#file-secrets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File Secrets</h3>
+<p>This reads a secret from the entire contents of a file. The file path is
+relative to the <code>app-config.yaml</code> the defines the secrets. For example, the
+following reads the contents of <code>my-secret.txt</code> relative to the config file
+itself:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-string">$secret:</span>
+  <span class="hljs-attr">file:</span> <span class="hljs-string">./my-secret.txt</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="data-file-secrets"></a><a href="#data-file-secrets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data File Secrets</h3>
+<p>This reads secrets from a path within a JSON-like data file. The file path
+behaves similar to file secrets, but in addition a <code>path</code> is used to point to a
+specific value inside the file. Supported file extensions are <code>.json</code>, <code>.yaml</code>,
+and <code>.yml</code>. For example, the following would read out <code>my-secret-key</code> from
+<code>my-secrets.json</code>:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-string">$secret:</span>
+  <span class="hljs-attr">data:</span> <span class="hljs-string">./my-secrets.json</span>
+  <span class="hljs-attr">path:</span> <span class="hljs-string">deployment.key</span>
+
+<span class="hljs-comment"># my-secrets.json</span>
+<span class="hljs-string">{</span>
+  <span class="hljs-attr">"deployment":</span> <span class="hljs-string">{</span>
+    <span class="hljs-attr">"key":</span> <span class="hljs-string">"my-secret-key"</span>
+  <span class="hljs-string">}</span>
+<span class="hljs-string">}</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/conf/reading"><span class="arrow-prev">← </span><span>Reading Backstage Configuration</span></a><a class="docs-next button" href="/docs/conf/defining"><span>Defining Configuration for your Plugin</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#file-format">File Format</a></li><li><a href="#environment-variable-overrides">Environment Variable Overrides</a></li><li><a href="#file-resolution">File Resolution</a></li><li><a href="#secrets">Secrets</a><ul class="toc-headings"><li><a href="#env-secrets">Env Secrets</a></li><li><a href="#file-secrets">File Secrets</a></li><li><a href="#data-file-secrets">Data File Secrets</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/create-a-plugin.md">Create a Plugin</a><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/structure-of-a-plugin.md">Structure of a Plugin</a><a href="https://github.com/spotify/backstage/tree/master/docs">API references</a><a href="https://github.com/spotify/backstage/blob/master/docs/FAQ.md">FAQ</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

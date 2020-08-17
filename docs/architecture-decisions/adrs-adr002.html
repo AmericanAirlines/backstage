@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>ADR002: Default Software Catalog File Format · Backstage</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="| Created    | Status |"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="ADR002: Default Software Catalog File Format · Backstage"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="| Created    | Status |"/><meta property="og:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><link rel="shortcut icon" href="/img/favicon.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-48912878-10', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/spotify/backstage#backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="/background" target="_self">The Spotify story</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Architecture Decision Records (ADRs)</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-terminology">Architecture terminology</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Running Backstage Locally</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/development-environment">Development Environment</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Deployment</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-other">Other</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Backstage Service Catalog (alpha)</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software creation templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Software Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-index">Extending the Scaffolder</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-templater">Creating your own Templater</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-publisher">Create your own Publisher</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-preparer">Create your own Preparer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Docs-like-code</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call existing API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">User Authentication and Authorization in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">Utility API References</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-router">createPlugin - router</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/">Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/support">Support and community</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">ADR002: Default Software Catalog File Format</h1></header><article><div><span><table>
+<thead>
+<tr><th>Created</th><th>Status</th></tr>
+</thead>
+<tbody>
+<tr><td>2020-05-17</td><td>Open</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="background"></a><a href="#background" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background</h2>
+<p>Backstage comes with a software catalog functionality, that you can use to track
+all your software components and more. It can be powered by data from various
+sources, and one of them that is included with the package, is a custom database
+backed catalog. It has the ability to keep itself updated automatically based on
+the contents of little descriptor files in your version control system of
+choice. Developers create these files and maintain them side by side with their
+code, and the catalog system reacts accordingly.</p>
+<p>This ADR describes the default format of these descriptor files.</p>
+<h3><a class="anchor" aria-hidden="true" id="inspiration"></a><a href="#inspiration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Inspiration</h3>
+<p>Internally at Spotify, a home grown software catalog system is used heavily and
+forms a core part of Backstage and other important pieces of the infrastructure.
+The user experience, learnings and certain pieces of metadata from that catalog
+are being carried over to the open source effort.</p>
+<p>The file format described herein, also draws heavy inspiration from the
+<a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">kubernetes object format</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="core-concepts"></a><a href="#core-concepts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Core Concepts</h3>
+<p>There are a number of descriptor files, all of whose locations (e.g. within a
+version control system) are registered with the software catalog. The method of
+registration is not covered in this document; it could happen either manually
+inside Backstage, or by push events from a CI/CD pipelines, or by webhook
+triggers from the version control system, etc.</p>
+<p>Each file describes one or more entities in accordance with the
+<a href="https://github.com/spotify/backstage/issues/390">Backstage System Model</a>. All
+of these entities have a common stucture and nomenclature, and they are stored
+in the software catalog from which they then can be queried.</p>
+<p>Entities have distinct names, and they may reference each other by those names.</p>
+<h2><a class="anchor" aria-hidden="true" id="format"></a><a href="#format" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Format</h2>
+<p>Descriptor files use the <a href="https://yaml.org/spec/1.2/spec.html">YAML</a> format.
+They may be written by hand, or created using automated tools. Each file may
+consist of several YAML documents (separated by <code>---</code>), where each document
+describes a single entity.</p>
+<p>This is an example entity definition with some mocked data.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1alpha1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Component</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">frobs-awesome</span>
+  <span class="hljs-attr">description:</span> <span class="hljs-string">|
+    Backend service that implements the Frobs API, as defined
+    in [the Frobs RFC](https://example.com/spec/frob.html).
+</span>  <span class="hljs-attr">labels:</span>
+    <span class="hljs-attr">system:</span> <span class="hljs-string">frobs</span>
+    <span class="hljs-attr">lifecycle:</span> <span class="hljs-string">production</span>
+    <span class="hljs-attr">example.com/service-discovery-name:</span> <span class="hljs-string">frobsawesome</span>
+  <span class="hljs-attr">annotations:</span>
+    <span class="hljs-attr">circleci.com/project-slug:</span> <span class="hljs-string">gh/example-org/frobs-awesome</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">service</span>
+</code></pre>
+<p>The root fields <code>apiVersion</code>, <code>kind</code>, <code>metadata</code>, and <code>spec</code> are part of the
+<em>envelope</em>, defining the overall structure of all kinds of entity. Likewise, the
+<code>name</code>, <code>namespace</code>, <code>labels</code>, and <code>annotations</code> metadata fields are of special
+significance and have reserved purposes and distinct shapes.</p>
+<p>See below for details about these fields.</p>
+<h2><a class="anchor" aria-hidden="true" id="envelope"></a><a href="#envelope" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Envelope</h2>
+<p>The root envelope object has the following structure.</p>
+<h3><a class="anchor" aria-hidden="true" id="apiversion-and-kind"></a><a href="#apiversion-and-kind" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>apiVersion</code> and <code>kind</code></h3>
+<p>The <code>kind</code> is the high level entity type being described, typically from the
+<a href="https://github.com/spotify/backstage/issues/390">Backstage system model</a>. The
+first versions of the catalog will focus on the <code>Component</code> kind.</p>
+<p>The <code>apiVersion</code>is the version of specification format for that particular
+entity that this file is written against. The version is used for being able to
+evolve the format, and the tuple of <code>apiVersion</code> and <code>kind</code> should be enough for
+a parser to know how to interpret the contents of the rest of the document.</p>
+<p>Backstage specific entities have an <code>apiVersion</code> that is prefixed with
+<code>backstage.io/</code>, to distinguish them from other types of object that share the
+same type of structure. This may be relevant when co-hosting these
+specifications with e.g. kubernetes object manifests.</p>
+<p>Early versions of the catalog will be using alpha/beta versions, e.g.
+<code>backstage.io/v1alpha1</code>, to signal that the format may still change. After that,
+we will be using <code>backstage.io/v1</code> and up.</p>
+<h3><a class="anchor" aria-hidden="true" id="metadata"></a><a href="#metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>metadata</code></h3>
+<p>A structure that contains metadata about the entity, i.e. things that aren't
+directly part of the entity specification itself. See below for more details
+about this structure.</p>
+<h3><a class="anchor" aria-hidden="true" id="spec"></a><a href="#spec" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec</code></h3>
+<p>The actual specification data that describes the entity.</p>
+<p>The precise structure of the <code>spec</code> depends on the <code>apiVersion</code> and <code>kind</code>
+combination, and some kinds may not even have a <code>spec</code> at all. See further down
+in this document for the specification structure of specific kinds.</p>
+<h2><a class="anchor" aria-hidden="true" id="metadata-1"></a><a href="#metadata-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metadata</h2>
+<p>The <code>metadata</code> root field has the following nested structure.</p>
+<h3><a class="anchor" aria-hidden="true" id="name"></a><a href="#name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>name</code></h3>
+<p>The name of the entity. This name is both meant for human eyes to recognize the
+entity, and for machines and other components to reference the entity (e.g. in
+URLs or from other entity specification files).</p>
+<p>Names must be unique per kind, within a given namespace (if specified), at any
+point in time. Names may be reused at a later time, after an entity is deleted
+from the registry.</p>
+<p>Names are required to follow a certain format. Entities that do not follow those
+rules will not be accepted for registration in the catalog. The ruleset is
+configurable to fit your organization's needs, but the default behavior is as
+follows.</p>
+<ul>
+<li>Strings of length at least 1, and at most 63</li>
+<li>Must consist of sequences of <code>[a-z0-9A-Z]</code> possibly separated by one of
+<code>[-_.]</code></li>
+</ul>
+<p>Example: <code>visits-tracking-service</code>, <code>CircleciBuildsDs_avro_gcs</code></p>
+<p>In addition to this, names are passed through a normalization function and then
+compared to the same normalized form of other entity names and made sure to not
+collide. This rule of uniqueness exists to avoid situations where e.g. both
+<code>my-component</code> and <code>MyComponent</code> are registered side by side, which leads to
+confusion and risk. The normalization function is also configurable, but the
+default behavior is as follows.</p>
+<ul>
+<li>Strip out all characters outside of the set <code>[a-zA-Z0-9]</code></li>
+<li>Convert to lowercase</li>
+</ul>
+<p>Example: <code>CircleciBuildsDs_avro_gcs</code> -&gt; <code>circlecibuildsdsavrogcs</code></p>
+<h3><a class="anchor" aria-hidden="true" id="namespace"></a><a href="#namespace" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>namespace</code></h3>
+<p>The <code>name</code> of a namespace that the entity belongs to. This field is optional,
+and currently has no special semantics apart from bounding the name uniqueness
+constraint if specified. It is reserved for future use and may get broader
+semantic implication.</p>
+<p>Namespaces may also be part of the catalog, and are <code>v1</code> / <code>Namespace</code> entities,
+i.e. not Backstage specific but the same as in Kubernetes.</p>
+<h3><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>description</code></h3>
+<p>A human readable description of the entity, to be shown in Backstage. Should be
+kept short and informative, suitable to give an overview of the entity's purpose
+at a glance. More detailed explanations and documentation should be placed
+elsewhere.</p>
+<h3><a class="anchor" aria-hidden="true" id="labels"></a><a href="#labels" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>labels</code></h3>
+<p>Labels are optional key/value pairs of that are attached to the entity, and
+their use is identical to
+<a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/">kubernetes object labels</a>.</p>
+<p>Their main purpose is for references to other entities, and for information that
+is in one way or another classifying for the current entity. They are often used
+as values in queries or filters.</p>
+<p>Both the key and the value are strings, subject to the following restrictions.</p>
+<p>Keys have an optional prefix followed by a slash, and then the name part which
+is required. The prefix must be a valid lowercase domain name, at most 253
+characters in total. The name part must be sequences of <code>[a-zA-Z0-9]</code> separated
+by any of <code>[-_.]</code>, at most 63 characters in total.</p>
+<p>The <code>backstage.io/</code> prefix is reserved for use by Backstage core components.
+Some keys such as <code>system</code> also have predefined semantics.</p>
+<p>Values are strings that follow the same restrictions as <code>name</code> above.</p>
+<h3><a class="anchor" aria-hidden="true" id="annotations"></a><a href="#annotations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>annotations</code></h3>
+<p>An object with arbitrary non-identifying metadata attached to the entity,
+identical in use to
+<a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/">kubernetes object annotations</a>.</p>
+<p>Their purpose is mainly, but not limited, to reference into external systems.
+This could for example be a reference to the git ref the entity was ingested
+from, to monitoring and logging systems, to pagerduty schedules, etc.</p>
+<p>Both the key and the value are strings, subject to the following restrictions.</p>
+<p>Keys have an optional prefix followed by a slash, and then the name part which
+is required. The prefix must be a valid lowercase domain name, at most 253
+characters in total. The name part must be sequences of <code>[a-zA-Z0-9]</code> separated
+by any of <code>[-_.]</code>, at most 63 characters in total.</p>
+<p>The <code>backstage.io/</code> prefix is reserved for use by Backstage core components.</p>
+<p>Values can be of any length, but are limited to being strings.</p>
+<h2><a class="anchor" aria-hidden="true" id="component"></a><a href="#component" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Component</h2>
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td><code>apiVersion</code></td><td><code>backstage.io/v1alpha1</code></td></tr>
+<tr><td><code>kind</code></td><td><code>Component</code></td></tr>
+</tbody>
+</table>
+<p>The <code>spec</code> object for this kind is as follows:</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>type</code></td><td>String</td><td>Yes</td><td>The type of component, e.g. <code>service</code>.</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/architecture-decisions/adrs-adr001"><span class="arrow-prev">← </span><span>ADR001</span></a><a class="docs-next button" href="/docs/architecture-decisions/adrs-adr003"><span>ADR003</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#background">Background</a><ul class="toc-headings"><li><a href="#inspiration">Inspiration</a></li><li><a href="#core-concepts">Core Concepts</a></li></ul></li><li><a href="#format">Format</a></li><li><a href="#envelope">Envelope</a><ul class="toc-headings"><li><a href="#apiversion-and-kind"><code>apiVersion</code> and <code>kind</code></a></li><li><a href="#metadata"><code>metadata</code></a></li><li><a href="#spec"><code>spec</code></a></li></ul></li><li><a href="#metadata-1">Metadata</a><ul class="toc-headings"><li><a href="#name"><code>name</code></a></li><li><a href="#namespace"><code>namespace</code></a></li><li><a href="#description"><code>description</code></a></li><li><a href="#labels"><code>labels</code></a></li><li><a href="#annotations"><code>annotations</code></a></li></ul></li><li><a href="#component">Component</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/create-a-plugin.md">Create a Plugin</a><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/structure-of-a-plugin.md">Structure of a Plugin</a><a href="https://github.com/spotify/backstage/tree/master/docs">API references</a><a href="https://github.com/spotify/backstage/blob/master/docs/FAQ.md">FAQ</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

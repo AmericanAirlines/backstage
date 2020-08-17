@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Introducing Tech Radar for Backstage · Backstage</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Just a few weeks ago, we released our internal plugin for [Lighthouse website audits] as our first open source plugin, so the whole community could use it. Today, we’re excited to add a new plugin to that list — say hello to the [Tech Radar plugin]!"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Introducing Tech Radar for Backstage · Backstage"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/blog/2020/05/14/tech-radar-plugin"/><meta property="og:description" content="Just a few weeks ago, we released our internal plugin for [Lighthouse website audits] as our first open source plugin, so the whole community could use it. Today, we’re excited to add a new plugin to that list — say hello to the [Tech Radar plugin]!"/><meta property="og:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><link rel="shortcut icon" href="/img/favicon.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-48912878-10', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/spotify/backstage#backstage" target="_self">GitHub</a></li><li class=""><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="/background" target="_self">The Spotify story</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/blog/2020/08/05/announcing-backstage-software-templates">Announcing Backstage Software Templates</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/07/01/how-to-enable-authentication-in-backstage-using-passport">How to enable authentication in Backstage using Passport</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/06/22/backstage-service-catalog-alpha">Backstage Service Catalog released in alpha</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/22/phase-2-service-catalog">Starting Phase 2: The Service Catalog</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/05/14/weaveworks-covid-19-app-uses-backstage-ui">Weaveworks’ COVID-19 app uses Backstage UI</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/05/14/tech-radar-plugin">Introducing Tech Radar for Backstage</a></h1><p class="post-meta">May 14, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://twitter.com/bilawalhameed" target="_blank" rel="noreferrer noopener">Bilawal Hameed</a></p><div class="authorPhoto"><a href="http://twitter.com/bilawalhameed" target="_blank" rel="noreferrer noopener"><img src="https://avatars0.githubusercontent.com/bih" alt="Bilawal Hameed"/></a></div></div></header><div><span><p><img src="/blog/assets/5/lead.png" alt="image illustrating the Tech Radar plugin for Backstage"></p>
+<p>Just a few weeks ago, we released our internal plugin for <a href="https://backstage.io/blog/2020/04/06/lighthouse-plugin">Lighthouse website audits</a> as our first open source plugin, so the whole community could use it. Today, we’re excited to add a new plugin to that list — say hello to the <a href="https://github.com/spotify/backstage/tree/master/plugins/tech-radar">Tech Radar plugin</a>!</p>
+<!--truncate-->
+<h2><a class="anchor" aria-hidden="true" id="what-is-tech-radar"></a><a href="#what-is-tech-radar" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is Tech Radar?</h2>
+<p>The Technology Radar is a concept created by <a href="https://www.thoughtworks.com/radar">ThoughtWorks</a> which allows you to visualize the official guidelines of software languages, processes, infrastructure, and platforms at that particular company. The particular visualization above was created by <a href="https://opensource.zalando.com/tech-radar/">Zalando</a>.</p>
+<p>At Spotify, our central committee of technical architects own the Tech Radar with the input of engineers across the company. Anyone can and is encouraged to give recommendations. We segment entries in our Tech Radar by languages, frameworks, processes, and infrastructure, although you should pick whatever works best for your organization. Each entry in the Tech Radar can have one of the following lifecycle values: Use, Trial, Assess, and Hold.</p>
+<p>We also assign clear definitions for each lifecycle:</p>
+<ul>
+<li><strong>Use:</strong> This technology is recommended for use by the majority of teams with a specific use case.</li>
+<li><strong>Trial:</strong> This technology has been evaluated for specific use cases and has showed clear benefits. Some teams adopt it in production, although it should be limited to low-impact projects as it might incur a higher risk.</li>
+<li><strong>Assess:</strong> This technology has the potential to be beneficial for the company. Some teams are evaluating it and using it in experimental projects. Using it in production comes with a high cost and risk due to lack of in-house knowledge, maintenance, and support.</li>
+<li><strong>Hold:</strong> We don’t want to further invest in this technology or we evaluated it and we don’t see it as beneficial for the company. Teams should not use it in new projects and should plan on migrating to a supported alternative if they use it for historical reasons. For broadly adopted technologies, the Radar should refer to a migration path to a supported alternative.</li>
+</ul>
+<p>Since rolling out the Tech Radar, it has become the source of truth when creating, maintaining, or evolving our software ecosystem. Spotify has dozens of entries in our Radar and it can scale quite well whilst being easy for our engineers and engineering managers to consume.</p>
+<h2><a class="anchor" aria-hidden="true" id="using-the-tech-radar-in-backstage"></a><a href="#using-the-tech-radar-in-backstage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the Tech Radar in Backstage</h2>
+<p>To learn about how you can bring the Tech Radar to your Backstage installation, check out <a href="https://github.com/spotify/backstage/tree/master/plugins/tech-radar">the plugin README on GitHub</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="a-personal-note"></a><a href="#a-personal-note" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A personal note</h2>
+<p>I want to thank both the Backstage team and Spotify. Firstly, I’ve been working with our internal version of Backstage for over a year, and the developer experience since open sourcing has been even more of a joy to work with. Secondly, the 10% hack time that Spotify generously provides to all engineers enabled me to open source the Tech Radar plugin.</p>
+<p>Since open sourcing it, the community has shown great interest in yet another powerful use case of Backstage. There was also an enthusiastic open source contributor who volunteered to migrate the plugin to TypeScript and React Hooks <a href="https://github.com/spotify/backstage/issues/661">in just 29 minutes</a> of opening the issue!</p>
+<p>I can’t wait to see how others benefit from the Tech Radar in their organizations!</p>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/blog/">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#what-is-tech-radar">What is Tech Radar?</a></li><li><a href="#using-the-tech-radar-in-backstage">Using the Tech Radar in Backstage</a></li><li><a href="#a-personal-note">A personal note</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/create-a-plugin.md">Create a Plugin</a><a href="https://github.com/spotify/backstage/blob/master/docs/plugins/structure-of-a-plugin.md">Structure of a Plugin</a><a href="https://github.com/spotify/backstage/tree/master/docs">API references</a><a href="https://github.com/spotify/backstage/blob/master/docs/FAQ.md">FAQ</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
