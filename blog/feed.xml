@@ -4,7 +4,7 @@
         <title>Backstage Blog</title>
         <link>https://backstage.io/blog</link>
         <description>The best place to stay up-to-date with the latest Backstage news and events.</description>
-        <lastBuildDate>Wed, 05 Aug 2020 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 08 Sep 2020 06:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -13,6 +13,14 @@
             <link>https://backstage.io/blog</link>
         </image>
         <copyright>Copyright © 2020 Spotify AB</copyright>
+        <item>
+            <title><![CDATA[Announcing TechDocs: Spotify’s docs-like-code for Backstage]]></title>
+            <link>https://backstage.io/blog/2020/09/08/announcing-tech-docs.html</link>
+            <guid>https://backstage.io/blog/2020/09/08/announcing-tech-docs.html</guid>
+            <pubDate>Tue, 08 Sep 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Since we <a href="https://backstage.io/blog/2020/03/16/announcing-backstage">open sourced Backstage</a>, one of the most requested features has been for a technical documentation plugin. Well, good news. The first open source version of TechDocs is here. Now let’s start collaborating and making it better, together.</p>
+]]></description>
+        </item>
         <item>
             <title><![CDATA[Announcing Backstage Software Templates]]></title>
             <link>https://backstage.io/blog/2020/08/05/announcing-backstage-software-templates.html</link>
