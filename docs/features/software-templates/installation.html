@@ -1,13 +1,68 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>features/software-templates/installation · Backstage</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# Installing in your Backstage App"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="features/software-templates/installation · Backstage"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="# Installing in your Backstage App"/><meta property="og:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><link rel="shortcut icon" href="/img/favicon.svg"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Blog RSS Feed"/><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Installing in your Backstage App · Backstage Service Catalog and Developer Platform</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Documentation on How to install Backstage App"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Installing in your Backstage App · Backstage Service Catalog and Developer Platform"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="Documentation on How to install Backstage App"/><meta property="og:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Service Catalog and Developer Platform Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Service Catalog and Developer Platform Blog RSS Feed"/><script>
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
               (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
               m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
               })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-              ga('create', 'UA-48912878-10', 'auto');
+              ga('create', 'UA-163836834-5', 'auto');
               ga('send', 'pageview');
-            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/spotify/backstage" target="_self">GitHub</a></li><li class=""><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/plugins" target="_self">Plugins</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/spotify/backstage/edit/master/docs/features/software-templates/installation.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">features/software-templates/installation</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="installing-in-your-backstage-app"></a><a href="#installing-in-your-backstage-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing in your Backstage App</h1>
-<p>The scaffolder plugin comes in two packages, <code>@backstage/plugin-scaffolder</code> and
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://unpkg.com/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script><script type="text/javascript" src="/js/medium-zoom.js"></script><script type="text/javascript" src="/js/dismissable-banner.js"></script><script type="text/javascript" src="/js/scroll-nav-to-view-in-docs.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage Service Catalog and Developer Platform</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/backstage/backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/plugins" target="_self">Plugins</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Software Templates</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/vision">Vision</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/background">The Spotify Story</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/adopting">Strategies for adopting</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/stability-index">Stability Index</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/logos">Logo assets</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/running-backstage-locally">Running Backstage Locally</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Deployment</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-helm">Kubernetes and Helm</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-other">Other</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/getting-started/contributors">Contributors</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CLI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/cli/">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/cli/commands">Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Core Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/configuration">Configuration</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/configuration">Catalog Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/references">Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-annotations">Well-known Annotations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-relations">Well-known Relations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Overview</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/features/software-templates/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-templates">Writing Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/builtin-actions">Builtin actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-custom-actions">Writing Custom Actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/template-legacy">Writing Templates (Legacy)</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backstage Search</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/search/search-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/search/architecture">Search Architecture</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TechDocs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/architecture">TechDocs Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuration">TechDocs Configuration Options</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/using-cloud-storage">Using Cloud Storage for TechDocs generated files</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuring-ci-cd">Configuring CI/CD to generate and publish TechDocs sites</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/how-to-guides">&quot;HOW TO&quot; guides</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Integrations<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">GitHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/github/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">LDAP</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/ldap/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Google Analytics</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/google-analytics/installation">Installation</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro to plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/integrating-plugin-into-service-catalog">Integrate into the Service Catalog</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/composability">Composability System Migration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call Existing API</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/github-apps">GitHub Apps for Backend Authentication</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/add-to-marketplace">Add to Marketplace</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/observability">Observability</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">User Authentication and Authorization in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend-classes">Auth backend classes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">reference/utility-apis/README</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/journey">Future developer journey</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-auth">Monorepo App Setup With Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-plugin">Adding Custom Plugin to Existing Monorepo App</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001: Architecture Decision Record (ADR) log</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002: Default Software Catalog File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003: Avoid Default Exports and Prefer Named Exports</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004: Module Export Structure</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005: Catalog Core Entities</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006: Avoid React.FC and React.SFC</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007: Use MSW to mock http requests</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008: Default Catalog File Name</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr009">ADR009: Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr010">ADR010: Use the Luxon Date Library</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr011">ADR011: Plugin Package Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/support/support">Support and community</a></li><li class="navListItem"><a class="navItem" href="/docs/support/project-structure">Backstage Project Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Glossary<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/glossary">Backstage Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/backstage/backstage/edit/master/docs/features/software-templates/installation.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Installing in your Backstage App</h1></header><article><div><span><p>The scaffolder plugin comes in two packages, <code>@backstage/plugin-scaffolder</code> and
 <code>@backstage/plugin-scaffolder-backend</code>. Each has their own installation steps,
 outlined below.</p>
 <p>The Scaffolder plugin also depends on the Software Catalog. Instructions for how
@@ -27,23 +82,21 @@ other <code>@backstage</code> packages. You can update it in <code>packages/app/
 it doesn't.</p>
 <h3><a class="anchor" aria-hidden="true" id="adding-the-plugin-to-your-packagesapp"></a><a href="#adding-the-plugin-to-your-packagesapp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding the Plugin to your <code>packages/app</code></h3>
 <p>Add the following entry to the head of your <code>packages/app/src/plugins.ts</code>:</p>
-<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> { plugin <span class="hljs-keyword">as</span> ScaffolderPlugin } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-scaffolder'</span>;
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> { scaffolderPlugin } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-scaffolder'</span>;
 </code></pre>
-<p>Add the following to your <code>packages/app/src/apis.ts</code>:</p>
-<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { scaffolderApiRef, ScaffolderApi } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-scaffolder'</span>;
+<p>Next we need to install the root page that the Scaffolder plugin provides. You
+can choose any path for the route, but we recommend the following:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">import</span> { ScaffolderPage } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-scaffolder'</span>;
 
-<span class="hljs-comment">// Inside the ApiRegistry builder function ...</span>
-
-builder.add(
-  scaffolderApiRef,
-  <span class="hljs-keyword">new</span> ScaffolderApi({
-    apiOrigin: backendUrl,
-    basePath: <span class="hljs-string">'/scaffolder/v1'</span>,
-  }),
-);
+// <span class="hljs-keyword">Add</span> <span class="hljs-keyword">to</span> the top-<span class="hljs-keyword">level</span> routes, directly <span class="hljs-keyword">within</span> &lt;FlatRoutes&gt;
+&lt;Route <span class="hljs-type">path</span>="/create" element={&lt;ScaffolderPage /&gt;} /&gt;;
 </code></pre>
-<p>Where <code>backendUrl</code> is the <code>backend.baseUrl</code> from config, i.e.
-<code>const backendUrl = config.getString('backend.baseUrl')</code>.</p>
+<p>You may also want to add a link to the template index page to your sidebar:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">import</span> CreateComponentIcon <span class="hljs-keyword">from</span> <span class="hljs-string">'@material-ui/icons/AddCircleOutline'</span>;
+
+<span class="hljs-comment">// Somewhere within the &lt;Sidebar&gt;</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">SidebarItem</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{CreateComponentIcon}</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"create"</span> <span class="hljs-attr">text</span>=<span class="hljs-string">"Create..."</span> /&gt;</span></span>;
+</code></pre>
 <p>This is all that is needed for the frontend part of the Scaffolder plugin to
 work!</p>
 <h2><a class="anchor" aria-hidden="true" id="installing-backstageplugin-scaffolder-backend"></a><a href="#installing-backstageplugin-scaffolder-backend" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing @backstage/plugin-scaffolder-backend</h2>
@@ -66,45 +119,47 @@ following contents to get you up and running quickly.</p>
 <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> {
   CookieCutter,
   createRouter,
-  FilePreparer,
-  GithubPreparer,
   Preparers,
-  GithubPublisher,
+  Publishers,
   CreateReactAppTemplater,
   Templaters,
 } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-scaffolder-backend'</span>;
-<span class="hljs-keyword">import</span> { Octokit } <span class="hljs-keyword">from</span> <span class="hljs-string">'@octokit/rest'</span>;
+<span class="hljs-keyword">import</span> { SingleHostDiscovery } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-common'</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { PluginEnvironment } <span class="hljs-keyword">from</span> <span class="hljs-string">'../types'</span>;
 <span class="hljs-keyword">import</span> Docker <span class="hljs-keyword">from</span> <span class="hljs-string">'dockerode'</span>;
+<span class="hljs-keyword">import</span> { CatalogClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/catalog-client'</span>;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createPlugin</span>(<span class="hljs-params">{ logger }: PluginEnvironment</span>) </span>{
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createPlugin</span>(<span class="hljs-params">{
+  logger,
+  config,
+  database,
+  reader,
+}: PluginEnvironment</span>) </span>{
   <span class="hljs-keyword">const</span> cookiecutterTemplater = <span class="hljs-keyword">new</span> CookieCutter();
   <span class="hljs-keyword">const</span> craTemplater = <span class="hljs-keyword">new</span> CreateReactAppTemplater();
   <span class="hljs-keyword">const</span> templaters = <span class="hljs-keyword">new</span> Templaters();
 
-  <span class="hljs-comment">// Register default templaters</span>
   templaters.register(<span class="hljs-string">'cookiecutter'</span>, cookiecutterTemplater);
   templaters.register(<span class="hljs-string">'cra'</span>, craTemplater);
 
-  <span class="hljs-keyword">const</span> filePreparer = <span class="hljs-keyword">new</span> FilePreparer();
-  <span class="hljs-keyword">const</span> githubPreparer = <span class="hljs-keyword">new</span> GithubPreparer();
-  <span class="hljs-keyword">const</span> preparers = <span class="hljs-keyword">new</span> Preparers();
-
-  <span class="hljs-comment">// Register default preparers</span>
-  preparers.register(<span class="hljs-string">'file'</span>, filePreparer);
-  preparers.register(<span class="hljs-string">'github'</span>, githubPreparer);
-
-  <span class="hljs-comment">// Create GitHub client with your access token from environment variables</span>
-  <span class="hljs-keyword">const</span> githubClient = <span class="hljs-keyword">new</span> Octokit({ auth: process.env.GITHUB_ACCESS_TOKEN });
-  <span class="hljs-keyword">const</span> publisher = <span class="hljs-keyword">new</span> GithubPublisher({ client: githubClient });
+  <span class="hljs-keyword">const</span> preparers = <span class="hljs-keyword">await</span> Preparers.fromConfig(config, { logger });
+  <span class="hljs-keyword">const</span> publishers = <span class="hljs-keyword">await</span> Publishers.fromConfig(config, { logger });
 
   <span class="hljs-keyword">const</span> dockerClient = <span class="hljs-keyword">new</span> Docker();
+
+  <span class="hljs-keyword">const</span> discovery = SingleHostDiscovery.fromConfig(config);
+  <span class="hljs-keyword">const</span> catalogClient = <span class="hljs-keyword">new</span> CatalogClient({ discoveryApi: discovery });
+
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> createRouter({
     preparers,
     templaters,
-    publisher,
+    publishers,
     logger,
+    config,
     dockerClient,
+    database,
+    catalogClient,
+    reader,
   });
 }
 </code></pre>
@@ -114,10 +169,11 @@ following contents to get you up and running quickly.</p>
 
 <span class="hljs-keyword">const</span> scaffolderEnv = useHotMemoize(<span class="hljs-keyword">module</span>, () =&gt; createEnv('scaffolder'));
 
-const service = createServiceBuilder(<span class="hljs-keyword">module</span>)
-  .loadConfig(configReader)
-  /** several different routers */
-  .addRouter('/scaffolder', await scaffolder(scaffolderEnv));
+const apiRouter = Router();
+/* several router .use calls */
+
+/* add this line */
+apiRouter.use('/scaffolder', await scaffolder(scaffolderEnv));
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="adding-templates"></a><a href="#adding-templates" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding Templates</h3>
 <p>At this point the scaffolder backend is installed in your backend package, but
@@ -131,38 +187,92 @@ our example templates through static configuration. Add the following to the
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">catalog:</span>
   <span class="hljs-attr">locations:</span>
     <span class="hljs-comment"># Backstage Example Templates</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">github</span>
-      <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/spotify/backstage/blob/master/plugins/scaffolder-backend/sample-templates/react-ssr-template/template.yaml</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">github</span>
-      <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/spotify/backstage/blob/master/plugins/scaffolder-backend/sample-templates/springboot-grpc-template/template.yaml</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">github</span>
-      <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/spotify/backstage/blob/master/plugins/scaffolder-backend/sample-templates/create-react-app/template.yaml</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">github</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">url</span>
+      <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/sample-templates/react-ssr-template/template.yaml</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">url</span>
+      <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/sample-templates/springboot-grpc-template/template.yaml</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">url</span>
+      <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/sample-templates/create-react-app/template.yaml</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">url</span>
       <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/spotify/cookiecutter-golang/blob/master/template.yaml</span>
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="runtime-dependencies"></a><a href="#runtime-dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Runtime Dependencies</h3>
-<p>For the scaffolder backend plugin to function, it needs a GitHub access token,
-and access to a running Docker daemon. You can create a GitHub access token
-<a href="https://github.com/settings/tokens/new">here</a>, select <code>repo</code> scope only. Full
-docs on creating private GitHub access tokens is available
-<a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">here</a>.
-Note that the need for private GitHub access tokens will be replaced with GitHub
-Apps integration further down the line.</p>
+<h3><a class="anchor" aria-hidden="true" id="runtime-dependencies--configuration"></a><a href="#runtime-dependencies--configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Runtime Dependencies / Configuration</h3>
+<p>For the scaffolder backend plugin to function, you'll need to setup the
+integrations config in your <code>app-config.yaml</code>.</p>
+<p>You can find help for different providers below.</p>
 <blockquote>
-<p><strong>Right now it is only possible to scaffold repositories inside GitHub
-organizations, and not under personal accounts.</strong></p>
+<p>Note: Some of this configuration may already be set up as part of your
+<code>app-config.yaml</code>. We're moving away from the duplicated config for
+authentication in the <code>scaffolder</code> section and using <code>integrations</code> instead.</p>
 </blockquote>
-<p>The GitHub access token is passed along using the <code>GITHUB_ACCESS_TOKEN</code>
-environment variable.</p>
+<h4><a class="anchor" aria-hidden="true" id="github"></a><a href="#github" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GitHub</h4>
+<p>The GitHub access token is retrieved from environment variables via the config.
+The config file needs to specify what environment variable the token is
+retrieved from. Your config should have the following objects.</p>
+<p>You can configure who can see the new repositories that the scaffolder creates
+by specifying <code>visibility</code> option. Valid options are <code>public</code>, <code>private</code> and
+<code>internal</code>. The <code>internal</code> option is for GitHub Enterprise clients, which means
+public within the enterprise.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">integrations:</span>
+  <span class="hljs-attr">github:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">github.com</span>
+      <span class="hljs-attr">token:</span>
+        <span class="hljs-string">$env:</span> <span class="hljs-string">GITHUB_TOKEN</span>
+
+<span class="hljs-attr">scaffolder:</span>
+  <span class="hljs-attr">github:</span>
+    <span class="hljs-attr">visibility:</span> <span class="hljs-string">public</span> <span class="hljs-comment"># or 'internal' or 'private'</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="gitlab"></a><a href="#gitlab" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GitLab</h4>
+<p>For GitLab, we currently support the configuration of the GitLab publisher and
+allows to configure the private access token and the base URL of a GitLab
+instance:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">integrations:</span>
+  <span class="hljs-attr">gitlab:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">gitlab.com</span>
+      <span class="hljs-attr">token:</span>
+        <span class="hljs-string">$env:</span> <span class="hljs-string">GITLAB_TOKEN</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="bitbucket"></a><a href="#bitbucket" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BitBucket</h4>
+<p>For Bitbucket there are two authentication methods supported. Either <code>token</code> or
+a combination of <code>appPassword</code> and <code>username</code>. It looks like either of the
+following:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">integrations:</span>
+  <span class="hljs-attr">bitbucket:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">bitbucket.org</span>
+      <span class="hljs-attr">token:</span>
+        <span class="hljs-string">$env:</span> <span class="hljs-string">BITBUCKET_TOKEN</span>
+</code></pre>
+<p>or</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">integrations:</span>
+  <span class="hljs-attr">bitbucket:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">bitbucket.org</span>
+      <span class="hljs-attr">appPassword:</span>
+        <span class="hljs-string">$env:</span> <span class="hljs-string">BITBUCKET_APP_PASSWORD</span>
+      <span class="hljs-attr">username:</span>
+        <span class="hljs-string">$env:</span> <span class="hljs-string">BITBUCKET_USERNAME</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="azure-devops"></a><a href="#azure-devops" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Azure DevOps</h4>
+<p>For Azure DevOps we support both the preparer and publisher stage with the
+configuration of a private access token (PAT). For the publisher it's also
+required to define the base URL for the client to connect to the service. This
+will hopefully support on-prem installations as well but that has not been
+verified.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">integrations:</span>
+  <span class="hljs-attr">azure:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">dev.azure.com</span>
+      <span class="hljs-attr">token:</span>
+        <span class="hljs-string">$env:</span> <span class="hljs-string">AZURE_TOKEN</span>
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="running-the-backend"></a><a href="#running-the-backend" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running the Backend</h3>
 <p>Finally, make sure you have a local Docker daemon running, and start up the
 backend with the new configuration:</p>
 <pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> packages/backend
-GITHUB_ACCESS_TOKEN=&lt;token&gt; yarn start
+GITHUB_TOKEN=&lt;token&gt; yarn start
 </code></pre>
 <p>If you've also set up the frontend plugin, so you should be ready to go browse
 the templates at <a href="http://localhost:3000/create">localhost:3000/create</a> now!</p>
-</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installing-backstageplugin-scaffolder">Installing @backstage/plugin-scaffolder</a><ul class="toc-headings"><li><a href="#adding-the-plugin-to-your-packagesapp">Adding the Plugin to your <code>packages/app</code></a></li></ul></li><li><a href="#installing-backstageplugin-scaffolder-backend">Installing @backstage/plugin-scaffolder-backend</a><ul class="toc-headings"><li><a href="#adding-the-plugin-to-your-packagesbackend">Adding the Plugin to your <code>packages/backend</code></a></li><li><a href="#adding-templates">Adding Templates</a></li><li><a href="#runtime-dependencies">Runtime Dependencies</a></li><li><a href="#running-the-backend">Running the Backend</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/spotify/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/features/software-templates/software-templates-index"><span class="arrow-prev">← </span><span>Overview</span></a><a class="docs-next button" href="/docs/features/software-templates/adding-templates"><span>Adding your own Templates</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installing-backstageplugin-scaffolder">Installing @backstage/plugin-scaffolder</a><ul class="toc-headings"><li><a href="#adding-the-plugin-to-your-packagesapp">Adding the Plugin to your <code>packages/app</code></a></li></ul></li><li><a href="#installing-backstageplugin-scaffolder-backend">Installing @backstage/plugin-scaffolder-backend</a><ul class="toc-headings"><li><a href="#adding-the-plugin-to-your-packagesbackend">Adding the Plugin to your <code>packages/backend</code></a></li><li><a href="#adding-templates">Adding Templates</a></li><li><a href="#runtime-dependencies--configuration">Runtime Dependencies / Configuration</a></li><li><a href="#running-the-backend">Running the Backend</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a><a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://engineering.atspotify.com/">Spotify Engineering Blog</a><a href="https://developer.spotify.com/">Spotify for Developers</a><a href="https://github.com/backstage/backstage">GitHub</a><a class="github-button" href="https://github.com/backstage/backstage" data-icon="octicon-star" data-count-href="/backstage/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><p style="text-align:center"><a href="https://spotify.github.io">Made with ❤️  at Spotify</a></p><p class="copyright">Copyright © 2021 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

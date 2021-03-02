@@ -1,0 +1,582 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Composability System Migration · Backstage Service Catalog and Developer Platform</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Documentation and migration instructions for new composability APIs."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Composability System Migration · Backstage Service Catalog and Developer Platform"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="Documentation and migration instructions for new composability APIs."/><meta property="og:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Service Catalog and Developer Platform Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Service Catalog and Developer Platform Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-163836834-5', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://unpkg.com/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script><script type="text/javascript" src="/js/medium-zoom.js"></script><script type="text/javascript" src="/js/dismissable-banner.js"></script><script type="text/javascript" src="/js/scroll-nav-to-view-in-docs.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage Service Catalog and Developer Platform</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/backstage/backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/plugins" target="_self">Plugins</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Plugins</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/vision">Vision</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/background">The Spotify Story</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/adopting">Strategies for adopting</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/stability-index">Stability Index</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/logos">Logo assets</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/running-backstage-locally">Running Backstage Locally</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Deployment</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-helm">Kubernetes and Helm</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-other">Other</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/getting-started/contributors">Contributors</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CLI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/cli/">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/cli/commands">Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Core Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/configuration">Configuration</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/configuration">Catalog Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/references">Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-annotations">Well-known Annotations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-relations">Well-known Relations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-templates">Writing Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/builtin-actions">Builtin actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-custom-actions">Writing Custom Actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/template-legacy">Writing Templates (Legacy)</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backstage Search</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/search/search-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/search/architecture">Search Architecture</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TechDocs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/architecture">TechDocs Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuration">TechDocs Configuration Options</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/using-cloud-storage">Using Cloud Storage for TechDocs generated files</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuring-ci-cd">Configuring CI/CD to generate and publish TechDocs sites</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/how-to-guides">&quot;HOW TO&quot; guides</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Integrations<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">GitHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/github/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">LDAP</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/ldap/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Google Analytics</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/google-analytics/installation">Installation</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro to plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/integrating-plugin-into-service-catalog">Integrate into the Service Catalog</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/plugins/composability">Composability System Migration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call Existing API</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/github-apps">GitHub Apps for Backend Authentication</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/add-to-marketplace">Add to Marketplace</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/observability">Observability</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">User Authentication and Authorization in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend-classes">Auth backend classes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">reference/utility-apis/README</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/journey">Future developer journey</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-auth">Monorepo App Setup With Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-plugin">Adding Custom Plugin to Existing Monorepo App</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001: Architecture Decision Record (ADR) log</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002: Default Software Catalog File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003: Avoid Default Exports and Prefer Named Exports</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004: Module Export Structure</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005: Catalog Core Entities</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006: Avoid React.FC and React.SFC</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007: Use MSW to mock http requests</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008: Default Catalog File Name</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr009">ADR009: Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr010">ADR010: Use the Luxon Date Library</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr011">ADR011: Plugin Package Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/support/support">Support and community</a></li><li class="navListItem"><a class="navItem" href="/docs/support/project-structure">Backstage Project Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Glossary<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/glossary">Backstage Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/backstage/backstage/edit/master/docs/plugins/composability.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Composability System Migration</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="summary"></a><a href="#summary" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h2>
+<p>This page describes the new composability system that was recently introduced in
+Backstage, and it does so from the perspective of the existing patterns and
+APIs. As the new system is solidified and existing code is ported, this page
+will be removed and replaced with a more direct description of the composability
+system. For now, the primary purpose of this documentation is to aid in the
+migration of existing plugins, but it does cover the migration of apps as well.</p>
+<p>The core principle of the new composability system is that plugins should have
+clear boundaries and connections. It should isolate crashes within a plugin, but
+allow navigation between them. It should allow for plugins to be loaded only
+when needed, and enable plugins to provide extension points for other plugins to
+build upon. The composability system is also built with an app-first mindset,
+prioritizing simplicity and clarity in the app over that in the plugins and core
+APIs.</p>
+<p>The new composability system isn't a single new API surface. It is a collection
+of patterns, primitives, new APIs, and old APIs used in new ways. At the core is
+the new concept of extensions, which are exported by plugins for use in the app.
+There is also a new primitive called component data, which assists in the
+conversion to a more declarative app. The <code>RouteRef</code>s now have a clear purpose
+as well, and can be used route to pages in a flexible way.</p>
+<h2><a class="anchor" aria-hidden="true" id="new-concepts"></a><a href="#new-concepts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New Concepts</h2>
+<p>This section is a brief look into all the new and updated concepts that were put
+in place to support the new composability system.</p>
+<h3><a class="anchor" aria-hidden="true" id="component-data"></a><a href="#component-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Component Data</h3>
+<p>Component data is a new composability primitive that is introduced as a way to
+provide a new data dimension for React components. Data is attached to React
+components using a key, and is then readable from any JSX elements created with
+those components, using the same key, as illustrated by the following example:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">const</span> MyComponent = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>This is my component<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>;
+attachComponentData(MyComponent, <span class="hljs-string">'my.data'</span>, <span class="hljs-number">5</span>);
+
+<span class="hljs-keyword">const</span> element = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> /&gt;</span></span>;
+<span class="hljs-keyword">const</span> myData = getComponentData(element, <span class="hljs-string">'my.data'</span>);
+<span class="hljs-comment">// myData === 5</span>
+</code></pre>
+<p>The purpose of component data is to provide a method for embedding data that can
+be inspected before rendering elements. Element inspection is a pattern that is
+quite common among React libraries, and used for example by <code>react-router</code> and
+<code>material-ui</code> to discover properties of the child elements before rendering.
+Although in those libraries only the element type and props are typically
+inspected, while our component data adds more structured access and simplifies
+evolution by allowing for multiple different versions of a piece of data to be
+used and interpreted at once.</p>
+<p>The initial use-case for component data is to support route and plugin discovery
+through elements in the app. Through this we allow for the React element tree in
+the app to be the source of truth, both for which plugins are used, as well as
+all top-level plugin routes in the app. The use of component data is not limited
+to these use-cases though, as it can be used as a primitive to create new
+abstractions as well.</p>
+<h3><a class="anchor" aria-hidden="true" id="extensions"></a><a href="#extensions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Extensions</h3>
+<p>Extensions are what plugins export for use in an app. Most typically they are
+React components, but in practice they can be any kind of JavaScript value. They
+are created using <code>create*Extension</code> functions, and wrapped with
+<code>plugin.provide()</code> in order to create the actual exported extension.</p>
+<p>The extension type is a simple one:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> Extension&lt;T&gt; = {
+  expose(plugin: BackstagePlugin&lt;<span class="hljs-built_in">any</span>, <span class="hljs-built_in">any</span>&gt;): T;
+};
+</code></pre>
+<p>The power of extensions comes from the ability of various actors to hook into
+their usage. The creation and plugin wrapping is controlled by whoever owns the
+creation function, the Backstage core is able to hook into the process of
+exposing the extension outside the plugin, and in the end the app controls the
+usage of the extension.</p>
+<p>The Backstage core API currently provides two different types of extension
+creators, <code>createComponentExtension</code>, and <code>createRoutableExtension</code>. Component
+extensions are plain React component with no particular requirements, for
+example a card for an entity overview page. The component will be exported more
+or less as is, but is wrapped to provide things like an error boundary, lazy
+loading, and a plugin context.</p>
+<p>Routable extensions build on top of component extensions and are used for any
+component that should be rendered at a specific route path, such as top-level
+pages or entity page tab content. When creating a routable extension you need to
+supply a <code>RouteRef</code> as <code>mountPoint</code>. The mount point will be the handle of the
+component for the outside world, and is used by other components and plugins
+that wish to link to the routable component.</p>
+<p>As of now there are only two extension creation functions, but it is possible to
+add more of them in the future, both in the core library and in plugins that
+wish to provide an extension point for other plugins to build upon. Extensions
+are also not tied to React, and can both be used to model generic JavaScript
+concepts, as well as potentially bridge to rendering libraries and web
+frameworks other than React.</p>
+<h3><a class="anchor" aria-hidden="true" id="extensions-from-a-plugins-point-of-view"></a><a href="#extensions-from-a-plugins-point-of-view" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Extensions from a Plugin's Point of View</h3>
+<p>Extensions are one of the primary methods to traverse the plugin boundary, and
+the way that plugins provide concrete content for use within an app. They
+replace existing component export concepts such as <code>Router</code> or <code>*Card</code>s for
+display on entity overview pages.</p>
+<p>It is recommended to create the exported extensions either in the top-level
+<code>plugin.ts</code> file, or in a dedicated <code>extensions.ts</code> (or <code>.tsx</code>) file. That file
+should not contain the bulk of the implementation though, and in fact, if the
+extension is a React component it is recommended to lazy-load the actual
+component. Component extensions support lazy loading out of the box using the
+<code>lazy</code> component declaration, for example:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> EntityFooCard = plugin.provide(
+  createComponentExtension({
+    component: {
+      lazy: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./components/FooCard'</span>).then(<span class="hljs-function"><span class="hljs-params">m</span> =&gt;</span> m.FooCard),
+    },
+  }),
+);
+</code></pre>
+<p>Routable extensions even enforce lazy loading, as it is the only way to provide
+a component:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> FooPage = plugin.provide(
+  createRoutableExtension({
+    component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./components/FooPage'</span>).then(<span class="hljs-function"><span class="hljs-params">m</span> =&gt;</span> m.FooPage),
+    mountPoint: fooPageRouteRef,
+  }),
+);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="using-extensions-in-an-app"></a><a href="#using-extensions-in-an-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Extensions in an App</h3>
+<p>Right now all extensions are modelled as React components. The usage of these
+extension is like regular usage of any React components, with one important
+difference. Extensions must all be part of a single React element tree spanning
+from the root <code>AppProvider</code>.</p>
+<p>For example, the following app code does <strong>NOT</strong> work:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">const</span> AppRoutes = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Routes</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">"/foo"</span> <span class="hljs-attr">element</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">FooPage</span> /&gt;</span>} /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">"/bar"</span> <span class="hljs-attr">element</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">BarPage</span> /&gt;</span>} /&gt;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Routes</span>&gt;</span></span>
+);
+
+<span class="hljs-keyword">const</span> App = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">AppProvider</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AppRouter</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Root</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">AppRoutes</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Root</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">AppRouter</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">AppProvider</span>&gt;</span></span>
+);
+</code></pre>
+<p>But in this case it is simple to fix! Simply be sure to not create any
+intermediate components in the app, for example like this:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">const</span> appRoutes = (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Routes</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">"/foo"</span> <span class="hljs-attr">element</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">FooPage</span> /&gt;</span>} /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">"/bar"</span> <span class="hljs-attr">element</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">BarPage</span> /&gt;</span>} /&gt;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Routes</span>&gt;</span></span>
+);
+
+<span class="hljs-keyword">const</span> App = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">AppProvider</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AppRouter</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Root</span>&gt;</span>{appRoutes}<span class="hljs-tag">&lt;/<span class="hljs-name">Root</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">AppRouter</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">AppProvider</span>&gt;</span></span>
+);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="new-routing-system"></a><a href="#new-routing-system" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New Routing System</h3>
+<p>A big piece of what is enabled by moving over to this new composability system
+is to make <code>RouteRef</code>s useful. The <code>RouteRef</code>s no longer have their own path, in
+fact the only required parameter is currently a <code>title</code>. Instead of assigning a
+path to each <code>RouteRef</code> and possibly overriding these paths in the app, the
+concrete <code>path</code> for each <code>RouteRef</code> is discovered based on the element tree in
+the app. Let's consider the following example:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">const</span> appRoutes = (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Routes</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">"/foo"</span> <span class="hljs-attr">element</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">FooPage</span> /&gt;</span>} /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">"/bar"</span> <span class="hljs-attr">element</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">BarPage</span> /&gt;</span>} /&gt;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Routes</span>&gt;</span></span>
+);
+</code></pre>
+<p>We'll assume that <code>FooPage</code> and <code>BarPage</code> are routable extensions, exported by
+the <code>fooPlugin</code> and <code>barPlugin</code> respectively. Since the <code>FooPage</code> is a routable
+extension it has a <code>RouteRef</code> assigned as its mount point, which we'll refer to
+as <code>fooPageRouteRef</code>.</p>
+<p>Given the above example, the <code>fooPageRouteRef</code> will be associated with the
+<code>'/foo'</code> route. The path is no longer accessible via the <code>path</code> property of the
+<code>RouteRef</code> though, as the routing structure is tied to the app's react tree. We
+instead use the new <code>useRouteRef</code> hook if we want to create a concrete link to
+the page. The <code>useRouteRef</code> hook takes a single <code>RouteRef</code> as its only
+parameter, and returns a function that is called to create the URL. For example
+like this:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">const</span> MyComponent = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> fooRoute = useRouteRef(fooPageRouteRef);
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">{fooRoute()}</span>&gt;</span>Link to Foo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>;
+};
+</code></pre>
+<p>Now let's assume that we want to link from the <code>BarPage</code> to the <code>FooPage</code>.
+Before the introduction of the new composability system, we would do this by
+importing the <code>fooPageRouteRef</code> exported by the <code>fooPlugin</code>. This created an
+unnecessary dependency on the plugin, and also provided little flexibility in
+allowing the app to tie plugins together, with the links instead being dictated
+by the plugins themselves. To solve this, we introduce <code>ExternalRouteRef</code>s. Much
+like regular route references, they can be passed to <code>useRouteRef</code> to create
+concrete URLs, but they can not be used as mount points in routable component
+and instead have to be associated with a target route using route bindings in
+the app.</p>
+<p>We create a new <code>ExternalRouteRef</code> inside the <code>barPlugin</code>, using a neutral name
+that describes its role in the plugin rather than a specific plugin page that it
+might be linking to, allowing the app to decide the final target. If the
+<code>BarPage</code> for example wants to link to an external page in the header, it might
+declare an <code>ExternalRouteRef</code> similar to this:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">const</span> headerLinkRouteRef = createExternalRouteRef({ id: <span class="hljs-string">'header-link'</span> });
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="binding-external-routes-in-the-app"></a><a href="#binding-external-routes-in-the-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Binding External Routes in the App</h3>
+<p>The association of external routes is controlled by the app. Each
+<code>ExternalRouteRef</code> of a plugin should be bound to an actual <code>RouteRef</code>, usually
+from another plugin. The binding process happens once at app startup, and is
+then used through the lifetime of the app to help resolve concrete route paths.</p>
+<p>Using the above example of the <code>BarPage</code> linking to the <code>FooPage</code>, we might do
+something like this in the app:</p>
+<pre><code class="hljs css language-ts">createApp({
+  bindRoutes({ bind }) {
+    bind(barPlugin.externalRoutes, {
+      headerLink: fooPlugin.routes.root,
+    });
+  },
+});
+</code></pre>
+<p>Given the above binding, using <code>useRouteRef(headerLinkRouteRef)</code> within the
+<code>barPlugin</code> will let us create a link to whatever path the <code>FooPage</code> is mounted
+at.</p>
+<p>Note that we are not importing and using the <code>RouteRef</code>s directly in the app,
+and instead rely on the plugin instance to access routes of the plugins. This is
+a new convention that was introduced to provide better namespacing and
+discoverability of routes, as well as reduce the number of separate exports from
+each plugin package. The route references would be supplied to <code>createPlugin</code>
+like this:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-comment">// In foo-plugin</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> fooPlugin = createPlugin({
+  routes: {
+    root: fooPageRouteRef,
+  },
+  ...
+})
+
+<span class="hljs-comment">// In bar-plugin</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> barPlugin = createPlugin({
+  externalRoutes: {
+    headerLink: headerLinkRouteRef,
+  },
+  ...
+})
+</code></pre>
+<p>Also note that you almost always want to create the route references themselves
+in a different file than the one that creates the plugin instance, for example a
+top-level <code>routes.ts</code>. This is to avoid circular imports when you use the route
+references from other parts of the same plugin.</p>
+<h3><a class="anchor" aria-hidden="true" id="optional-external-routes"></a><a href="#optional-external-routes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Optional External Routes</h3>
+<p>When creating an <code>ExternalRouteRef</code> it is possible to mark it as optional:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">const</span> headerLinkRouteRef = createExternalRouteRef({
+  id: <span class="hljs-string">'header-link'</span>,
+  optional: <span class="hljs-literal">true</span>,
+});
+</code></pre>
+<p>An external route that is marked as optional is not required to be bound in the
+app, allowing it to be used as a switch for whether a particular link should be
+displayed or action should be taken.</p>
+<p>When calling <code>useRouteRef</code> with an optional external route, its return signature
+is changed to <code>RouteFunc | undefined</code>, allowing for logic like this:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">const</span> MyComponent = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> headerLink = useRouteRef(headerLinkRouteRef);
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+      My Header
+      {headerLink &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">{headerLink()}</span>&gt;</span>External Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span></span>
+  );
+};
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="parameterized-routes"></a><a href="#parameterized-routes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameterized Routes</h3>
+<p>A new addition to <code>RouteRef</code>s is the possibility of adding named and typed
+parameters. Parameters are declared at creation, and will enforce presence of
+the parameters in the path in the app, and require them as a parameter when
+using <code>useRouteRef</code>.</p>
+<p>The following is an example of creation and usage of a parameterized route:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-comment">// Creation of a parameterized route</span>
+<span class="hljs-keyword">const</span> myRouteRef = createRouteRef({
+  <span class="hljs-attr">title</span>: <span class="hljs-string">'My Named Route'</span>,
+  <span class="hljs-attr">params</span>: [<span class="hljs-string">'name'</span>]
+})
+
+<span class="hljs-comment">// In the app, where MyPage is a routable extension with myRouteRef set as mountPoint</span>
+&lt;Route path=<span class="hljs-string">'/my-page/:name'</span> element={&lt;MyPage /&gt;}/&gt;
+
+<span class="hljs-comment">// Usage within a component</span>
+<span class="hljs-keyword">const</span> myRoute = useRouteRef(myRouteRef)
+<span class="hljs-keyword">return</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">{myRoute({name:</span> '<span class="hljs-attr">a</span>'})}&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">{myRoute({name:</span> '<span class="hljs-attr">b</span>'})}&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+)
+</code></pre>
+<p>It is currently not possible to have parameterized <code>ExternalRouteRef</code>s, or to
+bind an external route to a parameterized route, although this may be added in
+the future if needed.</p>
+<h3><a class="anchor" aria-hidden="true" id="new-catalog-components"></a><a href="#new-catalog-components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New Catalog Components</h3>
+<p>The established pattern for selecting what plugins should be available on each
+catalog page is to use custom components in the app, with logic embedded in the
+render function. Typically this takes form as a component that either receives
+the entity via props or uses the <code>useEntity</code> hook to retrieve the selected
+entity. A <code>switch</code> or <code>if</code> / <code>else if</code> chain is then used to select what
+children should be rendered based on information in the entity.</p>
+<p>This pattern will no longer work with the new composability system, and in
+general is very difficult to build any form of declarative model around, as it
+depends on runtime execution. To help replace existing code, a new
+<code>EntitySwitch</code> component has been added to the <code>@backstage/catalog</code> plugin,
+which grabs the selected entity from a context, and selects at most one element
+to render using a list of <code>EntitySwitch.Case</code> children.</p>
+<p>For example, if you want all entities of kind <code>&quot;Template&quot;</code> to be rendered with a
+<code>MyTemplate</code> component, and all other entities to be rendered with a <code>MyOther</code>
+component, you would do the following:</p>
+<pre><code class="hljs css language-tsx"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">EntitySwitch</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">EntitySwitch.Case</span> <span class="hljs-attr">if</span>=<span class="hljs-string">{isKind(</span>'<span class="hljs-attr">template</span>')}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">MyTemplate</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">EntitySwitch.Case</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">EntitySwitch.Case</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">MyTemplate</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">EntitySwitch.Case</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">EntitySwitch</span>&gt;</span>
+
+// Shorter form if desired:
+<span class="hljs-tag">&lt;<span class="hljs-name">EntitySwitch</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">EntitySwitch.Case</span> <span class="hljs-attr">if</span>=<span class="hljs-string">{isKind(</span>'<span class="hljs-attr">template</span>')} <span class="hljs-attr">children</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">MyTemplate</span> /&gt;</span>}/&gt;
+  <span class="hljs-tag">&lt;<span class="hljs-name">EntitySwitch.Case</span> <span class="hljs-attr">children</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">MyTemplate</span> /&gt;</span>}/&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">EntitySwitch</span>&gt;</span>
+</span></code></pre>
+<p>The <code>EntitySwitch</code> component will render the children of the first
+<code>EntitySwitch.Case</code> that returns <code>true</code> when the selected entity is passed to
+the function of the <code>if</code> prop. If none of the cases match, no children will be
+rendered, and if a case doesn't specify an <code>if</code> filter function, it will always
+match. The <code>if</code> property is simply a function of the type
+<code>(entity: Entity) =&gt; boolean</code>, for example, <code>isKind</code> can be implemented like
+this:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isKind</span>(<span class="hljs-params">kind: <span class="hljs-built_in">string</span></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">entity: Entity</span>) =&gt;</span> entity.kind.toLowerCase() === kind.toLowerCase();
+}
+</code></pre>
+<p>The <code>@backstage/catalog</code> plugin provides a couple of built-in conditions,
+<code>isKind</code>, <code>isComponentType</code>, and <code>isNamespace</code>.</p>
+<p>In addition to the <code>EntitySwitch</code> component, the catalog plugin also exports a
+new <code>EntityLayout</code> component. It is a tweaked version and replacement for the
+<code>EntityPageLayout</code> component, and is introduced more in depth in the app
+migration section below.</p>
+<h2><a class="anchor" aria-hidden="true" id="porting-existing-plugins"></a><a href="#porting-existing-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Porting Existing Plugins</h2>
+<p>There are a couple of high-level steps to porting an existing plugin to the new
+composability system:</p>
+<ul>
+<li>Remove usage of <code>router.addRoute</code> or <code>router.registerRoute</code> within
+<code>createPlugin</code>, and export the page components as routable extensions instead.</li>
+<li>Switch any <code>Router</code> export to instead be a routable extension.</li>
+<li>Change any plain component exports, such as catalog overview cards, to be
+component extensions.</li>
+<li>Stop exporting <code>RouteRef</code>s and instead pass them to <code>createPlugin</code>.</li>
+<li>Stop accepting <code>RouteRef</code>s as props or importing them from other plugins,
+instead create an <code>ExternalRouteRef</code> as a replacement, and pass it to
+<code>createPlugin.</code></li>
+<li>Rename any other exported symbols according to the naming pattern table below.</li>
+</ul>
+<p>Note that removing the existing exports and configuration is a breaking change
+in any plugin. If backwards compatibility is needed the existing code be
+deprecated while making the new additions, to then be removed at a later point.</p>
+<h3><a class="anchor" aria-hidden="true" id="naming-patterns"></a><a href="#naming-patterns" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Naming Patterns</h3>
+<p>Many export naming patterns have been changed to avoid import aliases and to
+clarify intent. Refer to the following table to formulate the new name:</p>
+<table>
+<thead>
+<tr><th>Description</th><th>Existing Pattern</th><th>New Pattern</th><th>Examples</th></tr>
+</thead>
+<tbody>
+<tr><td>Top-level Pages</td><td>Router</td><td>*Page</td><td>CatalogIndexPage, SettingsPage, LighthousePage</td></tr>
+<tr><td>Entity Tab Content</td><td>Router</td><td>Entity*Content</td><td>EntityJenkinsContent, EntityKubernetesContent</td></tr>
+<tr><td>Entity Overview Card</td><td>*Card</td><td>Entity*Card</td><td>EntitySentryCard, EntityPagerDutyCard</td></tr>
+<tr><td>Entity Conditional</td><td>isPluginApplicableToEntity</td><td>is*Available</td><td>isPagerDutyAvailable, isJenkinsAvailable</td></tr>
+<tr><td>Plugin Instance</td><td>plugin</td><td>*Plugin</td><td>jenkinsPlugin, catalogPlugin</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="porting-existing-apps"></a><a href="#porting-existing-apps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Porting Existing Apps</h2>
+<p>The first step of porting any app is to replace the root <code>Routes</code> component with
+<code>FlatRoutes</code> from <code>@backstage/core</code>. As opposed to the <code>Routes</code> component,
+<code>FlatRoutes</code> only considers the first level of <code>Route</code> components in its
+children, and provides any additional children to the outlet of the route. It
+also removes the need to append <code>&quot;/*&quot;</code> to paths, as it is added automatically.</p>
+<pre><code class="hljs css language-diff">const AppRoutes = () =&gt; (
+<span class="hljs-deletion">-  &lt;Routes&gt;</span>
+<span class="hljs-addition">+  &lt;FlatRoutes&gt;</span>
+    ...
+<span class="hljs-deletion">-    &lt;Route path="/docs/*" element={&lt;DocsRouter /&gt;} /&gt;</span>
+<span class="hljs-addition">+    &lt;Route path="/docs" element={&lt;DocsRouter /&gt;} /&gt;</span>
+    ...
+<span class="hljs-deletion">-  &lt;/Routes&gt;</span>
+<span class="hljs-addition">+  &lt;/FlatRoutes&gt;</span>
+);
+</code></pre>
+<p>The next step should be to switch from using <code>EntityPageLayout</code> to
+<code>EntityLayout</code>, as this can also be done without waiting for plugins to be
+ported. You should also replace the top-level <code>Router</code> from the catalog plugin
+with the separate <code>CatalogIndexPage</code> and <code>CatalogEntityPage</code> extensions that
+have been added to the catalog:</p>
+<pre><code class="hljs css language-diff"><span class="hljs-deletion">-&lt;Route</span>
+<span class="hljs-deletion">-  path={`${catalogRouteRef.path}/*`}</span>
+<span class="hljs-deletion">-  element={&lt;CatalogRouter EntityPage={EntityPage} /&gt;}</span>
+<span class="hljs-deletion">-/&gt;</span>
+<span class="hljs-addition">+&lt;Route path="/catalog" element={&lt;CatalogIndexPage /&gt;} /&gt;</span>
+<span class="hljs-addition">+&lt;Route</span>
+<span class="hljs-addition">+  path="/catalog/:namespace/:kind/:name"</span>
+<span class="hljs-addition">+  element={&lt;CatalogEntityPage /&gt;}</span>
+<span class="hljs-addition">+&gt;</span>
+<span class="hljs-addition">+  &lt;EntityPage /&gt;</span>
+<span class="hljs-addition">+&lt;/Route&gt;</span>
+</code></pre>
+<p>At that point you should flatten out the element tree as much as possible in the
+app, removing any intermediate components. At the top level this should usually
+be straightforward, but when reaching the catalog entity pages you may need to
+wait for some plugins to be migrated. This is because it is no longer possible
+to pass in the selected entity through component props, and it should be picked
+up from context inside the plugin instead. See the sections below for how to
+carry out migrations of some common entity page patterns.</p>
+<p>Once the app element tree doesn't contain any intermediate components, and all
+plugin imports have been switched to extensions rather than plain components,
+the app has been fully ported.</p>
+<h3><a class="anchor" aria-hidden="true" id="switching-from-entitypagelayout-to-entitylayout"></a><a href="#switching-from-entitypagelayout-to-entitylayout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Switching from EntityPageLayout to EntityLayout</h3>
+<p>The existing <code>EntityPageLayout</code> is replaced by the new <code>EntityLayout</code> component,
+which has a slightly different pattern for expressing the contents and paths.</p>
+<p>Porting from the old to the new API is just a matter of moving some things
+around. For example, given the following existing code:</p>
+<pre><code class="hljs css language-tsx"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">EntityPageLayout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">EntityPageLayout.Content</span>
+    <span class="hljs-attr">path</span>=<span class="hljs-string">"/"</span>
+    <span class="hljs-attr">title</span>=<span class="hljs-string">"Overview"</span>
+    <span class="hljs-attr">element</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">ComponentOverviewContent</span> <span class="hljs-attr">entity</span>=<span class="hljs-string">{entity}</span> /&gt;</span>}
+  /&gt;
+  <span class="hljs-tag">&lt;<span class="hljs-name">EntityPageLayout.Content</span>
+    <span class="hljs-attr">path</span>=<span class="hljs-string">"/sentry"</span>
+    <span class="hljs-attr">title</span>=<span class="hljs-string">"Sentry"</span>
+    <span class="hljs-attr">element</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">SentryRouter</span> <span class="hljs-attr">entity</span>=<span class="hljs-string">{entity}</span> /&gt;</span>}
+  /&gt;
+  <span class="hljs-tag">&lt;<span class="hljs-name">EntityPageLayout.Content</span>
+    <span class="hljs-attr">path</span>=<span class="hljs-string">"/kubernetes/*"</span>
+    <span class="hljs-attr">title</span>=<span class="hljs-string">"Kubernetes"</span>
+    <span class="hljs-attr">element</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">KubernetesRouter</span> <span class="hljs-attr">entity</span>=<span class="hljs-string">{entity}</span> /&gt;</span>}
+  /&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">EntityPageLayout</span>&gt;</span>
+</span></code></pre>
+<p>It would be ported to this:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-tag">&lt;<span class="hljs-name">EntityLayout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">EntityLayout.Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">"/"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Overview"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ComponentOverviewContent</span> <span class="hljs-attr">entity</span>=<span class="hljs-string">{entity}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">EntityLayout.Route</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">EntityLayout.Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">"/sentry"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Sentry"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">SentryRouter</span> <span class="hljs-attr">entity</span>=<span class="hljs-string">{entity}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">EntityLayout.Route</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">EntityLayout.Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">"/kubernetes"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Kubernetes"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">KubernetesRouter</span> <span class="hljs-attr">entity</span>=<span class="hljs-string">{entity}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">EntityLayout.Route</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">EntityLayout</span>&gt;</span>
+</code></pre>
+<p>In addition to the renaming, the <code>element</code> prop has been moved to <code>children</code>.
+Also note that the <code>/*</code> suffix has been removed from the <code>&quot;/kubernetes&quot;</code> path,
+as it's now added automatically.</p>
+<p>Usage of the <code>EntityLayout</code> component is required to be able to properly
+discover routes, and so it is required to apply this change before you can start
+using routable entity content extensions from plugins.</p>
+<h3><a class="anchor" aria-hidden="true" id="porting-entity-pages"></a><a href="#porting-entity-pages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Porting Entity Pages</h3>
+<p>The established pattern in the app is to use custom components in order to
+select what plugin components to render for a given entity. The new
+<code>EntitySwitch</code> component introduced above is what is intended to replace this
+pattern, now that the entire app needs to be rendered as a single element tree.
+For example, given the following existing code:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> EntityPage = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> { entity } = useEntity();
+
+  <span class="hljs-keyword">switch</span> (entity?.kind?.toLowerCase()) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'component'</span>:
+      <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ComponentEntityPage</span> <span class="hljs-attr">entity</span>=<span class="hljs-string">{entity}</span> /&gt;</span></span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'api'</span>:
+      <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ApiEntityPage</span> <span class="hljs-attr">entity</span>=<span class="hljs-string">{entity}</span> /&gt;</span></span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'group'</span>:
+      <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">GroupEntityPage</span> <span class="hljs-attr">entity</span>=<span class="hljs-string">{entity}</span> /&gt;</span></span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'user'</span>:
+      <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">UserEntityPage</span> <span class="hljs-attr">entity</span>=<span class="hljs-string">{entity}</span> /&gt;</span></span>;
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">DefaultEntityPage</span> <span class="hljs-attr">entity</span>=<span class="hljs-string">{entity}</span> /&gt;</span></span>;
+  }
+};
+</code></pre>
+<p>It would be migrated to this:</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> entityPage = (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">EntitySwitch</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">EntitySwitch.Case</span> <span class="hljs-attr">if</span>=<span class="hljs-string">{isKind(</span>'<span class="hljs-attr">component</span>')} <span class="hljs-attr">children</span>=<span class="hljs-string">{componentPage}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">EntitySwitch.Case</span> <span class="hljs-attr">if</span>=<span class="hljs-string">{isKind(</span>'<span class="hljs-attr">api</span>')} <span class="hljs-attr">children</span>=<span class="hljs-string">{apiPage}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">EntitySwitch.Case</span> <span class="hljs-attr">if</span>=<span class="hljs-string">{isKind(</span>'<span class="hljs-attr">group</span>')} <span class="hljs-attr">children</span>=<span class="hljs-string">{groupPage}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">EntitySwitch.Case</span> <span class="hljs-attr">if</span>=<span class="hljs-string">{isKind(</span>'<span class="hljs-attr">user</span>')} <span class="hljs-attr">children</span>=<span class="hljs-string">{userPage}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">EntitySwitch.Case</span> <span class="hljs-attr">children</span>=<span class="hljs-string">{defaultPage}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">EntitySwitch</span>&gt;</span></span>
+);
+</code></pre>
+<p>Note that for example <code>&lt;ComponentEntityPage ... /&gt;</code> has been changed to simply
+<code>componentPage</code>, that is because just like the <code>EntityPage</code> component, the
+<code>ComponentEntityPage</code> also needs to be ported to be an element rather a
+component in a similar way.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/plugins/integrating-plugin-into-service-catalog"><span class="arrow-prev">← </span><span>Integrate into the Service Catalog</span></a><a class="docs-next button" href="/docs/plugins/proxying"><span>Proxying</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#summary">Summary</a></li><li><a href="#new-concepts">New Concepts</a><ul class="toc-headings"><li><a href="#component-data">Component Data</a></li><li><a href="#extensions">Extensions</a></li><li><a href="#extensions-from-a-plugins-point-of-view">Extensions from a Plugin's Point of View</a></li><li><a href="#using-extensions-in-an-app">Using Extensions in an App</a></li><li><a href="#new-routing-system">New Routing System</a></li><li><a href="#binding-external-routes-in-the-app">Binding External Routes in the App</a></li><li><a href="#optional-external-routes">Optional External Routes</a></li><li><a href="#parameterized-routes">Parameterized Routes</a></li><li><a href="#new-catalog-components">New Catalog Components</a></li></ul></li><li><a href="#porting-existing-plugins">Porting Existing Plugins</a><ul class="toc-headings"><li><a href="#naming-patterns">Naming Patterns</a></li></ul></li><li><a href="#porting-existing-apps">Porting Existing Apps</a><ul class="toc-headings"><li><a href="#switching-from-entitypagelayout-to-entitylayout">Switching from EntityPageLayout to EntityLayout</a></li><li><a href="#porting-entity-pages">Porting Entity Pages</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a><a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://engineering.atspotify.com/">Spotify Engineering Blog</a><a href="https://developer.spotify.com/">Spotify for Developers</a><a href="https://github.com/backstage/backstage">GitHub</a><a class="github-button" href="https://github.com/backstage/backstage" data-icon="octicon-star" data-count-href="/backstage/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><p style="text-align:center"><a href="https://spotify.github.io">Made with ❤️  at Spotify</a></p><p class="copyright">Copyright © 2021 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '8d115c9875ba0f4feaee95bab55a1645',
+                indexName: 'backstage',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

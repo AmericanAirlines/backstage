@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>How to design for Backstage (even if you’re not a designer) · Backstage Service Catalog and Developer Platform</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="We are excited to launch the Backstage Design System, which includes a [Figma UI kit](https://www.figma.com/community/file/850673348101741100), a rich set of [reusable code components](http://backstage.io/storybook) on Storybook, and [Guidelines](https://backstage.io/docs/dls/design) for designers and developers as they build plugins for Backstage."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="How to design for Backstage (even if you’re not a designer) · Backstage Service Catalog and Developer Platform"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/blog/2020/09/30/backstage-design-system"/><meta property="og:description" content="We are excited to launch the Backstage Design System, which includes a [Figma UI kit](https://www.figma.com/community/file/850673348101741100), a rich set of [reusable code components](http://backstage.io/storybook) on Storybook, and [Guidelines](https://backstage.io/docs/dls/design) for designers and developers as they build plugins for Backstage."/><meta property="og:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Service Catalog and Developer Platform Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Service Catalog and Developer Platform Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-163836834-5', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://unpkg.com/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script><script type="text/javascript" src="/js/medium-zoom.js"></script><script type="text/javascript" src="/js/dismissable-banner.js"></script><script type="text/javascript" src="/js/scroll-nav-to-view-in-docs.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage Service Catalog and Developer Platform</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/backstage/backstage" target="_self">GitHub</a></li><li class=""><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/plugins" target="_self">Plugins</a></li><li class="siteNavGroupActive"><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/blog/2021/01/12/new-backstage-feature-kubernetes-for-service-owners">New Backstage feature: Kubernetes for Service owners</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/12/22/stability-index">Announcing the Backstage Stability Index</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/10/22/cost-insights-plugin">New Cost Insights plugin: The engineer’s solution to taming cloud costs</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/09/30/plugin-marketplace">The Plugin Marketplace is open</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/blog/2020/09/30/backstage-design-system">How to design for Backstage (even if you’re not a designer)</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/09/30/backstage-design-system">How to design for Backstage (even if you’re not a designer)</a></h1><p class="post-meta">September 30, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="http://twitter.com/katherinemzhou" target="_blank" rel="noreferrer noopener">Kat Zhou, Spotify</a></p></div></header><div><span><p><img src="/blog/assets/backstage-DS-header.png" alt="img"></p>
+<p>We are excited to launch the Backstage Design System, which includes a <a href="https://www.figma.com/community/file/850673348101741100">Figma UI kit</a>, a rich set of <a href="http://backstage.io/storybook">reusable code components</a> on Storybook, and <a href="https://backstage.io/docs/dls/design">Guidelines</a> for designers and developers as they build plugins for Backstage.</p>
+<!--truncate-->
+<h2><a class="anchor" aria-hidden="true" id="not-just-the-way-it-looks"></a><a href="#not-just-the-way-it-looks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Not just the way it looks</h2>
+<p>We see great design as one of the secret weapons of Backstage. Design should never be an afterthought — we believe an elegant, cohesive UX is vital to what makes Backstage such a productive, end-to-end development environment.</p>
+<p>Backstage keeps engineers from getting lost inside the complexity of your infrastructure by bringing order to your software ecosystem (through the <a href="https://backstage.io/blog/2020/06/22/backstage-service-catalog-alpha">service catalog</a>) and providing an abstraction layer on top of it. How that abstraction layer works is essential to how Backstage works. So we’ve spent time figuring out how to make great design in Backstage easier to achieve for both designers and non-designers alike.</p>
+<p>Since making Backstage open source, we’ve been able to host design studios and user interviews with teams outside Spotify to get feedback and collaborate on a design system, together. (And we’re always keen on collaborating with more organizations.)</p>
+<p><img src="/blog/assets/Backstage-mural-DS.png" alt="img">
+<em>Screenshot of our design studio for Backstage Search, which included stakeholders inside and outside of Spotify.</em></p>
+<p>As Backstage has gained traction, we’ve seen the importance of creating a scalable and coherent design system. It’s through the shared guidelines of our design system that we are able to maintain a unified ecosystem of plugins for our users, globally. Let’s get started by taking a closer look at the different design components of a plugin.</p>
+<h2><a class="anchor" aria-hidden="true" id="anatomy-of-a-plugin"></a><a href="#anatomy-of-a-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Anatomy of a plugin</h2>
+<p><img src="https://backstage.io/img/cards-plugins.png" alt=""></p>
+<p>Plugins are what provide the feature functionality in Backstage, allowing you to customize it to fit your infrastructure. They are integrated into Backstage's frontend, so that no matter what tool or service is being accessed, users are guaranteed a seamless experience.</p>
+<p>As you begin to <a href="https://backstage.io/docs/plugins/">build your own plugins</a>, we encourage you to explore the <a href="https://backstage.io/plugins">open source plugins</a> we have available in Backstage, as reference. The anatomy of a plugin is simple. In the example below, we’ve highlighted a few of the standard components you should consider when designing your plugin.</p>
+<p><img src="/blog/assets/backstage-guide-DS.png" alt="img"></p>
+<ol>
+<li><strong>Tabs.</strong> Want to include multiple pages in your plugin? Use our tab component so users can easily navigate through your plugin.</li>
+<li><strong>Title.</strong> Plugin pages should always have a title. Subheads are optional. Typically, the ‘star’ icon is included in the overview tab, which allows the user to favorite the plugin, adding it to the side navigation.</li>
+<li><strong>Cards.</strong> Use the card components to display different kinds of content and functionality. You can follow our 12-column, responsive grid system to arrange the cards.</li>
+<li><strong>Support.</strong> There should always be a support button (tertiary style, with icon). There can also be a primary action button as well as a secondary one.</li>
+<li><strong>Header.</strong> Use the Backstage header to allow for users to easily understand what they’re looking at. You can include an optional subhead as well as other information. The color varies depending on the type of plugin you’ve built (stand-alone tool, service, app, website, etc.).</li>
+</ol>
+<p>Now that we’ve familiarized ourselves with the basic parts of a plugin, let’s take a look at some of the tools and resources that make designing plugins even easier.</p>
+<h2><a class="anchor" aria-hidden="true" id="tools-and-resources"></a><a href="#tools-and-resources" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tools and resources</h2>
+<p>The quickest way to start is by duplicating our <a href="https://www.figma.com/community/file/850673348101741100">Figma UI kit</a>, then clicking on the Create a Plugin page on the left-hand side to grab some templates. Feel free to experiment and play around! Figma is a fantastic, multiplayer tool that allows for designers and developers to co-create components and share specs with ease. We’re excited to see what you design and develop.</p>
+<p>As you’re designing and building your plugins, make sure to take advantage of these helpful resources.</p>
+<p><img src="/blog/assets/backstage-figma1-DS.png" alt="img">
+<img src="/blog/assets/backstage-figma2-ds.png" alt="img"></p>
+<h3><a class="anchor" aria-hidden="true" id="figma-communityhttpswwwfigmacombackstage"></a><a href="#figma-communityhttpswwwfigmacombackstage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.figma.com/@backstage">Figma Community</a></h3>
+<p>We are thrilled to be using <a href="https://www.figma.com/@backstage">Figma Community</a> to share our design assets. You can duplicate our UI kit and design your own plugin for Backstage. Figma Community is currently in beta, so this is a neat opportunity to be testing out a new way of working. At the moment, it doesn’t support auto-updating of duplicated files, so we’ll be announcing new versions of our UI kit on Discord in the #design channel.</p>
+<p><img src="/blog/assets/backstage-storybook-ds.png" alt="img"></p>
+<h3><a class="anchor" aria-hidden="true" id="storybookhttpsbackstageiostorybook"></a><a href="#storybookhttpsbackstageiostorybook" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://backstage.io/storybook/">Storybook</a></h3>
+<p>You can view (and grab) our <a href="https://backstage.io/storybook/">reusable components on Storybook</a>. If you’d like to help build up our design system, you can also help us add components that we’ve designed to Storybook as well. We post newly designed components and patterns to GitHub as issues, where contributors can pick them up and add them to our Storybook so they’re available for the rest of the Backstage community.</p>
+<p><img src="/blog/assets/backstage-guidelines-ds.png" alt="img"></p>
+<h3><a class="anchor" aria-hidden="true" id="guidelineshttpsbackstageiodocsdlsdesign"></a><a href="#guidelineshttpsbackstageiodocsdlsdesign" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://backstage.io/docs/dls/design">Guidelines</a></h3>
+<p>To keep up with our latest design guidelines, go to <a href="https://backstage.io/docs/dls/design">Designing for Backstage</a>. You’ll find more how-to’s and you can also learn more about our design philosophy and practices there. Down the line, we plan on including more in-depth component rules in this section (i.e., dos/don’ts, use cases, etc.).</p>
+<p><img src="/blog/assets/backstage-github-ds.png" alt="img"></p>
+<h3><a class="anchor" aria-hidden="true" id="githubhttpsgithubcombackstagebackstage"></a><a href="#githubhttpsgithubcombackstagebackstage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/backstage/backstage">GitHub</a></h3>
+<p>Join in on the action <a href="https://github.com/backstage/backstage">at backstage/backstage on GitHub</a> by submitting issues and opening pull requests for all things related to components and patterns in Backstage.</p>
+<p><img src="/blog/assets/backstage-discord-DS.png" alt="img"></p>
+<h3><a class="anchor" aria-hidden="true" id="discordhttpsdiscordcominvitemupmjp2"></a><a href="#discordhttpsdiscordcominvitemupmjp2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://discord.com/invite/MUpMjP2">Discord</a></h3>
+<p>All design questions should be directed to the <a href="https://discord.com/channels/687207715902193673/696709358544879716">#design</a> channel in <a href="https://discord.com/invite/MUpMjP2">Discord</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="whats-next-for-backstage-design"></a><a href="#whats-next-for-backstage-design" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What's next for Backstage design</h2>
+<p>There are a lot of exciting things that we’re envisioning for Backstage and open source design at Spotify. These include:</p>
+<ul>
+<li>Expanding our Backstage Design System by building on the UI kit and component library in Figma and Storybook</li>
+</ul>
+<ul>
+<li><p>Collaborating with more of our amazing contributors to ensure our Backstage Design System works for everyone</p></li>
+<li><p>Featuring rad plugins that folks have created, using our design system, in our Figma Community space</p></li>
+<li><p>Building up our Guidelines by continuing to creating robust design documentation</p></li>
+<li><p>Ensuring that we maintain accessible practices throughout our experience</p></li>
+</ul>
+<p><img src="/blog/assets/backstage-world-DS.png" alt="img"></p>
+<h2><a class="anchor" aria-hidden="true" id="get-involved"></a><a href="#get-involved" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get involved</h2>
+<p>Designing in the open needs to be democratic and participatory, which is why we invite you to join in on the fun! There are a couple things you can do to get involved, such as:</p>
+<ul>
+<li><p><strong>Build with us!</strong> Are there components/plugins that you’d like to see in Backstage? Feel free to create an example/prototype of what you’re envisioning and create a UX component issue in our GitHub repo.</p></li>
+<li><p><strong>Chat with us!</strong> If you have questions, ideas, or puppy GIFs, feel free to reach out to us on Discord in the #design channel.</p></li>
+<li><p><strong>Share with us!</strong> One of our priorities is making Backstage more accessible, and we need your help. If you’ve got A11Y insights and ideas on how we can improve our product, please let us know!</p></li>
+<li><p><strong>Work with us!</strong> We are hiring for product designers to work on Backstage. We strongly stand for breaking traditional pipelines and elevating our caliber by hiring the best folks who are underrepresented minorities in tech today. Keen on joining? Know someone who has a knack for open source design and design systems? Send a direct message to @katz on Discord!</p></li>
+</ul>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/blog/">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#not-just-the-way-it-looks">Not just the way it looks</a></li><li><a href="#anatomy-of-a-plugin">Anatomy of a plugin</a></li><li><a href="#tools-and-resources">Tools and resources</a><ul class="toc-headings"><li><a href="#figma-communityhttpswwwfigmacombackstage"><a href="https://www.figma.com/@backstage">Figma Community</a></a></li><li><a href="#storybookhttpsbackstageiostorybook"><a href="https://backstage.io/storybook/">Storybook</a></a></li><li><a href="#guidelineshttpsbackstageiodocsdlsdesign"><a href="https://backstage.io/docs/dls/design">Guidelines</a></a></li><li><a href="#githubhttpsgithubcombackstagebackstage"><a href="https://github.com/backstage/backstage">GitHub</a></a></li><li><a href="#discordhttpsdiscordcominvitemupmjp2"><a href="https://discord.com/invite/MUpMjP2">Discord</a></a></li></ul></li><li><a href="#whats-next-for-backstage-design">What's next for Backstage design</a></li><li><a href="#get-involved">Get involved</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a><a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://engineering.atspotify.com/">Spotify Engineering Blog</a><a href="https://developer.spotify.com/">Spotify for Developers</a><a href="https://github.com/backstage/backstage">GitHub</a><a class="github-button" href="https://github.com/backstage/backstage" data-icon="octicon-star" data-count-href="/backstage/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><p style="text-align:center"><a href="https://spotify.github.io">Made with ❤️  at Spotify</a></p><p class="copyright">Copyright © 2021 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '8d115c9875ba0f4feaee95bab55a1645',
+                indexName: 'backstage',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

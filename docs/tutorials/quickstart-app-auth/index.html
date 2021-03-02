@@ -1,0 +1,397 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Monorepo App Setup With Authentication · Backstage Service Catalog and Developer Platform</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="###### January 8th 2021 - @backstage/create-app - v0.4.5"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Monorepo App Setup With Authentication · Backstage Service Catalog and Developer Platform"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="###### January 8th 2021 - @backstage/create-app - v0.4.5"/><meta property="og:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Service Catalog and Developer Platform Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Service Catalog and Developer Platform Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-163836834-5', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://unpkg.com/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script><script type="text/javascript" src="/js/medium-zoom.js"></script><script type="text/javascript" src="/js/dismissable-banner.js"></script><script type="text/javascript" src="/js/scroll-nav-to-view-in-docs.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage Service Catalog and Developer Platform</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/backstage/backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/plugins" target="_self">Plugins</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Tutorials</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/vision">Vision</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/background">The Spotify Story</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/adopting">Strategies for adopting</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/stability-index">Stability Index</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/logos">Logo assets</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/running-backstage-locally">Running Backstage Locally</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Deployment</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-helm">Kubernetes and Helm</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-other">Other</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/getting-started/contributors">Contributors</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CLI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/cli/">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/cli/commands">Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Core Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/configuration">Configuration</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/configuration">Catalog Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/references">Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-annotations">Well-known Annotations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-relations">Well-known Relations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-templates">Writing Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/builtin-actions">Builtin actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-custom-actions">Writing Custom Actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/template-legacy">Writing Templates (Legacy)</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backstage Search</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/search/search-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/search/architecture">Search Architecture</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TechDocs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/architecture">TechDocs Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuration">TechDocs Configuration Options</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/using-cloud-storage">Using Cloud Storage for TechDocs generated files</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuring-ci-cd">Configuring CI/CD to generate and publish TechDocs sites</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/how-to-guides">&quot;HOW TO&quot; guides</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Integrations<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">GitHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/github/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">LDAP</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/ldap/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Google Analytics</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/google-analytics/installation">Installation</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro to plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/integrating-plugin-into-service-catalog">Integrate into the Service Catalog</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/composability">Composability System Migration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call Existing API</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/github-apps">GitHub Apps for Backend Authentication</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/add-to-marketplace">Add to Marketplace</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/observability">Observability</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">User Authentication and Authorization in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend-classes">Auth backend classes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">reference/utility-apis/README</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/journey">Future developer journey</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/tutorials/quickstart-app-auth">Monorepo App Setup With Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-plugin">Adding Custom Plugin to Existing Monorepo App</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001: Architecture Decision Record (ADR) log</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002: Default Software Catalog File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003: Avoid Default Exports and Prefer Named Exports</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004: Module Export Structure</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005: Catalog Core Entities</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006: Avoid React.FC and React.SFC</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007: Use MSW to mock http requests</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008: Default Catalog File Name</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr009">ADR009: Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr010">ADR010: Use the Luxon Date Library</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr011">ADR011: Plugin Package Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/support/support">Support and community</a></li><li class="navListItem"><a class="navItem" href="/docs/support/project-structure">Backstage Project Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Glossary<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/glossary">Backstage Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/backstage/backstage/edit/master/docs/tutorials/quickstart-app-auth.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Monorepo App Setup With Authentication</h1></header><article><div><span><h6><a class="anchor" aria-hidden="true" id="january-8th-2021---backstagecreate-app---v045"></a><a href="#january-8th-2021---backstagecreate-app---v045" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>January 8th 2021 - @backstage/create-app - v0.4.5</h6>
+<p><br /></p>
+<blockquote>
+<p>This document takes you through setting up a Backstage app that runs in your
+own environment. It starts with a skeleton install and verifying of the
+monorepo's functionality. Next, authentication is added and tested.</p>
+<p>This document assumes you have Node.js 12 or 14 active along with Yarn and
+Python. Please note, that at the time of this writing, the current version is
+v0.4.5. This guide can still be used with future versions, just, verify as you
+go.</p>
+</blockquote>
+<h1><a class="anchor" aria-hidden="true" id="the-skeleton-application"></a><a href="#the-skeleton-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Skeleton Application</h1>
+<p>From the terminal:</p>
+<ol>
+<li>Create a (monorepo) application: <code>npx @backstage/create-app</code></li>
+<li>Enter an <code>id</code> for your new app like <code>mybiz-backstage</code> I went with
+<code>simple-backstage-app</code></li>
+<li>Choose <code>SQLite</code> as your database. This is the quickest way to get started as
+PostgreSQL requires additional setup not covered here.</li>
+<li>Start your backend: <code>yarn --cwd packages/backend start</code></li>
+</ol>
+<pre><code class="hljs css language-zsh"><span class="hljs-comment"># You should see positive verbiage in your terminal output</span>
+2020-09-11T22:20:26.712Z backstage info Listening on :7000
+</code></pre>
+<ol start="5">
+<li>Finally, start the frontend. Open a new terminal window and from the root of
+your project, run: <code>yarn start</code></li>
+</ol>
+<pre><code class="hljs css language-zsh"><span class="hljs-comment"># You should see positive verbiage in your terminal output</span>
+ℹ ｢wds｣: Project is running at http://localhost:3000/
+</code></pre>
+<p>Once the app compiles, a browser window should have popped with your stand-alone
+application loaded at <code>localhost:3000</code>. This could take a couple minutes.</p>
+<pre><code class="hljs css language-zsh"><span class="hljs-comment"># You should see positive verbiage in your terminal output</span>
+ℹℹ ｢wdm｣: Compiled successfully.
+</code></pre>
+<p>Since there is no auth currently configured, you are automatically entered as a
+guest. Let's fix that now and add auth.</p>
+<h1><a class="anchor" aria-hidden="true" id="the-auth-configuration"></a><a href="#the-auth-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Auth Configuration</h1>
+<p>A default Backstage installation includes multiple authentication providers out
+of the box. The steps to enable new authentication providers in Backstage are
+very similar to each other, the biggest difference is usually configuring the
+external authentication provider. Please see a subset of possible providers and
+instructions to integrate them below. Steps 1 &amp; 2 are described separately for
+each provider and steps beyond that are common for all.</p>
+<p><details><summary>GitHub</summary></p>
+<p>
+<h3><a class="anchor" aria-hidden="true" id="1-open-app-configyaml-and-change-it-as-follows"></a><a href="#1-open-app-configyaml-and-change-it-as-follows" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Open <code>app-config.yaml</code> and change it as follows</h3>
+<p><em>from:</em></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
+  <span class="hljs-attr">providers:</span> <span class="hljs-string">{}</span>
+</code></pre>
+<p><em>to:</em></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
+  <span class="hljs-attr">providers:</span>
+    <span class="hljs-attr">github:</span>
+      <span class="hljs-attr">development:</span>
+        <span class="hljs-attr">clientId:</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_GITHUB_CLIENT_ID</span>
+        <span class="hljs-attr">clientSecret:</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_GITHUB_CLIENT_SECRET</span>
+        <span class="hljs-comment">## uncomment the following two lines if using enterprise</span>
+        <span class="hljs-comment"># enterpriseInstanceUrl:</span>
+        <span class="hljs-comment">#  $env: AUTH_GITHUB_ENTERPRISE_INSTANCE_URL</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="2-generate-a-github-client-id-and-secret"></a><a href="#2-generate-a-github-client-id-and-secret" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Generate a GitHub client ID and secret</h3>
+<ul>
+<li>Log into <a href="http://github.com">http://github.com</a></li>
+<li>Navigate to (Settings &gt; Developer Settings &gt; OAuth Apps &gt; New OAuth
+App)[<a href="https://github.com/settings/applications/new">https://github.com/settings/applications/new</a>]</li>
+<li>Set Homepage URL = <code>http://localhost:3000</code></li>
+<li>Set Callback URL = <code>http://localhost:7000/api/auth/github</code></li>
+<li>Click [Register application]</li>
+<li>On the next page, copy and paste your new Client ID and Client Secret to
+environment variables defined in the <code>app-config.yaml</code> file,
+<code>AUTH_GITHUB_CLIENT_ID</code> &amp; <code>AUTH_GITHUB_CLIENT_SECRET</code></li>
+</ul>
+</p>
+</details>
+<p><details><summary>GitLab</summary></p>
+<p>
+<h3><a class="anchor" aria-hidden="true" id="1-open-app-configyaml-and-change-it-as-follows-1"></a><a href="#1-open-app-configyaml-and-change-it-as-follows-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Open <code>app-config.yaml</code> and change it as follows</h3>
+<p><em>from:</em></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
+  <span class="hljs-attr">providers:</span> <span class="hljs-string">{}</span>
+</code></pre>
+<p><em>to:</em></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
+  <span class="hljs-attr">providers:</span>
+    <span class="hljs-attr">gitlab:</span>
+      <span class="hljs-attr">development:</span>
+        <span class="hljs-attr">clientId:</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_GITLAB_CLIENT_ID</span>
+        <span class="hljs-attr">clientSecret:</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_GITLAB_CLIENT_SECRET</span>
+        <span class="hljs-attr">audience:</span> <span class="hljs-string">https://gitlab.com</span> <span class="hljs-comment"># Or your self-hosted GitLab instance URL</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="2-generate-a-gitlab-application-client-id-and-secret"></a><a href="#2-generate-a-gitlab-application-client-id-and-secret" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Generate a GitLab Application client ID and secret</h3>
+<ul>
+<li>Log into GitLab</li>
+<li>Navigate to (Profile &gt; Settings &gt;
+Applications)[<a href="https://gitlab.com/-/profile/applications">https://gitlab.com/-/profile/applications</a>]</li>
+<li>Name your application</li>
+<li>Set Callback URL = <code>http://localhost:7000/api/auth/gitlab/handler/frame</code></li>
+<li>Select the following values:
+<ul>
+<li><code>read_user</code> (Read the authenticated user's personal information)</li>
+<li><code>read_repository</code> (Allows read-only access to the repository)</li>
+<li><code>write_repository</code> (Allows read-write access to the repository)</li>
+<li><code>openid</code> (Authenticate using OpenID Connect)</li>
+<li><code>profile</code> (Allows read-only access to the user's personal information using
+OpenID Connect)</li>
+<li><code>email</code> (Allows read-only access to the user's primary email address using
+OpenID Connect)</li>
+</ul></li>
+<li>Click [Save application]</li>
+<li>On the next page, copy and paste your new Application ID and Secret to
+environment variables defined in the <code>app-config.yaml</code> file,
+<code>AUTH_GITLAB_CLIENT_ID</code> &amp; <code>AUTH_GITLAB_CLIENT_SECRET</code></li>
+</ul>
+</p>
+</details>
+<p><details><summary>Google</summary></p>
+<p>
+<h3><a class="anchor" aria-hidden="true" id="1-open-app-configyaml-and-change-it-as-follows-2"></a><a href="#1-open-app-configyaml-and-change-it-as-follows-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Open <code>app-config.yaml</code> and change it as follows</h3>
+<p><em>from:</em></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
+  <span class="hljs-attr">providers:</span> <span class="hljs-string">{}</span>
+</code></pre>
+<p><em>to:</em></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
+  <span class="hljs-attr">providers:</span>
+    <span class="hljs-attr">google:</span>
+      <span class="hljs-attr">development:</span>
+        <span class="hljs-attr">clientId:</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_GOOGLE_CLIENT_ID</span>
+        <span class="hljs-attr">clientSecret:</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_GOOGLE_CLIENT_SECRET</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="2-generate-google-credentials-in-google-cloud-console"></a><a href="#2-generate-google-credentials-in-google-cloud-console" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Generate Google Credentials in Google Cloud console</h3>
+<ul>
+<li>Log into <a href="https://console.cloud.google.com">https://console.cloud.google.com</a></li>
+<li>Select or create a new project from the dropdown on the top bar</li>
+<li>Navigate to (APIs &amp; Services &gt;
+Credentials)[<a href="https://console.cloud.google.com/apis/credentials">https://console.cloud.google.com/apis/credentials</a>]</li>
+<li>Click Create Credentials and select [OAuth client ID]</li>
+<li>Select Web Application as the application type</li>
+<li>Add new Authorised JavaScript origin = <code>http://localhost:3000</code></li>
+<li>Add new Authorised redirect URI =
+<code>http://localhost:7000/api/auth/google/handler/frame</code></li>
+<li>Click [Save application]</li>
+<li>Google should display a modal with your Client ID and Secret. Copy and paste
+those to environment variables defined in the <code>app-config.yaml</code> file,
+<code>AUTH_GOOGLE_CLIENT_ID</code> &amp; <code>AUTH_GOOGLE_CLIENT_SECRET</code></li>
+</ul>
+</p>
+</details>
+<p><details><summary>Microsoft</summary></p>
+<p>
+<h3><a class="anchor" aria-hidden="true" id="1-open-app-configyaml-and-change-it-as-follows-3"></a><a href="#1-open-app-configyaml-and-change-it-as-follows-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Open <code>app-config.yaml</code> and change it as follows</h3>
+<p><em>from:</em></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
+  <span class="hljs-attr">providers:</span> <span class="hljs-string">{}</span>
+</code></pre>
+<p><em>to:</em></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
+  <span class="hljs-attr">providers:</span>
+    <span class="hljs-attr">microsoft:</span>
+      <span class="hljs-attr">development:</span>
+        <span class="hljs-attr">clientId:</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_MICROSOFT_CLIENT_ID</span>
+        <span class="hljs-attr">clientSecret:</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_MICROSOFT_CLIENT_SECRET</span>
+        <span class="hljs-attr">tenantId:</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_MICROSOFT_TENANT_ID</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="2-create-a-microsoft-app-registration-in-microsoft-portal"></a><a href="#2-create-a-microsoft-app-registration-in-microsoft-portal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Create a Microsoft App Registration in Microsoft Portal</h3>
+<ul>
+<li>Log into <a href="https://portal.azure.com">https://portal.azure.com</a></li>
+<li>Navigate to (Azure Active Directory &gt; App
+Registrations)[<a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps">https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps</a>]</li>
+<li>Create a New Registration</li>
+<li>Add new Redirect URI = <code>http://localhost:3000</code></li>
+<li>Add new Authorised redirect URI =
+<code>http://localhost:7000/api/auth/microsoft/handler/frame</code></li>
+<li>Click [Save application]</li>
+<li>Set environment variable <code>AUTH_MICROSOFT_CLIENT_ID</code> from
+<code>Application (client) Id</code> displayed on the directory page</li>
+<li>Set environment variable <code>AUTH_MICROSOFT_TENANT_ID</code> from
+<code>Directory (tenant) ID</code> displayed on the directory page</li>
+<li>Navigate to Certificates &amp; Secrets section and click [Create a new secret]</li>
+<li>Set environment variable <code>AUTH_MICROSOFT_CLIENT_SECRET</code> from the <code>value</code> field
+created.</li>
+</ul>
+</p>
+</details>
+<p><details><summary>Auth0</summary></p>
+<p>
+<h3><a class="anchor" aria-hidden="true" id="1-open-app-configyaml-and-change-it-as-follows-4"></a><a href="#1-open-app-configyaml-and-change-it-as-follows-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Open <code>app-config.yaml</code> and change it as follows</h3>
+<p><em>from:</em></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
+  <span class="hljs-attr">providers:</span> <span class="hljs-string">{}</span>
+</code></pre>
+<p><em>to:</em></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
+  <span class="hljs-attr">providers:</span>
+    <span class="hljs-attr">auth0:</span>
+      <span class="hljs-attr">development:</span>
+        <span class="hljs-attr">clientId:</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_AUTH0_CLIENT_ID</span>
+        <span class="hljs-attr">clientSecret:</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_AUTH0_CLIENT_SECRET</span>
+        <span class="hljs-attr">domain:</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_AUTH0_DOMAIN_ID</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="2-create-an-auth0-application-in-the-auth0-management-console"></a><a href="#2-create-an-auth0-application-in-the-auth0-management-console" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Create an Auth0 application in the Auth0 management console</h3>
+<ul>
+<li>Log into <a href="https://manage.auth0.com/dashboard/">https://manage.auth0.com/dashboard/</a></li>
+<li>Navigate to Applications</li>
+<li>Create a New Application
+<ul>
+<li>Select Single Page Web Application</li>
+</ul></li>
+<li>Go to Settings tab</li>
+<li>Add new line to Allowed Callback URLs =
+<code>http://localhost:7000/api/auth/auth0/handler/frame</code></li>
+<li>Click [Save Changes]</li>
+<li>Set environment variables displayed on the Basic Information page
+<ul>
+<li><code>AUTH_AUTH0_CLIENT_ID</code> from <code>Client ID</code> displayed on Auth0 application page</li>
+<li><code>AUTH_AUTH0_CLIENT_SECRET</code> from <code>Client Secret</code> displayed on Auth0
+application page</li>
+<li><code>AUTH_AUTH0_DOMAIN_ID</code> from <code>Domain</code> displayed on Auth0 application page</li>
+</ul></li>
+</ul>
+</p>
+</details>
+<h3><a class="anchor" aria-hidden="true" id="3-set-environment-variables-in-whatever-fashion-is-easiest-for-you-i-chose-to"></a><a href="#3-set-environment-variables-in-whatever-fashion-is-easiest-for-you-i-chose-to" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Set environment variables in whatever fashion is easiest for you. I chose to</h3>
+<p>add mine to my <code>.zshrc</code> profile.</p>
+<pre><code class="hljs css language-zsh"><span class="hljs-comment"># For macOS Catalina &amp; Z Shell</span>
+<span class="hljs-comment"># ------ simple-backstage-app GitHub</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># (Change the name of the environment variables based on your auth setup above)</span>
+<span class="hljs-built_in">export</span> AUTH_GITHUB_CLIENT_ID=xxx
+<span class="hljs-built_in">export</span> AUTH_GITHUB_CLIENT_SECRET=xxx
+<span class="hljs-comment"># export AUTH_GITHUB_ENTERPRISE_INSTANCE_URL=https://github.{MY_BIZ}.com</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="4-and-of-course-i-need-to-source-that-file"></a><a href="#4-and-of-course-i-need-to-source-that-file" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. And of course I need to source that file.</h3>
+<pre><code class="hljs css language-zsh"><span class="hljs-comment"># Loading the new variables</span>
+% <span class="hljs-built_in">source</span> ~/.zshrc
+
+<span class="hljs-comment"># Any other currently opened terminals need to be restarted to pick up the new values</span>
+<span class="hljs-comment"># verify your setup by running env</span>
+% env
+<span class="hljs-comment"># should output something like</span>
+&gt; ...
+&gt; AUTH_GITHUB_CLIENT_ID=xxx
+&gt; AUTH_GITHUB_CLIENT_SECRET=xxx
+&gt; ...
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="5-open-and-change-_root--packages--app--src-_-apptsx-to-use-correct"></a><a href="#5-open-and-change-_root--packages--app--src-_-apptsx-to-use-correct" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. Open and change <em>root &gt; packages &gt; app &gt; src &gt;</em> <code>App.tsx</code> to use correct</h3>
+<p>authentication provider reference</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-keyword">import</span> { githubAuthApiRef, SignInPage } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/core'</span>;
+</code></pre>
+<p>Modify the imported reference based on the authentication method you selected
+above:</p>
+<table>
+<thead>
+<tr><th>Auth Provider</th><th>Import Name</th></tr>
+</thead>
+<tbody>
+<tr><td>GitHub</td><td>githubAuthApiRef</td></tr>
+<tr><td>GitLab</td><td>gitlabAuthApiRef</td></tr>
+<tr><td>Google</td><td>googleAuthApiRef</td></tr>
+<tr><td>Microsoft</td><td>microsoftAuthApiRef</td></tr>
+<tr><td>Auth0</td><td>auth0AuthApiRef</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="6-in-the-same-file-modify-createapp"></a><a href="#6-in-the-same-file-modify-createapp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. In the same file, modify createApp</h3>
+<p>Remember to modify the provider information based on the table above.</p>
+<pre><code class="hljs css language-tsx"><span class="hljs-attr">const</span> <span class="hljs-string">app = createApp({</span>
+  <span class="hljs-attr">apis,</span>
+  <span class="hljs-attr">plugins</span>: <span class="hljs-string">Object.values(plugins),</span>
+  <span class="hljs-attr">components</span>: <span class="hljs-string">{</span>
+    <span class="hljs-attr">SignInPage</span>: <span class="hljs-string">props =&gt; (</span>
+      <span class="hljs-attr">&lt;SignInPage</span>
+        <span class="hljs-attr">{...props}</span>
+        <span class="hljs-attr">auto</span>
+        <span class="hljs-attr">provider</span>=<span class="hljs-string">{{</span>
+          <span class="hljs-attr">id</span>: <span class="hljs-string">'github-auth-provider',</span>
+          <span class="hljs-attr">title</span>: <span class="hljs-string">'GitHub',</span>
+          <span class="hljs-attr">message</span>: <span class="hljs-string">'Simple Backstage Application Login',</span>
+          <span class="hljs-attr">apiRef</span>: <span class="hljs-string">githubAuthApiRef,</span>
+        <span class="hljs-attr">}}</span>
+      <span class="hljs-attr">/&gt;</span>
+    <span class="hljs-attr">),</span>
+  <span class="hljs-attr">},</span>
+<span class="hljs-attr">});</span>
+</code></pre>
+<p>After finishing setting up one (or multiple) authentication providers defined
+above you can start the backend and frontend as before</p>
+<p>When the browser loads, you should be presented with a login page for GitHub.
+Login as usual with your GitHub account. If this is your first time, you will be
+asked to authorize and then are redirected to the catalog page if all is well.</p>
+<p>For more information you can clone
+<a href="https://github.com/RoadieHQ/backstage-auth-example">the backstage-auth-example repository</a>.
+Each authentication setting is set up there on a branch named after the
+authentication provider.</p>
+<h1><a class="anchor" aria-hidden="true" id="where-to-go-from-here"></a><a href="#where-to-go-from-here" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Where to go from here</h1>
+<blockquote>
+<p>You're probably eager to write your first custom plugin. Follow this next
+tutorial for an in-depth look at a custom GitHub repository browser plugin.
+<a href="/docs/tutorials/quickstart-app-plugin">Adding Custom Plugin to Existing Monorepo App</a>.</p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/tutorials/journey"><span class="arrow-prev">← </span><span>Future developer journey</span></a><a class="docs-next button" href="/docs/tutorials/quickstart-app-plugin"><span>Adding Custom Plugin to Existing Monorepo App</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a><a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://engineering.atspotify.com/">Spotify Engineering Blog</a><a href="https://developer.spotify.com/">Spotify for Developers</a><a href="https://github.com/backstage/backstage">GitHub</a><a class="github-button" href="https://github.com/backstage/backstage" data-icon="octicon-star" data-count-href="/backstage/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><p style="text-align:center"><a href="https://spotify.github.io">Made with ❤️  at Spotify</a></p><p class="copyright">Copyright © 2021 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '8d115c9875ba0f4feaee95bab55a1645',
+                indexName: 'backstage',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

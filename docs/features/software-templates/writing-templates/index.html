@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Writing Templates · Backstage Service Catalog and Developer Platform</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Details around creating your own custom Software Templates"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Writing Templates · Backstage Service Catalog and Developer Platform"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="Details around creating your own custom Software Templates"/><meta property="og:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Service Catalog and Developer Platform Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Service Catalog and Developer Platform Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-163836834-5', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://unpkg.com/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script><script type="text/javascript" src="/js/medium-zoom.js"></script><script type="text/javascript" src="/js/dismissable-banner.js"></script><script type="text/javascript" src="/js/scroll-nav-to-view-in-docs.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage Service Catalog and Developer Platform</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/backstage/backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/plugins" target="_self">Plugins</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Software Templates</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/vision">Vision</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/background">The Spotify Story</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/adopting">Strategies for adopting</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/stability-index">Stability Index</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/logos">Logo assets</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/running-backstage-locally">Running Backstage Locally</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Deployment</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-helm">Kubernetes and Helm</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-other">Other</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/getting-started/contributors">Contributors</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CLI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/cli/">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/cli/commands">Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Core Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/configuration">Configuration</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/configuration">Catalog Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/references">Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-annotations">Well-known Annotations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-relations">Well-known Relations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/features/software-templates/writing-templates">Writing Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/builtin-actions">Builtin actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-custom-actions">Writing Custom Actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/template-legacy">Writing Templates (Legacy)</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backstage Search</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/search/search-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/search/architecture">Search Architecture</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TechDocs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/architecture">TechDocs Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuration">TechDocs Configuration Options</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/using-cloud-storage">Using Cloud Storage for TechDocs generated files</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuring-ci-cd">Configuring CI/CD to generate and publish TechDocs sites</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/how-to-guides">&quot;HOW TO&quot; guides</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Integrations<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">GitHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/github/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">LDAP</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/ldap/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Google Analytics</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/google-analytics/installation">Installation</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro to plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/integrating-plugin-into-service-catalog">Integrate into the Service Catalog</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/composability">Composability System Migration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call Existing API</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/github-apps">GitHub Apps for Backend Authentication</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/add-to-marketplace">Add to Marketplace</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/observability">Observability</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">User Authentication and Authorization in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend-classes">Auth backend classes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">reference/utility-apis/README</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/journey">Future developer journey</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-auth">Monorepo App Setup With Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-plugin">Adding Custom Plugin to Existing Monorepo App</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001: Architecture Decision Record (ADR) log</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002: Default Software Catalog File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003: Avoid Default Exports and Prefer Named Exports</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004: Module Export Structure</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005: Catalog Core Entities</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006: Avoid React.FC and React.SFC</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007: Use MSW to mock http requests</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008: Default Catalog File Name</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr009">ADR009: Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr010">ADR010: Use the Luxon Date Library</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr011">ADR011: Plugin Package Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/support/support">Support and community</a></li><li class="navListItem"><a class="navItem" href="/docs/support/project-structure">Backstage Project Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Glossary<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/glossary">Backstage Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/backstage/backstage/edit/master/docs/features/software-templates/writing-templates.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Writing Templates</h1></header><article><div><span><p>Templates are stored in the <strong>Service Catalog</strong> under a kind <code>Template</code>. You can
+create your own templates with a small <code>yaml</code> definition which describes the
+template and it's metadata, along with some input variables that your template
+will need, and then a list of actions which are then executed by the scaffolding
+service.</p>
+<p>Let's take a look at a simple example:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-comment"># Notice the v1beta2 version</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1beta2</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Template</span>
+<span class="hljs-comment"># some metadata about the template itself</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">v1beta2-demo</span>
+  <span class="hljs-attr">title:</span> <span class="hljs-string">Test</span> <span class="hljs-string">Action</span> <span class="hljs-string">template</span>
+  <span class="hljs-attr">description:</span> <span class="hljs-string">scaffolder</span> <span class="hljs-string">v1beta2</span> <span class="hljs-string">template</span> <span class="hljs-string">demo</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">owner:</span> <span class="hljs-string">backstage/techdocs-core</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">service</span>
+
+  <span class="hljs-comment"># these are the steps which are rendered in the frontend with the form input</span>
+  <span class="hljs-attr">parameters:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">title:</span> <span class="hljs-string">Fill</span> <span class="hljs-string">in</span> <span class="hljs-string">some</span> <span class="hljs-string">steps</span>
+      <span class="hljs-attr">required:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">name</span>
+      <span class="hljs-attr">properties:</span>
+        <span class="hljs-attr">name:</span>
+          <span class="hljs-attr">title:</span> <span class="hljs-string">Name</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+          <span class="hljs-attr">description:</span> <span class="hljs-string">Unique</span> <span class="hljs-string">name</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">component</span>
+          <span class="hljs-attr">ui:autofocus:</span> <span class="hljs-literal">true</span>
+          <span class="hljs-attr">ui:options:</span>
+            <span class="hljs-attr">rows:</span> <span class="hljs-number">5</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">title:</span> <span class="hljs-string">Choose</span> <span class="hljs-string">a</span> <span class="hljs-string">location</span>
+      <span class="hljs-attr">required:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">repoUrl</span>
+      <span class="hljs-attr">properties:</span>
+        <span class="hljs-attr">repoUrl:</span>
+          <span class="hljs-attr">title:</span> <span class="hljs-string">Repository</span> <span class="hljs-string">Location</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+          <span class="hljs-attr">ui:field:</span> <span class="hljs-string">RepoUrlPicker</span>
+          <span class="hljs-attr">ui:options:</span>
+            <span class="hljs-attr">allowedHosts:</span>
+              <span class="hljs-bullet">-</span> <span class="hljs-string">github.com</span>
+
+  <span class="hljs-comment"># here's the steps that are executed in series in the scaffolder backend</span>
+  <span class="hljs-attr">steps:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">id:</span> <span class="hljs-string">fetch-base</span>
+      <span class="hljs-attr">name:</span> <span class="hljs-string">Fetch</span> <span class="hljs-string">Base</span>
+      <span class="hljs-attr">action:</span> <span class="hljs-string">fetch:cookiecutter</span>
+      <span class="hljs-attr">input:</span>
+        <span class="hljs-attr">url:</span> <span class="hljs-string">./template</span>
+        <span class="hljs-attr">values:</span>
+          <span class="hljs-attr">name:</span> <span class="hljs-string">'<span class="hljs-template-variable">{{ parameters.name }}</span>'</span>
+
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">id:</span> <span class="hljs-string">fetch-docs</span>
+      <span class="hljs-attr">name:</span> <span class="hljs-string">Fetch</span> <span class="hljs-string">Docs</span>
+      <span class="hljs-attr">action:</span> <span class="hljs-string">fetch:plain</span>
+      <span class="hljs-attr">input:</span>
+        <span class="hljs-attr">targetPath:</span> <span class="hljs-string">./community</span>
+        <span class="hljs-attr">url:</span> <span class="hljs-string">https://github.com/backstage/community/tree/main/backstage-community-sessions</span>
+
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">id:</span> <span class="hljs-string">publish</span>
+      <span class="hljs-attr">name:</span> <span class="hljs-string">Publish</span>
+      <span class="hljs-attr">action:</span> <span class="hljs-string">publish:github</span>
+      <span class="hljs-attr">input:</span>
+        <span class="hljs-attr">allowedHosts:</span> <span class="hljs-string">['github.com']</span>
+        <span class="hljs-attr">description:</span> <span class="hljs-string">'This is <span class="hljs-template-variable">{{ parameters.name }}</span>'</span>
+        <span class="hljs-attr">repoUrl:</span> <span class="hljs-string">'<span class="hljs-template-variable">{{ parameters.repoUrl }}</span>'</span>
+
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">id:</span> <span class="hljs-string">register</span>
+      <span class="hljs-attr">name:</span> <span class="hljs-string">Register</span>
+      <span class="hljs-attr">action:</span> <span class="hljs-string">catalog:register</span>
+      <span class="hljs-attr">input:</span>
+        <span class="hljs-attr">repoContentsUrl:</span> <span class="hljs-string">'<span class="hljs-template-variable">{{ steps.publish.output.repoContentsUrl }}</span>'</span>
+        <span class="hljs-attr">catalogInfoPath:</span> <span class="hljs-string">'/catalog-info.yaml'</span>
+
+  <span class="hljs-comment"># some outputs which are saved along with the job for use in the frontend</span>
+  <span class="hljs-attr">output:</span>
+    <span class="hljs-attr">remoteUrl:</span> <span class="hljs-string">'<span class="hljs-template-variable">{{ steps.publish.output.remoteUrl }}</span>'</span>
+    <span class="hljs-attr">entityRef:</span> <span class="hljs-string">'<span class="hljs-template-variable">{{ steps.register.output.entityRef }}</span>'</span>
+</code></pre>
+<p>Let's dive in an pick apart what each of these sections do and what they are.</p>
+<h3><a class="anchor" aria-hidden="true" id="specparameters---formstep--formstep"></a><a href="#specparameters---formstep--formstep" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.parameters</code> - <code>FormStep | FormStep[]</code></h3>
+<p>These <code>parameters</code> are template variables which can be modified in the frontend
+as a sequence. It can either be one <code>Step</code> if you just want one big list of
+different fields in the frontend, or it can be broken up into multiple different
+steps which would be rendered as different steps in the scaffolder plugin
+frontend.</p>
+<p>Each <code>Step</code> is <code>JSONSchema</code> with some extra goodies for styling what it might
+look like in the frontend. For these steps we rely very heavily on this library:
+<a href="https://github.com/rjsf-team/react-jsonschema-form">https://github.com/rjsf-team/react-jsonschema-form</a>. They have some great docs
+too here: <a href="https://react-jsonschema-form.readthedocs.io/">https://react-jsonschema-form.readthedocs.io/</a> and a playground where
+you can play around with some examples here
+<a href="https://rjsf-team.github.io/react-jsonschema-form">https://rjsf-team.github.io/react-jsonschema-form</a>.</p>
+<p>There's another option for that library called <code>uiSchema</code> which we've taken
+advantage of, and we've merged it with the existing <code>JSONSchema</code> that you
+provide to the library. These are the little <code>ui:*</code> properties that you can see
+in the step definitions.</p>
+<p>For example if we take the <strong>simple</strong> example from the playground it looks like
+this:</p>
+<pre><code class="hljs css language-json"><span class="hljs-comment">// jsonSchema:</span>
+{
+  <span class="hljs-attr">"title"</span>: <span class="hljs-string">"A registration form"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"A simple form example."</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"object"</span>,
+  <span class="hljs-attr">"required"</span>: [
+    <span class="hljs-string">"firstName"</span>,
+    <span class="hljs-string">"lastName"</span>
+  ],
+  <span class="hljs-attr">"properties"</span>: {
+    <span class="hljs-attr">"firstName"</span>: {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"First name"</span>,
+      <span class="hljs-attr">"default"</span>: <span class="hljs-string">"Chuck"</span>
+    },
+    <span class="hljs-attr">"lastName"</span>: {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Last name"</span>
+    },
+    <span class="hljs-attr">"telephone"</span>: {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Telephone"</span>,
+      <span class="hljs-attr">"minLength"</span>: <span class="hljs-number">10</span>
+    }
+  }
+}
+
+<span class="hljs-comment">// uiSchema:</span>
+{
+  <span class="hljs-attr">"firstName"</span>: {
+    <span class="hljs-attr">"ui:autofocus"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"ui:emptyValue"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"ui:autocomplete"</span>: <span class="hljs-string">"family-name"</span>
+  },
+  <span class="hljs-attr">"lastName"</span>: {
+    <span class="hljs-attr">"ui:emptyValue"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"ui:autocomplete"</span>: <span class="hljs-string">"given-name"</span>
+  },
+  <span class="hljs-attr">"telephone"</span>: {
+    <span class="hljs-attr">"ui:options"</span>: {
+      <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"tel"</span>
+    }
+  }
+}
+</code></pre>
+<p>It would look something like the following in a template:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1beta2</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Template</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">v1beta2-demo</span>
+  <span class="hljs-attr">title:</span> <span class="hljs-string">Test</span> <span class="hljs-string">Action</span> <span class="hljs-string">template</span>
+  <span class="hljs-attr">description:</span> <span class="hljs-string">scaffolder</span> <span class="hljs-string">v1beta2</span> <span class="hljs-string">template</span> <span class="hljs-string">demo</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">owner:</span> <span class="hljs-string">backstage/techdocs-core</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">service</span>
+
+  <span class="hljs-attr">parameters:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">title:</span> <span class="hljs-string">A</span> <span class="hljs-string">registration</span> <span class="hljs-string">form</span>
+      <span class="hljs-attr">description:</span> <span class="hljs-string">A</span> <span class="hljs-string">simple</span> <span class="hljs-string">form</span> <span class="hljs-string">example.</span>
+      <span class="hljs-attr">type:</span> <span class="hljs-string">object</span>
+      <span class="hljs-attr">required:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">firstName</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">lastName</span>
+      <span class="hljs-attr">properties:</span>
+        <span class="hljs-attr">firstName:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+          <span class="hljs-attr">title:</span> <span class="hljs-string">First</span> <span class="hljs-string">name</span>
+          <span class="hljs-attr">default:</span> <span class="hljs-string">Chuck</span>
+          <span class="hljs-attr">ui:autofocus:</span> <span class="hljs-literal">true</span>
+          <span class="hljs-attr">ui:emptyValue:</span> <span class="hljs-string">''</span>
+          <span class="hljs-attr">ui:autocomplete:</span> <span class="hljs-string">family-name</span>
+        <span class="hljs-attr">lastName:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+          <span class="hljs-attr">title:</span> <span class="hljs-string">Last</span> <span class="hljs-string">name</span>
+          <span class="hljs-attr">ui:emptyValue:</span> <span class="hljs-string">''</span>
+          <span class="hljs-attr">ui:autocomplete:</span> <span class="hljs-string">given-name</span>
+        <span class="hljs-attr">telephone:</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+          <span class="hljs-attr">title:</span> <span class="hljs-string">Telephone</span>
+          <span class="hljs-attr">minLength:</span> <span class="hljs-number">10</span>
+          <span class="hljs-attr">ui:options:</span>
+            <span class="hljs-attr">inputType:</span> <span class="hljs-string">tel</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="the-repository-picker"></a><a href="#the-repository-picker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Repository Picker</h4>
+<p>So in order to make working with repository providers easier, we've built a
+custom picker that can be used by overriding the <code>ui:field</code> option in the
+<code>uiSchema</code> for a <code>string</code> field. Instead of displaying a text input block it
+will render our custom component that we've built which makes it easy to select
+a repository provider, and insert a project or owner, and repository name.</p>
+<p>You can see it in the above full example which is a separate step and it looks a
+little like this:</p>
+<pre><code class="hljs css language-yaml">   <span class="hljs-bullet">-</span> <span class="hljs-attr">title:</span> <span class="hljs-string">Choose</span> <span class="hljs-string">a</span> <span class="hljs-string">location</span>
+      <span class="hljs-attr">required:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">repoUrl</span>
+      <span class="hljs-attr">properties:</span>
+        <span class="hljs-attr">repoUrl:</span>
+          <span class="hljs-attr">title:</span> <span class="hljs-string">Repository</span> <span class="hljs-string">Location</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+          <span class="hljs-attr">ui:field:</span> <span class="hljs-string">RepoUrlPicker</span>
+          <span class="hljs-attr">ui:options:</span>
+            <span class="hljs-attr">allowedHosts:</span>
+              <span class="hljs-bullet">-</span> <span class="hljs-string">github.com</span>
+</code></pre>
+<p>The <code>allowedHosts</code> part should be set to where you wish to enable this template
+to publish to. And it can be any host that is listed in your <code>integrations</code>
+config in <code>app-config.yaml</code>.</p>
+<p>The <code>RepoUrlPicker</code> is a custom field that we provide part of the
+<code>plugin-scaffolder</code>. It's currently not possible to create your own fields yet,
+but contributions are welcome! :)</p>
+<h3><a class="anchor" aria-hidden="true" id="specsteps---action"></a><a href="#specsteps---action" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.steps</code> - <code>Action[]</code></h3>
+<p>The <code>steps</code> is an array of the things that you want to happen part of this
+template. These follow the same standard format:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">id:</span> <span class="hljs-string">fetch-base</span> <span class="hljs-comment"># A unique id for the step</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">Fetch</span> <span class="hljs-string">Base</span> <span class="hljs-comment"># A title displayed in the frontend</span>
+  <span class="hljs-attr">action:</span> <span class="hljs-string">fetch:cookiecutter</span> <span class="hljs-comment"># an action to call</span>
+  <span class="hljs-attr">input:</span> <span class="hljs-comment"># input that is passed as arguments to the action handler</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">./template</span>
+    <span class="hljs-attr">values:</span>
+      <span class="hljs-attr">name:</span> <span class="hljs-string">'<span class="hljs-template-variable">{{ parameters.name }}</span>'</span>
+</code></pre>
+<p>By default we ship some built in actions that you can take a look at
+<a href="/docs/features/software-templates/builtin-actions">here</a>, or you can create your own custom actions by
+looking at the docs <a href="/docs/features/software-templates/writing-custom-actions">here</a></p>
+<h3><a class="anchor" aria-hidden="true" id="outputs"></a><a href="#outputs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Outputs</h3>
+<p>Each individual step can output some variables that can be used in the
+scaffolder frontend for after the job is finished. This is useful for things
+like linking to the entity that has been created with the backend, and also
+linking to the created repository.</p>
+<p>The main two that are used are the following:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">output:</span>
+  <span class="hljs-attr">remoteUrl:</span> <span class="hljs-string">'<span class="hljs-template-variable">{{ steps.publish.output.remoteUrl }}</span>'</span> <span class="hljs-comment"># link to the remote repository</span>
+  <span class="hljs-attr">entityRef:</span> <span class="hljs-string">'<span class="hljs-template-variable">{{ steps.register.output.entityRef }}</span>'</span> <span class="hljs-comment"># link to the entitiy that has been ingested to the catalog</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="the-templating-syntax"></a><a href="#the-templating-syntax" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The templating syntax</h3>
+<p>You might have noticed in the examples that there are <code>{{ }}</code>, and these are a
+<code>handlebars</code> templates for linking and glueing all these different parts of
+<code>yaml</code> together. All the form inputs from the <code>parameters</code> section, when passed
+to the steps will be available by using the template syntax
+<code>{{ parameters.something }}</code>. This is great for passing the values from the form
+into different steps and reusing these input variables.</p>
+<p>As you can see above in the <code>Outputs</code> section, <code>actions</code> and <code>steps</code> can also
+output things. So you can grab that output by using
+<code>steps.$stepId.output.$property</code>.</p>
+<p>You can read more about all the <code>inputs</code> and <code>outputs</code> defined in the actions in
+code part of the <code>JSONSchema</code> or you can read more about our built in ones
+<a href="/docs/features/software-templates/builtin-actions">here</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/features/software-templates/adding-templates"><span class="arrow-prev">← </span><span>Adding your own Templates</span></a><a class="docs-next button" href="/docs/features/software-templates/builtin-actions"><span>Builtin actions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a><a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://engineering.atspotify.com/">Spotify Engineering Blog</a><a href="https://developer.spotify.com/">Spotify for Developers</a><a href="https://github.com/backstage/backstage">GitHub</a><a class="github-button" href="https://github.com/backstage/backstage" data-icon="octicon-star" data-count-href="/backstage/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><p style="text-align:center"><a href="https://spotify.github.io">Made with ❤️  at Spotify</a></p><p class="copyright">Copyright © 2021 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '8d115c9875ba0f4feaee95bab55a1645',
+                indexName: 'backstage',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Commands · Backstage Service Catalog and Developer Platform</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Descriptions of all commands available in the CLI."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Commands · Backstage Service Catalog and Developer Platform"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="Descriptions of all commands available in the CLI."/><meta property="og:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Service Catalog and Developer Platform Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Service Catalog and Developer Platform Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-163836834-5', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://unpkg.com/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script><script type="text/javascript" src="/js/medium-zoom.js"></script><script type="text/javascript" src="/js/dismissable-banner.js"></script><script type="text/javascript" src="/js/scroll-nav-to-view-in-docs.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage Service Catalog and Developer Platform</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/backstage/backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/plugins" target="_self">Plugins</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>CLI</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/vision">Vision</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/background">The Spotify Story</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/adopting">Strategies for adopting</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/stability-index">Stability Index</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/logos">Logo assets</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/running-backstage-locally">Running Backstage Locally</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Deployment</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-helm">Kubernetes and Helm</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-other">Other</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/getting-started/contributors">Contributors</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CLI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/cli/">Overview</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/cli/commands">Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Core Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/configuration">Configuration</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/configuration">Catalog Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/references">Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-annotations">Well-known Annotations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-relations">Well-known Relations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-templates">Writing Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/builtin-actions">Builtin actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-custom-actions">Writing Custom Actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/template-legacy">Writing Templates (Legacy)</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backstage Search</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/search/search-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/search/architecture">Search Architecture</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TechDocs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/architecture">TechDocs Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuration">TechDocs Configuration Options</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/using-cloud-storage">Using Cloud Storage for TechDocs generated files</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuring-ci-cd">Configuring CI/CD to generate and publish TechDocs sites</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/how-to-guides">&quot;HOW TO&quot; guides</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Integrations<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">GitHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/github/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">LDAP</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/ldap/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Google Analytics</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/google-analytics/installation">Installation</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro to plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/integrating-plugin-into-service-catalog">Integrate into the Service Catalog</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/composability">Composability System Migration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call Existing API</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/github-apps">GitHub Apps for Backend Authentication</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/add-to-marketplace">Add to Marketplace</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/observability">Observability</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">User Authentication and Authorization in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend-classes">Auth backend classes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">reference/utility-apis/README</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/journey">Future developer journey</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-auth">Monorepo App Setup With Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-plugin">Adding Custom Plugin to Existing Monorepo App</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001: Architecture Decision Record (ADR) log</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002: Default Software Catalog File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003: Avoid Default Exports and Prefer Named Exports</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004: Module Export Structure</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005: Catalog Core Entities</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006: Avoid React.FC and React.SFC</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007: Use MSW to mock http requests</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008: Default Catalog File Name</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr009">ADR009: Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr010">ADR010: Use the Luxon Date Library</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr011">ADR011: Plugin Package Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/support/support">Support and community</a></li><li class="navListItem"><a class="navItem" href="/docs/support/project-structure">Backstage Project Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Glossary<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/glossary">Backstage Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/backstage/backstage/edit/master/docs/cli/commands.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Commands</h1></header><article><div><span><p>This page lists all commands provided by the Backstage CLI, what they're for,
+and where to use them.</p>
+<p>The documentation for each command begins with specifying its scope, this
+indicates where the command should be used by selecting from the following list:</p>
+<ul>
+<li><code>app</code> - A frontend app package, such as <code>packages/app</code>.</li>
+<li><code>backend</code> - A backend package, such as <code>packages/backend</code>.</li>
+<li><code>frontend-plugin</code> - A frontend plugin package.</li>
+<li><code>backend-plugin</code> - A backend plugin package.</li>
+<li><code>root</code> - The monorepo root.</li>
+<li><code>any</code> - Any kind of package, but not the repo root.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="help"></a><a href="#help" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>help</h2>
+<p>This command displays a help summary or detailed help screens for each command.
+Below is a cleaned up output of <code>yarn backstage-cli --help</code>.</p>
+<pre><code class="hljs css language-text">app:build                Build an app for a production release
+app:serve                Serve an app for local development
+
+backend:build            Build a backend plugin
+backend:bundle           Bundle the backend into a deployment archive
+backend:build-image      Bundles the package into a docker image
+backend:dev              Start local development server with HMR for the backend
+
+plugin:build             Build a plugin
+plugin:diff              Diff an existing plugin with the creation template
+plugin:serve             Serves the dev/ folder of a plugin
+
+build                    Build a package for publishing
+build-workspace          Builds a temporary dist workspace from the provided packages
+lint                     Lint a package
+test                     Run tests, forwarding args to Jest, defaulting to watch mode
+clean                    Delete cache directories
+
+create-plugin            Creates a new plugin in the current repository
+remove-plugin            Removes plugin in the current repository
+
+config:print             Print the app configuration for the current package
+config:check             Validate that the given configuration loads and matches schema
+config:schema            Dump the app configuration schema
+
+versions:bump            Bump Backstage packages to the latest versions
+versions:check           Check Backstage package versioning
+
+prepack                  Prepares a package for packaging before publishing
+postpack                 Restores the changes made by the prepack command
+
+help [command]           display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="appbuild"></a><a href="#appbuild" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>app:build</h2>
+<p>Scope: <code>app</code></p>
+<p>Builds a bundle of static content from the app, which can then be served via any
+static web server such as <code>nginx</code>, or via the
+<a href="https://www.npmjs.com/package/@backstage/plugin-app-backend"><code>app-backend</code></a>
+plugin directly from a Backstage backend instance.</p>
+<p>The command also reads and injects static configuration into the bundle. It is
+important to note that when deploying using your own static content hosting
+solution, this will be the final configuration used in the frontend unless you
+for example hook in configuration loading from the backend. When using the
+<code>nginx</code> based Dockerfile in this repo along with its included run script,
+<code>APP_CONFIG_</code> environment variables will be injected into the frontend, and when
+serving using the <code>app-backend</code> plugin, the configuration is completely injected
+from the backend and the configuration at the time of calling this command will
+not be used.</p>
+<p>Note that even when injecting configuration at runtime, it is not possible to
+change the base path of the app. For example, if you at build time have
+<code>app.baseUrl</code> set to <code>http://dev-app.com/my-app</code>, you can change that to
+<code>https://prod-app.com/my-app</code>, but not to <code>https://prod-app.com</code>, as that would
+change the path.</p>
+<p>During the build, the following variables are set:</p>
+<pre><code class="hljs css language-java">process.env.NODE_ENV = <span class="hljs-string">'production'</span>;
+process.env.BUILD_INFO = {
+  cliVersion: <span class="hljs-string">'0.4.0'</span>, <span class="hljs-comment">// The version of the CLI package</span>
+  gitVersion: <span class="hljs-string">'v0.4.0-86-ge54815618'</span>, <span class="hljs-comment">// output of `git describe --always`</span>
+  packageVersion: <span class="hljs-string">'1.0.5'</span>, <span class="hljs-comment">// The version of the app package itself</span>
+  timestamp: <span class="hljs-number">1678900000000</span>, <span class="hljs-comment">// Date.now() when the build started</span>
+  commit: <span class="hljs-string">'e548156182a973ed4b459e18533afc22c85ffff8'</span>, <span class="hljs-comment">// output of `git rev-parse HEAD`</span>
+};
+</code></pre>
+<p>Some CI environments do not properly report correct resource limits, potentially
+leading to errors such as <code>ENOMEM</code> during compilation. If you run into this
+issue you can limit the parallelization of the build process by setting the
+environment variable <code>BACKSTAGE_CLI_BUILD_PARALLEL</code>, which is forwarded to the
+<a href="https://github.com/webpack-contrib/terser-webpack-plugin#parallel"><code>terser-webpack-plugin</code></a>.
+You can set it to <code>false</code> or <code>1</code> to completely disable parallelization, but
+usually a low value such as <code>2</code> is enough.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli app:build
+
+Options:
+  --stats          Write bundle stats to output directory
+  --config &lt;path&gt;  Config files to load instead of app-config.yaml (default: [])
+  -h, --help       display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="appserve"></a><a href="#appserve" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>app:serve</h2>
+<p>Scope: <code>app</code></p>
+<p>Serve an app for local development. This starts up a local development server,
+using a bundling configuration that is quite similar to that of the <code>app:build</code>
+command, but with development features such as React Hot Module Replacement,
+faster sourcemaps, no minification, etc.</p>
+<p>The static configuration is injected into the frontend, but it does not support
+watching, meaning that changes in for example <code>app-config.yaml</code> are not
+reflected until the serve process is restarted.</p>
+<p>During the build, the following variables are set:</p>
+<pre><code class="hljs css language-java">process.env.NODE_ENV = <span class="hljs-string">'development'</span>;
+process.env.BUILD_INFO = { <span class="hljs-comment">/* See app:build */</span> };
+</code></pre>
+<p>The server listening configuration is controlled through the static
+configuration. The <code>app.baseUrl</code> determines the listening host and port, as well
+as whether HTTPS is used or not. It is also possible to override the listening
+host and port if needed by setting <code>app.listen.host</code> and <code>app.listen.port</code>.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli app:serve [options]
+
+Options:
+  --check          Enable type checking and linting
+  --config &lt;path&gt;  Config files to load instead of app-config.yaml (default: [])
+  -h, --help       display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="backendbuild"></a><a href="#backendbuild" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>backend:build</h2>
+<p>Scope: <code>backend-plugin</code></p>
+<p>This builds a backend package for publishing and use in production. The build
+output is written to <code>dist/</code>. Be sure to list any additional file that the
+package depends on at runtime in the <code>&quot;files&quot;</code> field inside <code>package.json</code>, a
+common example being the <code>migrations</code> directory.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli backend:build [options]
+
+Options:
+  -h, --help  display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="backendbundle"></a><a href="#backendbundle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>backend:bundle</h2>
+<p>Scope: <code>backend</code></p>
+<p>Bundle the backend and all of its local dependencies into a deployment archive.
+The archive is written to <code>dist/bundle.tar.gz</code>, and contains the packaged
+version of all dependencies of the target package, along with the target package
+itself. The layout of the packages in the archive is the same as the directory
+layout in the target monorepo, and the bundle also contains the root
+<code>package.json</code> and <code>yarn.lock</code>.</p>
+<p>To use the bundle, extract it into a target directory, run
+<code>yarn install --production</code>, and then start the target backend package using for
+example <code>node package/backend</code>.</p>
+<p>The <code>dist/bundle.tar.gz</code> is accompanied by a <code>dist/skeleton.tar.gz</code>, which has
+the same layout, but only contains <code>package.json</code> files and <code>yarn.lock</code>. This
+can be used to run a <code>yarn install</code> in environments that will benefit from the
+caching that this enables, such as Docker image builds. To use the skeleton
+archive, simply extract it first, run install, and then extract the main bundle.</p>
+<p>The following is an example of a <code>Dockerfile</code> that can be used to package the
+output of <code>backstage-cli backend:bundle</code> into an image:</p>
+<pre><code class="hljs css language-Dockerfile"><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">14</span>-buster-slim
+<span class="hljs-keyword">WORKDIR</span><span class="bash"> /app</span>
+
+<span class="hljs-keyword">ADD</span><span class="bash"> yarn.lock package.json packages/backend/dist/skeleton.tar.gz ./</span>
+<span class="hljs-keyword">RUN</span><span class="bash"> yarn install --frozen-lockfile --production --network-timeout 300000 &amp;&amp; rm -rf <span class="hljs-string">"<span class="hljs-variable">$(yarn cache dir)</span>"</span></span>
+
+<span class="hljs-keyword">ADD</span><span class="bash"> packages/backend/dist/bundle.tar.gz app-config.yaml ./</span>
+
+<span class="hljs-keyword">CMD</span><span class="bash"> [<span class="hljs-string">"node"</span>, <span class="hljs-string">"packages/backend"</span>]</span>
+</code></pre>
+<pre><code class="hljs css language-text">Usage: backstage-cli backend:bundle [options]
+
+Bundle the backend into a deployment archive
+
+Options:
+  --build-dependencies  Build all local package dependencies before bundling the backend
+  -h, --help            display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="backendbuild-image"></a><a href="#backendbuild-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>backend:build-image</h2>
+<p>Scope: <code>backend</code></p>
+<p>Builds a Docker image of the backend package, forwarding all unknown options to
+<code>docker image build</code>. For example:</p>
+<pre><code class="hljs css language-bash">yarn backstage-cli backend:build-image --build --tag my-backend-image
+</code></pre>
+<p>The image is built using the backend package along with all of its local package
+dependencies. It expects to find a <code>Dockerfile</code> at the root of the backend
+package, which will be used during the build.</p>
+<p>The Dockerfile is <strong>NOT</strong> executed within the package or repo itself. Because
+the packages in the repo itself are configured for development instead of
+production use, the final Docker build happens in a separate temporary
+directory, to which the backend package and dependencies have been copied. Only
+files listed within the <code>&quot;files&quot;</code> field within each package's <code>package.json</code> are
+copied over, along with the root <code>package.json</code>, <code>yarn.lock</code>, and any
+<code>app-config.*.yaml</code> files.</p>
+<p>During the build a <code>skeleton.tar</code> file is created and put at the repo root. This
+file contains the <code>package.json</code> of each included package, which together with
+the root <code>package.json</code> and <code>yarn.lock</code> can be used to run a cached
+<code>yarn install</code> before the full production builds of all the packages are copied
+over, providing a significant speedup if Docker build layer caching available.</p>
+<p>This command is experimental and we hope to be able to replace it with one that
+is less integrated directly with Docker, and also supports multi-stage Docker
+builds. It is possible to replicate most of what this command does by manually
+building each package, and then use the <code>build-workspace</code> to create the
+temporary workspace, and finally copy over any additional files to the workspace
+and execute the Docker build within it.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli backend:build-image [options]
+
+Options:
+  --build                 Build packages before packing them into the image
+  --backstage-cli-help    display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="backenddev"></a><a href="#backenddev" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>backend:dev</h2>
+<p>Scope: <code>backend</code>, <code>backend-plugin</code></p>
+<p>Starts a backend package in development mode, with watch mode enabled for all
+local dependencies.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli backend:dev [options]
+
+Options:
+  --check          Enable type checking and linting
+  --inspect        Enable debugger
+  --config &lt;path&gt;  Config files to load instead of app-config.yaml (default: [])
+  -h, --help       display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="create-plugin"></a><a href="#create-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>create-plugin</h2>
+<p>Scope: <code>root</code></p>
+<p>Creates a new plugin within the repository. This command is typically wrapped up
+in the root <code>package.json</code> to be executed with <code>yarn create-plugin</code>, using
+options that are appropriate for the organization that owns the app repo. A
+recommended scope for internal packages is <code>@internal</code>.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli create-plugin [options]
+
+Options:
+  --backend             Create plugin with the backend dependencies as default
+  --scope &lt;scope&gt;       npm scope
+  --npm-registry &lt;URL&gt;  npm registry URL
+  --no-private          Public npm package
+  -h, --help            display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="remove-plugin"></a><a href="#remove-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>remove-plugin</h2>
+<p>Scope: <code>root</code></p>
+<p>A utility to remove a plugin from a repo, essentially undoing everything that
+was done by <code>create-plugin</code>.</p>
+<p>This is primarily intended as a utility for manual tests and end to end testing
+scripts.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli remove-plugin [options]
+
+Options:
+  -h, --help  display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="pluginbuild"></a><a href="#pluginbuild" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>plugin:build</h2>
+<p>Scope: <code>frontend-plugin</code></p>
+<p>Build a frontend plugin for publishing to a package registry. There is no need
+to run this command during development or even in CI unless the package is being
+published. The <code>app:bundle</code> command does not use the output for this command
+when bundling local package dependencies.</p>
+<p>The output is written to a <code>dist/</code> folder. It also outputs type declarations for
+the plugin, and therefore requires <code>yarn tsc</code> to have been run first. The input
+type declarations are expected to be found within <code>dist-types/</code> at the root of
+the monorepo.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli plugin:build [options]
+
+Options:
+  -h, --help  display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="pluginserve"></a><a href="#pluginserve" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>plugin:serve</h2>
+<p>Scope: <code>frontend-plugin</code></p>
+<p>Serves a frontend plugin by itself for isolated development. The serve task
+itself is essentially identical to <code>app:serve</code>, but the entrypoint is instead
+set to the <code>dev/</code> folder within the plugin.</p>
+<p>The <code>dev/</code> folder typically contains a small wrapper script that hooks up any
+necessary mock APIs or other things that are needed for the plugin to function.
+The <code>@backstage/dev-utils</code> package provides utilities to that end.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli plugin:serve [options]
+
+Options:
+  --check          Enable type checking and linting
+  --config &lt;path&gt;  Config files to load instead of app-config.yaml (default: [])
+  -h, --help       display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="plugindiff"></a><a href="#plugindiff" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>plugin:diff</h2>
+<p>Scope: <code>frontend-plugin</code></p>
+<p>Compares a frontend plugin to the <code>create-plugin</code> template, making sure that it
+hasn't diverged from the template and recommending updates when it has. A good
+practice is to run this command after updating the version of the CLI in a
+project.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli plugin:diff [options]
+
+Options:
+  --check     Fail if changes are required
+  --yes       Apply all changes
+  -h, --help  display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="build"></a><a href="#build" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>build</h2>
+<p>Scope: <code>any</code></p>
+<p>Build a single package for publishing, just like the <code>plugin:build</code> and
+<code>backend:build</code> commands. This command is intended for standalone packages that
+aren't plugins, and for example support building of isomorphic packages for
+usage in both the frontend and backend.</p>
+<p>For frontend packages you'll want to include <code>esm</code> output, and for backend
+packages <code>cjs</code>. Whether to include <code>types</code> depends on if you need type
+declarations for the package, and also requires <code>yarn tsc</code> to have been run
+first.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli build [options]
+
+Options:
+  --outputs &lt;formats&gt;  List of formats to output [types,cjs,esm]
+  -h, --help           display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="lint"></a><a href="#lint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>lint</h2>
+<p>Scope: <code>any</code></p>
+<p>Lint a package. In addition to the default <code>eslint</code> behavior, this command will
+include TypeScript files, treat warnings as errors, and default to linting the
+entire directory if no specific files are listed.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli lint [options]
+
+Options:
+  --format &lt;format&gt;  Lint report output format (default: "eslint-formatter-friendly")
+  --fix              Attempt to automatically fix violations
+  -h, --help         display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="test"></a><a href="#test" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>test</h2>
+<p>Scope: <code>any</code></p>
+<p>Run tests, forwarding all unknown options to Jest, and defaulting to watch mode.
+When executing the tests, <code>process.env.NODE_ENV</code> will be set to <code>&quot;test&quot;</code>.</p>
+<p>This command uses a default Jest configuration that is included in the CLI,
+which is set up with similar goals for speed, scale, and working within a
+monorepo. The configuration sets the <code>src</code> as the root directory, enforces the
+<code>.test.</code> infix for tests, and uses <code>src/setupTests.ts</code> as the test setup
+location.</p>
+<p>If needed, the configuration can be extended using a <code>&quot;jest&quot;</code> field in
+<code>package.json</code>, both within the target package and the monorepo root, with
+configuration in the target package taking precedence. Refer to the
+<a href="https://jestjs.io/docs/en/configuration">Jest configuration documentation</a> for
+a full list of configuration options.</p>
+<p>In addition to the Jest configuration there's an optional <code>transformModules</code>
+option, which is an array of module names to include in transformations.
+Normally modules inside <code>node_modules</code> are not transformed, but there are cases
+were published packages are not transpiled far enough to be usable by Jest, in
+which case you need to enable transform of them.</p>
+<p>Another way to override the Jest configuration is to place a <code>jest.config.js</code> or
+<code>jest.config.ts</code> file in the package root. As opposed to the <code>package.json</code> way
+of overriding config, this completely removes the base config, and so you need
+to set it up from scratch.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli test [options]
+
+Options:
+  --backstage-cli-help    display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configprint"></a><a href="#configprint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>config:print</h2>
+<p>Scope: <code>root</code></p>
+<p>Print the static configuration, defaulting to reading <code>app-config.yaml</code> in the
+repo root, using schema collected from all local packages in the repo.</p>
+<p>For example, to validate that a given configuration value is visible in the
+frontend when building the <code>my-app</code> package, you can use the following:</p>
+<pre><code class="hljs css language-bash">yarn backstage-cli config:<span class="hljs-built_in">print</span> --frontend --package my-app
+</code></pre>
+<pre><code class="hljs css language-text">Usage: backstage-cli config:print [options]
+
+Options:
+  --package &lt;name&gt;   Only load config schema that applies to the given package
+  --frontend         Print only the frontend configuration
+  --with-secrets     Include secrets in the printed configuration
+  --format &lt;format&gt;  Format to print the configuration in, either json or yaml [yaml]
+  --config &lt;path&gt;    Config files to load instead of app-config.yaml (default: [])
+  -h, --help         display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configcheck"></a><a href="#configcheck" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>config:check</h2>
+<p>Scope: <code>root</code></p>
+<p>Validate that static configuration loads and matches schema, defaulting to
+reading <code>app-config.yaml</code> in the repo root and using schema collected from all
+local packages in the repo.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli config:check [options]
+
+Options:
+  --package &lt;name&gt;  Only load config schema that applies to the given package
+  --config &lt;path&gt;   Config files to load instead of app-config.yaml (default: [])
+  -h, --help        display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configschema"></a><a href="#configschema" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>config:schema</h2>
+<p>Scope: <code>root</code></p>
+<p>Dump the configuration schema that was collected from all local packages in the
+repo.</p>
+<p>Note: when run by <code>yarn</code>, supply the yarn option <code>--silent</code> if you are using the
+output in a command line pipe to avoid non schema output in the pipeline.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli config:schema [options]
+
+Print configuration schema
+
+Options:
+  --package &lt;name&gt;   Only output config schema that applies to the given package
+  --format &lt;format&gt;  Format to print the schema in, either json or yaml [yaml]
+  -h, --help         display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="versionsbump"></a><a href="#versionsbump" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>versions:bump</h2>
+<p>Scope: <code>root</code></p>
+<p>Bump all <code>@backstage</code> packages to the latest versions. This checks for updates
+in the package registry, and will update entries both in <code>yarn.lock</code> and
+<code>package.json</code> files when necessary.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli versions:bump [options]
+
+Options:
+  -h, --help  display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="versionscheck"></a><a href="#versionscheck" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>versions:check</h2>
+<p>Scope: <code>root</code></p>
+<p>Validate <code>@backstage</code> dependencies within the repo, making sure that there are
+no duplicates of packages that might lead to breakages. For example,
+<code>@backstage/core</code> must not be loaded in twice, so having two different versions
+of it installed will cause this command to exit with an error.</p>
+<p>By supplying the <code>--fix</code> flag the command will attempt to fix any conflict that
+can be resolved by editing <code>yarn.lock</code>, but will not attempt to search for
+remote updates or modify any <code>package.json</code> files.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli versions:check [options]
+
+Options:
+  --fix       Fix any auto-fixable versioning problems
+  -h, --help  display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="prepack"></a><a href="#prepack" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>prepack</h2>
+<p>Scope: <code>any</code></p>
+<p>This command should be added as <code>scripts.prepack</code> in all packages. It enables
+packaging- and publish-time overrides for fields inside <code>packages.json</code>.</p>
+<p>The checked in version of all packages in a Backstage monorepo are tailored for
+local development, and as such <code>main</code> and similar fields inside <code>package.json</code>
+point to development source, i.e. <code>src/index.ts</code>. Using this when publishing
+would lead to a broken package, since <code>src/</code> is not included in the published
+package and we instead need to point to files in the <code>dist/</code> directory. This
+command allows for those fields to be rewritten when needed, and does so by
+copying all fields within <code>publishConfig</code> to the top-level of each
+<code>package.json</code>, skipping <code>access</code>, <code>registry</code>, and <code>tag</code>.</p>
+<p>The need for this command may be removed in the future, as this exact method of
+overriding fields for publishing is already supported by some package managers.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli prepack [options]
+
+Options:
+  -h, --help  display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="postpack"></a><a href="#postpack" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>postpack</h2>
+<p>Scope: <code>any</code></p>
+<p>This should be added as <code>scripts.postpack</code> in all packages. It restores
+<code>package.json</code> to what it looked like before calling the <code>prepack</code> command.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli postpack [options]
+
+Options:
+  -h, --help  display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="clean"></a><a href="#clean" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>clean</h2>
+<p>Scope: <code>any</code></p>
+<p>Remove cache and output directories.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli clean [options]
+
+Options:
+  -h, --help  display help for command
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="build-workspace"></a><a href="#build-workspace" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>build-workspace</h2>
+<p>Scope: <code>any</code>, <code>root</code></p>
+<p>Builds a mirror of the workspace using the packaged production version of each
+package. This essentially calls <code>yarn pack</code> in each included package and unpacks
+the resulting archive in the target <code>workspace-dir</code>.</p>
+<pre><code class="hljs css language-text">Usage: backstage-cli build-workspace [options] &lt;workspace-dir&gt;
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/cli/index"><span class="arrow-prev">← </span><span>Overview</span></a><a class="docs-next button" href="/docs/features/kubernetes/overview"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#help">help</a></li><li><a href="#appbuild">app:build</a></li><li><a href="#appserve">app:serve</a></li><li><a href="#backendbuild">backend:build</a></li><li><a href="#backendbundle">backend:bundle</a></li><li><a href="#backendbuild-image">backend:build-image</a></li><li><a href="#backenddev">backend:dev</a></li><li><a href="#create-plugin">create-plugin</a></li><li><a href="#remove-plugin">remove-plugin</a></li><li><a href="#pluginbuild">plugin:build</a></li><li><a href="#pluginserve">plugin:serve</a></li><li><a href="#plugindiff">plugin:diff</a></li><li><a href="#build">build</a></li><li><a href="#lint">lint</a></li><li><a href="#test">test</a></li><li><a href="#configprint">config:print</a></li><li><a href="#configcheck">config:check</a></li><li><a href="#configschema">config:schema</a></li><li><a href="#versionsbump">versions:bump</a></li><li><a href="#versionscheck">versions:check</a></li><li><a href="#prepack">prepack</a></li><li><a href="#postpack">postpack</a></li><li><a href="#clean">clean</a></li><li><a href="#build-workspace">build-workspace</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a><a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://engineering.atspotify.com/">Spotify Engineering Blog</a><a href="https://developer.spotify.com/">Spotify for Developers</a><a href="https://github.com/backstage/backstage">GitHub</a><a class="github-button" href="https://github.com/backstage/backstage" data-icon="octicon-star" data-count-href="/backstage/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><p style="text-align:center"><a href="https://spotify.github.io">Made with ❤️  at Spotify</a></p><p class="copyright">Copyright © 2021 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '8d115c9875ba0f4feaee95bab55a1645',
+                indexName: 'backstage',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

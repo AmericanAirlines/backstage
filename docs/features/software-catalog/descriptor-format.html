@@ -1,12 +1,12 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Descriptor Format of Catalog Entities · Backstage</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This section describes the default data shape and semantics of catalog entities."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Descriptor Format of Catalog Entities · Backstage"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="This section describes the default data shape and semantics of catalog entities."/><meta property="og:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/img/logo-gradient-on-dark.svg"/><link rel="shortcut icon" href="/img/favicon.svg"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Blog RSS Feed"/><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Descriptor Format of Catalog Entities · Backstage Service Catalog and Developer Platform</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Documentation on Descriptor Format of Catalog Entities which describes the default data shape and semantics of catalog entities"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Descriptor Format of Catalog Entities · Backstage Service Catalog and Developer Platform"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="Documentation on Descriptor Format of Catalog Entities which describes the default data shape and semantics of catalog entities"/><meta property="og:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Service Catalog and Developer Platform Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Service Catalog and Developer Platform Blog RSS Feed"/><script>
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
               (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
               m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
               })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-              ga('create', 'UA-48912878-10', 'auto');
+              ga('create', 'UA-163836834-5', 'auto');
               ga('send', 'pageview');
-            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/spotify/backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/plugins" target="_self">Plugins</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Software Catalog</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-terminology">Architecture terminology</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/vision">Vision</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/background">The Spotify Story</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/adopting">Strategies for adopting</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Running Backstage Locally</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/development-environment">Development Environment</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Deployment</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-other">Other</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Core Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-index">Extending the Scaffolder</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-templater">Creating your own Templater</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-publisher">Create your own Publisher</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/extending/extending-preparer">Create your own Preparer</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Docs-like-code</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro to plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/integrating-plugin-into-service-catalog">Integrate into the Service Catalog</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call Existing API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/add-to-marketplace">Add to Marketplace</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">User Authentication and Authorization in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend-classes">Auth backend classes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">Utility API References</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-router">createPlugin - router</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/journey">Future developer journey</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/support">Support and community</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://unpkg.com/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script><script type="text/javascript" src="/js/medium-zoom.js"></script><script type="text/javascript" src="/js/dismissable-banner.js"></script><script type="text/javascript" src="/js/scroll-nav-to-view-in-docs.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage Service Catalog and Developer Platform</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/backstage/backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/plugins" target="_self">Plugins</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Software Catalog</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/vision">Vision</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/background">The Spotify Story</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/adopting">Strategies for adopting</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/stability-index">Stability Index</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/logos">Logo assets</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/running-backstage-locally">Running Backstage Locally</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Deployment</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-helm">Kubernetes and Helm</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/deployment-other">Other</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/getting-started/contributors">Contributors</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CLI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/cli/">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/cli/commands">Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Core Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/configuration">Configuration</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/configuration">Catalog Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/references">Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-annotations">Well-known Annotations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-relations">Well-known Relations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-templates">Writing Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/builtin-actions">Builtin actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-custom-actions">Writing Custom Actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/template-legacy">Writing Templates (Legacy)</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backstage Search</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/search/search-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/search/architecture">Search Architecture</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TechDocs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/architecture">TechDocs Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuration">TechDocs Configuration Options</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/using-cloud-storage">Using Cloud Storage for TechDocs generated files</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuring-ci-cd">Configuring CI/CD to generate and publish TechDocs sites</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/how-to-guides">&quot;HOW TO&quot; guides</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Integrations<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">GitHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/github/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">LDAP</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/ldap/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Google Analytics</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/google-analytics/installation">Installation</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro to plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/integrating-plugin-into-service-catalog">Integrate into the Service Catalog</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/composability">Composability System Migration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call Existing API</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/github-apps">GitHub Apps for Backend Authentication</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/add-to-marketplace">Add to Marketplace</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/observability">Observability</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">User Authentication and Authorization in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend-classes">Auth backend classes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">reference/utility-apis/README</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/journey">Future developer journey</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-auth">Monorepo App Setup With Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-plugin">Adding Custom Plugin to Existing Monorepo App</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001: Architecture Decision Record (ADR) log</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002: Default Software Catalog File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003: Avoid Default Exports and Prefer Named Exports</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004: Module Export Structure</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005: Catalog Core Entities</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006: Avoid React.FC and React.SFC</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007: Use MSW to mock http requests</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008: Default Catalog File Name</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr009">ADR009: Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr010">ADR010: Use the Luxon Date Library</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr011">ADR011: Plugin Package Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/support/support">Support and community</a></li><li class="navListItem"><a class="navItem" href="/docs/support/project-structure">Backstage Project Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Glossary<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/glossary">Backstage Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -62,20 +62,29 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/spotify/backstage/edit/master/docs/features/software-catalog/descriptor-format.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Descriptor Format of Catalog Entities</h1></header><article><div><span><p>This section describes the default data shape and semantics of catalog entities.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/backstage/backstage/edit/master/docs/features/software-catalog/descriptor-format.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Descriptor Format of Catalog Entities</h1></header><article><div><span><p>This section describes the default data shape and semantics of catalog entities.</p>
 <p>This both applies to objects given to and returned from the software catalog
 API, as well as to the descriptor files that the software catalog can ingest
 natively. In the API request/response cycle, a JSON representation is used,
 while the descriptor files are on YAML format to be more easily maintainable by
-humans. However, the structure and semantics is the same in both cases.</p>
+humans. However, the structure and semantics are the same in both cases.</p>
+<p>Although it's possible to name catalog entity descriptor files however you wish,
+we recommend that you name them <code>catalog-info.yaml</code>.</p>
 <h2><a class="anchor" aria-hidden="true" id="contents"></a><a href="#contents" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contents</h2>
 <ul>
 <li><a href="#overall-shape-of-an-entity">Overall Shape Of An Entity</a></li>
 <li><a href="#common-to-all-kinds-the-envelope">Common to All Kinds: The Envelope</a></li>
 <li><a href="#common-to-all-kinds-the-metadata">Common to All Kinds: The Metadata</a></li>
+<li><a href="#common-to-all-kinds-relations">Common to All Kinds: Relations</a></li>
 <li><a href="#kind-component">Kind: Component</a></li>
 <li><a href="#kind-template">Kind: Template</a></li>
 <li><a href="#kind-api">Kind: API</a></li>
+<li><a href="#kind-group">Kind: Group</a></li>
+<li><a href="#kind-user">Kind: User</a></li>
+<li><a href="#kind-resource">Kind: Resource</a></li>
+<li><a href="#kind-system">Kind: System</a></li>
+<li><a href="#kind-domain">Kind: Domain</a></li>
+<li><a href="#kind-location">Kind: Location</a></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="overall-shape-of-an-entity"></a><a href="#overall-shape-of-an-entity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overall Shape Of An Entity</h2>
 <p>The following is an example of the shape of an entity as returned from the
@@ -85,9 +94,9 @@ software catalog API.</p>
   <span class="hljs-string">"kind"</span>: <span class="hljs-string">"Component"</span>,
   <span class="hljs-string">"metadata"</span>: {
     <span class="hljs-string">"annotations"</span>: {
-      <span class="hljs-string">"backstage.io/managed-by-location"</span>: <span class="hljs-string">"file:/tmp/component-info.yaml"</span>,
+      <span class="hljs-string">"backstage.io/managed-by-location"</span>: <span class="hljs-string">"file:/tmp/catalog-info.yaml"</span>,
       <span class="hljs-string">"example.com/service-discovery"</span>: <span class="hljs-string">"artistweb"</span>,
-      <span class="hljs-string">"circleci.com/project-slug"</span>: <span class="hljs-string">"gh/example-org/artist-website"</span>
+      <span class="hljs-string">"circleci.com/project-slug"</span>: <span class="hljs-string">"github/example-org/artist-website"</span>
     },
     <span class="hljs-string">"description"</span>: <span class="hljs-string">"The place to be, for great artists"</span>,
     <span class="hljs-string">"etag"</span>: <span class="hljs-string">"ZjU2MWRkZWUtMmMxZS00YTZiLWFmMWMtOTE1NGNiZDdlYzNk"</span>,
@@ -95,13 +104,18 @@ software catalog API.</p>
     <span class="hljs-string">"labels"</span>: {
       <span class="hljs-string">"system"</span>: <span class="hljs-string">"public-websites"</span>
     },
+    <span class="hljs-string">"links"</span>: [{
+      <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://admin.example-org.com"</span>,
+      <span class="hljs-string">"title"</span>: <span class="hljs-string">"Admin Dashboard"</span>,
+      <span class="hljs-string">"icon"</span>: <span class="hljs-string">"dashboard"</span>
+    }],
     <span class="hljs-string">"tags"</span>: [<span class="hljs-string">"java"</span>],
     <span class="hljs-string">"name"</span>: <span class="hljs-string">"artist-web"</span>,
     <span class="hljs-string">"uid"</span>: <span class="hljs-string">"2152f463-549d-4d8d-a94d-ce2b7676c6e2"</span>
   },
   <span class="hljs-string">"spec"</span>: {
     <span class="hljs-string">"lifecycle"</span>: <span class="hljs-string">"production"</span>,
-    <span class="hljs-string">"owner"</span>: <span class="hljs-string">"artist-relations@example.com"</span>,
+    <span class="hljs-string">"owner"</span>: <span class="hljs-string">"artist-relations-team"</span>,
     <span class="hljs-string">"type"</span>: <span class="hljs-string">"website"</span>
   }
 }
@@ -116,19 +130,65 @@ software catalog API.</p>
     <span class="hljs-attr">system:</span> <span class="hljs-string">public-websites</span>
   <span class="hljs-attr">annotations:</span>
     <span class="hljs-attr">example.com/service-discovery:</span> <span class="hljs-string">artistweb</span>
-    <span class="hljs-attr">circleci.com/project-slug:</span> <span class="hljs-string">gh/example-org/artist-website</span>
+    <span class="hljs-attr">circleci.com/project-slug:</span> <span class="hljs-string">github/example-org/artist-website</span>
   <span class="hljs-attr">tags:</span>
     <span class="hljs-bullet">-</span> <span class="hljs-string">java</span>
+  <span class="hljs-attr">links:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">url:</span> <span class="hljs-string">https://admin.example-org.com</span>
+      <span class="hljs-attr">title:</span> <span class="hljs-string">Admin</span> <span class="hljs-string">Dashboard</span>
+      <span class="hljs-attr">icon:</span> <span class="hljs-string">dashboard</span>
 <span class="hljs-attr">spec:</span>
   <span class="hljs-attr">type:</span> <span class="hljs-string">website</span>
   <span class="hljs-attr">lifecycle:</span> <span class="hljs-string">production</span>
-  <span class="hljs-attr">owner:</span> <span class="hljs-string">artist-relations@example.com</span>
+  <span class="hljs-attr">owner:</span> <span class="hljs-string">artist-relations-team</span>
 </code></pre>
 <p>The root fields <code>apiVersion</code>, <code>kind</code>, <code>metadata</code>, and <code>spec</code> are part of the
 <em>envelope</em>, defining the overall structure of all kinds of entity. Likewise,
 some metadata fields like <code>name</code>, <code>labels</code>, and <code>annotations</code> are of special
 significance and have reserved purposes and distinct shapes.</p>
 <p>See below for details about these fields.</p>
+<h2><a class="anchor" aria-hidden="true" id="substitutions-in-the-descriptor-format"></a><a href="#substitutions-in-the-descriptor-format" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Substitutions In The Descriptor Format</h2>
+<p>The descriptor format supports substitutions using <code>$text</code>, <code>$json</code>, and
+<code>$yaml</code>.</p>
+<p>Placeholders like <code>$json: https://example.com/entity.json</code> are substituted by
+the content of the referenced file. Files can be referenced from any configured
+integration similar to locations by passing an absolute URL. It's also possible
+to reference relative files like <code>./referenced.yaml</code> from the same location.
+Relative references are handled relative to the folder of the
+<code>catalog-info.yaml</code> that contains the placeholder. There are three different
+types of placeholders:</p>
+<ul>
+<li><code>$text</code>: Interprets the contents of the referenced file as plain text and
+embeds it as a string.</li>
+<li><code>$json</code>: Interprets the contents of the referenced file as JSON and embeds the
+parsed structure.</li>
+<li><code>$yaml</code>: Interprets the contents of the referenced file as YAML and embeds the
+parsed structure.</li>
+</ul>
+<p>For example, this can be used to load the definition of an API entity from a web
+server and embed it as a string in the field <code>spec.definition</code>:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1alpha1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">API</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">petstore</span>
+  <span class="hljs-attr">description:</span> <span class="hljs-string">The</span> <span class="hljs-string">Petstore</span> <span class="hljs-string">API</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">openapi</span>
+  <span class="hljs-attr">lifecycle:</span> <span class="hljs-string">production</span>
+  <span class="hljs-attr">owner:</span> <span class="hljs-string">petstore@example.com</span>
+  <span class="hljs-attr">definition:</span>
+    <span class="hljs-string">$text:</span> <span class="hljs-string">https://petstore.swagger.io/v2/swagger.json</span>
+</code></pre>
+<p>Note that to be able to read from targets that are outside of the normal
+integration points such as <code>github.com</code>, you'll need to explicitly allow it by
+adding an entry in the <code>backend.reading.allow</code> list. For example:</p>
+<pre><code class="hljs css language-yml"><span class="hljs-attr">backend:</span>
+  <span class="hljs-attr">baseUrl:</span> <span class="hljs-string">...</span>
+  <span class="hljs-attr">reading:</span>
+    <span class="hljs-attr">allow:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">example.com</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">'*.examples.org'</span>
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="common-to-all-kinds-the-envelope"></a><a href="#common-to-all-kinds-the-envelope" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Common to All Kinds: The Envelope</h2>
 <p>The root envelope object has the following structure.</p>
 <h3><a class="anchor" aria-hidden="true" id="apiversion-and-kind-required"></a><a href="#apiversion-and-kind-required" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>apiVersion</code> and <code>kind</code> [required]</h3>
@@ -147,7 +207,7 @@ data.</p>
 <p>Backstage specific entities have an <code>apiVersion</code> that is prefixed with
 <code>backstage.io/</code>, to distinguish them from other types of object that share the
 same type of structure. This may be relevant when co-hosting these
-specifications with e.g. kubernetes object manifests, or when an organization
+specifications with e.g. Kubernetes object manifests, or when an organization
 adds their own specific kinds of entity to the catalog.</p>
 <p>Early versions of the catalog will be using alpha/beta versions, e.g.
 <code>backstage.io/v1alpha1</code>, to signal that the format may still change. After that,
@@ -166,14 +226,15 @@ in this document for the specification structure of specific kinds.</p>
 described below.</p>
 <p>In addition to these, you may add any number of other fields directly under
 <code>metadata</code>, but be aware that general plugins and tools may not be able to
-understand their semantics.</p>
+understand their semantics. See <a href="/docs/features/software-catalog/extending-the-model">Extending the model</a>
+for more information.</p>
 <h3><a class="anchor" aria-hidden="true" id="name-required"></a><a href="#name-required" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>name</code> [required]</h3>
 <p>The name of the entity. This name is both meant for human eyes to recognize the
 entity, and for machines and other components to reference the entity (e.g. in
 URLs or from other entity specification files).</p>
 <p>Names must be unique per kind, within a given namespace (if specified), at any
-point in time. Names may be reused at a later time, after an entity is deleted
-from the registry.</p>
+point in time. This uniqueness constraint is case insensitive. Names may be
+reused at a later time, after an entity is deleted from the registry.</p>
 <p>Names are required to follow a certain format. Entities that do not follow those
 rules will not be accepted for registration in the catalog. The ruleset is
 configurable to fit your organization's needs, but the default behavior is as
@@ -183,25 +244,15 @@ follows.</p>
 <li>Must consist of sequences of <code>[a-z0-9A-Z]</code> possibly separated by one of
 <code>[-_.]</code></li>
 </ul>
-<p>Example: <code>visits-tracking-service</code>, <code>CircleciBuildsDump_avro_gcs</code></p>
-<p>In addition to this, names are passed through a normalization function and then
-compared to the same normalized form of other entity names and made sure to not
-collide. This rule of uniqueness exists to avoid situations where e.g. both
-<code>my-component</code> and <code>MyComponent</code> are registered side by side, which leads to
-confusion and risk. The normalization function is also configurable, but the
-default behavior is as follows.</p>
-<ul>
-<li>Strip out all characters outside of the set <code>[a-zA-Z0-9]</code></li>
-<li>Convert to lowercase</li>
-</ul>
-<p>Example: <code>CircleciBuildsDs_avro_gcs</code> -&gt; <code>circlecibuildsdsavrogcs</code></p>
+<p>Example: <code>visits-tracking-service</code>, <code>CircleciBuildsDumpV2_avro_gcs</code></p>
 <h3><a class="anchor" aria-hidden="true" id="namespace-optional"></a><a href="#namespace-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>namespace</code> [optional]</h3>
 <p>The ID of a namespace that the entity belongs to. This is a string that follows
 the same format restrictions as <code>name</code> above.</p>
 <p>This field is optional, and currently has no special semantics apart from
 bounding the name uniqueness constraint if specified. It is reserved for future
 use and may get broader semantic implication later. For now, it is recommended
-to not specify a namespace unless you have specific need to do so.</p>
+to not specify a namespace unless you have specific need to do so. This means
+the entity belongs to the <code>&quot;default&quot;</code> namespace.</p>
 <p>Namespaces may also be part of the catalog, and are <code>v1</code> / <code>Namespace</code> entities,
 i.e. not Backstage specific but the same as in Kubernetes.</p>
 <h3><a class="anchor" aria-hidden="true" id="description-optional"></a><a href="#description-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>description</code> [optional]</h3>
@@ -221,8 +272,7 @@ as values in queries or filters.</p>
 is required. The prefix, if present, must be a valid lowercase domain name, at
 most 253 characters in total. The name part must be sequences of <code>[a-zA-Z0-9]</code>
 separated by any of <code>[-_.]</code>, at most 63 characters in total.</p>
-<p>The <code>backstage.io/</code> prefix is reserved for use by Backstage core components.
-Some keys such as <code>system</code> also have predefined semantics.</p>
+<p>The <code>backstage.io/</code> prefix is reserved for use by Backstage core components.</p>
 <p>Values are strings that follow the same restrictions as <code>name</code> above.</p>
 <h3><a class="anchor" aria-hidden="true" id="annotations-optional"></a><a href="#annotations-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>annotations</code> [optional]</h3>
 <p>An object with arbitrary non-identifying metadata attached to the entity,
@@ -230,7 +280,7 @@ identical in use to
 <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/">Kubernetes object annotations</a>.</p>
 <p>Their purpose is mainly, but not limited, to reference into external systems.
 This could for example be a reference to the git ref the entity was ingested
-from, to monitoring and logging systems, to pagerduty schedules, etc. Users may
+from, to monitoring and logging systems, to PagerDuty schedules, etc. Users may
 add these to descriptor YAML files, but in addition to this automated systems
 may also add annotations, either during ingestion into the catalog, or at a
 later time.</p>
@@ -250,8 +300,85 @@ key-value pairs.</p>
 <p>The values are user defined, for example the programming language used for the
 component, like <code>java</code> or <code>go</code>.</p>
 <p>This field is optional, and currently has no special semantics.</p>
-<p>Each tag must be sequences of <code>[a-zA-Z0-9]</code> separated by <code>-</code>, at most 63
-characters in total.</p>
+<p>Each tag must be sequences of <code>[a-z0-9]</code> separated by <code>-</code>, at most 63 characters
+in total.</p>
+<h3><a class="anchor" aria-hidden="true" id="links-optional"></a><a href="#links-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>links</code> [optional]</h3>
+<p>A list of external hyperlinks related to the entity. Links can provide
+additional contextual information that may be located outside of Backstage
+itself. For example, an admin dashboard or external CMS page.</p>
+<p>Users may add links to descriptor YAML files to provide additional reference
+information to external content &amp; resources. Links are not intended to drive any
+additional functionality within Backstage, which is best left to <code>annotations</code>
+and <code>labels</code>. It is recommended to use links only when an equivalent well-known
+<code>annotation</code> does not cover a similar use case.</p>
+<p>Fields of a link are:</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>url</code></td><td>String</td><td>[Required] A <code>url</code> in a standard <code>uri</code> format (e.g. <code>https://example.com/some/page</code>)</td></tr>
+<tr><td><code>title</code></td><td>String</td><td>[Optional] A user friendly display name for the link.</td></tr>
+<tr><td><code>icon</code></td><td>String</td><td>[Optional] A key representing a visual icon to be displayed in the UI.</td></tr>
+</tbody>
+</table>
+<p><em>NOTE</em>: The <code>icon</code> field value is meant to be a semantic key that will map to a
+specific icon that may be provided by an icon library (e.g. <code>material-ui</code>
+icons). These keys should be a sequence of <code>[a-z0-9A-Z]</code>, possibly separated by
+one of <code>[-_.]</code>. Backstage may support some basic icons out of the box, but the
+Backstage integrator will ultimately be left to provide the appropriate icon
+component mappings. A generic fallback icon would be provided if a mapping
+cannot be resolved.</p>
+<h2><a class="anchor" aria-hidden="true" id="common-to-all-kinds-relations"></a><a href="#common-to-all-kinds-relations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Common to All Kinds: Relations</h2>
+<p>The <code>relations</code> root field is a read-only list of relations, between the current
+entity and other entities, described in the
+<a href="/docs/features/software-catalog/well-known-relations">well-known relations section</a>. Relations are commonly
+two-way, so that there's a pair of relation types each describing one direction
+of the relation.</p>
+<p>A relation as part of a single entity that's read out of the API may look as
+follows.</p>
+<pre><code class="hljs css language-js">{
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-string">"relations"</span>: [
+    {
+      <span class="hljs-string">"target"</span>: {
+        <span class="hljs-string">"kind"</span>: <span class="hljs-string">"group"</span>,
+        <span class="hljs-string">"namespace"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"dev.infra"</span>
+      },
+      <span class="hljs-string">"type"</span>: <span class="hljs-string">"ownedBy"</span>
+    }
+  ],
+  <span class="hljs-string">"spec"</span>: {
+    <span class="hljs-string">"owner"</span>: <span class="hljs-string">"dev.infra"</span>,
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+<p>The fields of a relation are:</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>target</code></td><td>Object</td><td>A complete <a href="/docs/features/software-catalog/references">compound reference</a> to the other end of the relation.</td></tr>
+<tr><td><code>type</code></td><td>String</td><td>The type of relation FROM a source entity TO the target entity.</td></tr>
+<tr><td><code>metadata</code></td><td>Object</td><td>Reserved for future use.</td></tr>
+</tbody>
+</table>
+<p>Entity descriptor YAML files are not supposed to contain this field. Instead,
+catalog processors analyze the entity descriptor data and its surroundings, and
+deduce relations that are then attached onto the entity as read from the
+catalog.</p>
+<p>Where relations are produced, they are to be considered the authoritative source
+for that piece of data. In the example above, a plugin would do better to
+consume the relation rather than <code>spec.owner</code> for deducing the owner of the
+entity, because it may even be the case that the owner isn't taken from the YAML
+at all - it could be taken from a CODEOWNERS file nearby instead for example.
+Also, the <code>spec.owner</code> is on a shortened form and may have semantics associated
+with it (such as the default kind being <code>Group</code> if not specified).</p>
+<p>See the <a href="/docs/features/software-catalog/well-known-relations">well-known relations section</a> for a list of
+well-known / common relations and their semantics.</p>
 <h2><a class="anchor" aria-hidden="true" id="kind-component"></a><a href="#kind-component" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kind: Component</h2>
 <p>Describes the following entity kind:</p>
 <table>
@@ -276,8 +403,9 @@ artifact.</p>
 <span class="hljs-attr">spec:</span>
   <span class="hljs-attr">type:</span> <span class="hljs-string">website</span>
   <span class="hljs-attr">lifecycle:</span> <span class="hljs-string">production</span>
-  <span class="hljs-attr">owner:</span> <span class="hljs-string">artist-relations@example.com</span>
-  <span class="hljs-attr">implementsApis:</span>
+  <span class="hljs-attr">owner:</span> <span class="hljs-string">artist-relations-team</span>
+  <span class="hljs-attr">system:</span> <span class="hljs-string">artist-engagement-portal</span>
+  <span class="hljs-attr">providesApis:</span>
     <span class="hljs-bullet">-</span> <span class="hljs-string">artist-api</span>
 </code></pre>
 <p>In addition to the <a href="#common-to-all-kinds-the-metadata">common envelope metadata</a>
@@ -295,7 +423,7 @@ that is specific to just websites.</p>
 <ul>
 <li><code>service</code> - a backend service, typically exposing an API</li>
 <li><code>website</code> - a website</li>
-<li><code>library</code> - a software library, such as an NPM module or a Java library</li>
+<li><code>library</code> - a software library, such as an npm module or a Java library</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="speclifecycle-required"></a><a href="#speclifecycle-required" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.lifecycle</code> [required]</h3>
 <p>The lifecycle state of the component, e.g. <code>production</code>. This field is required.</p>
@@ -311,8 +439,8 @@ components, or that there are low or no reliability guarantees</li>
 disappear at a later point in time</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="specowner-required"></a><a href="#specowner-required" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.owner</code> [required]</h3>
-<p>The owner of the component, e.g. <code>artist-relations@example.com</code>. This field is
-required.</p>
+<p>An <a href="#string-references">entity reference</a> to the owner of the component, e.g.
+<code>artist-relations-team</code>. This field is required.</p>
 <p>In Backstage, the owner of a component is the singular entity (commonly a team)
 that bears ultimate responsibility for the component, and has the authority and
 capability to develop and maintain it. They will be the point of contact if
@@ -322,70 +450,154 @@ catalog items can get an understanding of to whom this component belongs. It is
 not to be used by automated processes to for example assign authorization in
 runtime systems. There may be others that also develop or otherwise touch the
 component, but there will always be one ultimate owner.</p>
-<p>Apart from being a string, the software catalog leaves the format of this field
-open to implementers to choose. Most commonly, it is set to the ID or email of a
-group of people in an organizational structure.</p>
-<h3><a class="anchor" aria-hidden="true" id="specimplementsapis-optional"></a><a href="#specimplementsapis-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.implementsApis</code> [optional]</h3>
-<p>Links APIs that are implemented by the component, e.g. <code>artist-api</code>. This field
-is optional.</p>
-<p>The software catalog expects a list of one or more strings that references the
-names of other entities of the <code>kind</code> <code>API</code>.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-group"><code>Group</code></a> (default), <a href="#kind-user"><code>User</code></a></td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#ownedby-and-ownerof"><code>ownerOf</code>, and reverse <code>ownedBy</code></a></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="specsystem-optional"></a><a href="#specsystem-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.system</code> [optional]</h3>
+<p>An <a href="#string-references">entity reference</a> to the system that the component
+belongs to, e.g. <code>artist-engagement-portal</code>. This field is optional.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-system"><code>System</code></a> (default)</td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#partof-and-haspart"><code>partOf</code>, and reverse <code>hasPart</code></a></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="specsubcomponentof-optional"></a><a href="#specsubcomponentof-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.subcomponentOf</code> [optional]</h3>
+<p>An <a href="#string-references">entity reference</a> to another component of which the
+component is a part, e.g. <code>spotify-ios-app</code>. This field is optional.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-component"><code>Component</code></a> (default)</td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#partof-and-haspart"><code>partOf</code>, and reverse <code>hasPart</code></a></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="specprovidesapis-optional"></a><a href="#specprovidesapis-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.providesApis</code> [optional]</h3>
+<p>An array of <a href="#string-references">entity references</a> to the APIs that are
+provided by the component, e.g. <code>artist-api</code>. This field is optional.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-api"><code>API</code></a> (default)</td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#providesapi-and-apiprovidedby"><code>providesApi</code>, and reverse <code>apiProvidedBy</code></a></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="specconsumesapis-optional"></a><a href="#specconsumesapis-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.consumesApis</code> [optional]</h3>
+<p>An array of <a href="#string-references">entity references</a> to the APIs that are
+consumed by the component, e.g. <code>artist-api</code>. This field is optional.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-api"><code>API</code></a> (default)</td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#consumesapi-and-apiconsumedby"><code>consumesApi</code>, and reverse <code>apiConsumedBy</code></a></td></tr>
+</tbody>
+</table>
 <h2><a class="anchor" aria-hidden="true" id="kind-template"></a><a href="#kind-template" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kind: Template</h2>
-<p>Describes the following entity kind:</p>
+<p>The following describes the following entity kind:</p>
 <table>
 <thead>
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td><code>apiVersion</code></td><td><code>backstage.io/v1alpha1</code></td></tr>
+<tr><td><code>apiVersion</code></td><td><code>backstage.io/v1beta2</code></td></tr>
 <tr><td><code>kind</code></td><td><code>Template</code></td></tr>
 </tbody>
 </table>
-<p>A Template describes a skeleton for use with the Scaffolder. It is used for
-describing what templating library is supported, and also for documenting the
-variables that the template requires using
-<a href="https://jsonforms.io/">JSON Forms Schema</a>.</p>
+<p>If you're looking for docs on <code>v1alpha1</code> you can find them
+<a href="/docs/features/software-templates/template-legacy">here</a></p>
+<p>A template definition describes both the parameters that are rendered in the
+frontend part of the scaffolding wizard, and the steps that are executed when
+scaffolding that component.</p>
 <p>Descriptor files for this kind may look as follows.</p>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1alpha1</span>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1beta2</span>
 <span class="hljs-attr">kind:</span> <span class="hljs-string">Template</span>
+<span class="hljs-comment"># some metadata about the template itself</span>
 <span class="hljs-attr">metadata:</span>
-  <span class="hljs-attr">name:</span> <span class="hljs-string">react-ssr-template</span>
-  <span class="hljs-attr">title:</span> <span class="hljs-string">React</span> <span class="hljs-string">SSR</span> <span class="hljs-string">Template</span>
-  <span class="hljs-attr">description:</span>
-    <span class="hljs-string">Next.js</span> <span class="hljs-string">application</span> <span class="hljs-string">skeleton</span> <span class="hljs-string">for</span> <span class="hljs-string">creating</span> <span class="hljs-string">isomorphic</span> <span class="hljs-string">web</span> <span class="hljs-string">applications.</span>
-  <span class="hljs-attr">tags:</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-string">recommended</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-string">react</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">v1beta2-demo</span>
+  <span class="hljs-attr">title:</span> <span class="hljs-string">Test</span> <span class="hljs-string">Action</span> <span class="hljs-string">template</span>
+  <span class="hljs-attr">description:</span> <span class="hljs-string">scaffolder</span> <span class="hljs-string">v1beta2</span> <span class="hljs-string">template</span> <span class="hljs-string">demo</span>
 <span class="hljs-attr">spec:</span>
-  <span class="hljs-attr">owner:</span> <span class="hljs-string">web@example.com</span>
-  <span class="hljs-attr">templater:</span> <span class="hljs-string">cookiecutter</span>
-  <span class="hljs-attr">type:</span> <span class="hljs-string">website</span>
-  <span class="hljs-attr">path:</span> <span class="hljs-string">'.'</span>
-  <span class="hljs-attr">schema:</span>
-    <span class="hljs-attr">required:</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">component_id</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-string">description</span>
-    <span class="hljs-attr">properties:</span>
-      <span class="hljs-attr">component_id:</span>
-        <span class="hljs-attr">title:</span> <span class="hljs-string">Name</span>
-        <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
-        <span class="hljs-attr">description:</span> <span class="hljs-string">Unique</span> <span class="hljs-string">name</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">component</span>
-      <span class="hljs-attr">description:</span>
-        <span class="hljs-attr">title:</span> <span class="hljs-string">Description</span>
-        <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
-        <span class="hljs-attr">description:</span> <span class="hljs-string">Description</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">component</span>
+  <span class="hljs-attr">owner:</span> <span class="hljs-string">backstage/techdocs-core</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">service</span>
+
+  <span class="hljs-comment"># these are the steps which are rendered in the frontend with the form input</span>
+  <span class="hljs-attr">parameters:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">title:</span> <span class="hljs-string">Fill</span> <span class="hljs-string">in</span> <span class="hljs-string">some</span> <span class="hljs-string">steps</span>
+      <span class="hljs-attr">required:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">name</span>
+      <span class="hljs-attr">properties:</span>
+        <span class="hljs-attr">name:</span>
+          <span class="hljs-attr">title:</span> <span class="hljs-string">Name</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+          <span class="hljs-attr">description:</span> <span class="hljs-string">Unique</span> <span class="hljs-string">name</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">component</span>
+          <span class="hljs-attr">ui:autofocus:</span> <span class="hljs-literal">true</span>
+          <span class="hljs-attr">ui:options:</span>
+            <span class="hljs-attr">rows:</span> <span class="hljs-number">5</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">title:</span> <span class="hljs-string">Choose</span> <span class="hljs-string">a</span> <span class="hljs-string">location</span>
+      <span class="hljs-attr">required:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-string">repoUrl</span>
+      <span class="hljs-attr">properties:</span>
+        <span class="hljs-attr">repoUrl:</span>
+          <span class="hljs-attr">title:</span> <span class="hljs-string">Repository</span> <span class="hljs-string">Location</span>
+          <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
+          <span class="hljs-attr">ui:field:</span> <span class="hljs-string">RepoUrlPicker</span>
+          <span class="hljs-attr">ui:options:</span>
+            <span class="hljs-attr">allowedHosts:</span>
+              <span class="hljs-bullet">-</span> <span class="hljs-string">github.com</span>
+
+  <span class="hljs-comment"># here's the steps that are executed in series in the scaffolder backend</span>
+  <span class="hljs-attr">steps:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">id:</span> <span class="hljs-string">fetch-base</span>
+      <span class="hljs-attr">name:</span> <span class="hljs-string">Fetch</span> <span class="hljs-string">Base</span>
+      <span class="hljs-attr">action:</span> <span class="hljs-string">fetch:cookiecutter</span>
+      <span class="hljs-attr">input:</span>
+        <span class="hljs-attr">url:</span> <span class="hljs-string">./template</span>
+        <span class="hljs-attr">values:</span>
+          <span class="hljs-attr">name:</span> <span class="hljs-string">'<span class="hljs-template-variable">{{ parameters.name }}</span>'</span>
+
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">id:</span> <span class="hljs-string">fetch-docs</span>
+      <span class="hljs-attr">name:</span> <span class="hljs-string">Fetch</span> <span class="hljs-string">Docs</span>
+      <span class="hljs-attr">action:</span> <span class="hljs-string">fetch:plain</span>
+      <span class="hljs-attr">input:</span>
+        <span class="hljs-attr">targetPath:</span> <span class="hljs-string">./community</span>
+        <span class="hljs-attr">url:</span> <span class="hljs-string">https://github.com/backstage/community/tree/main/backstage-community-sessions</span>
+
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">id:</span> <span class="hljs-string">publish</span>
+      <span class="hljs-attr">name:</span> <span class="hljs-string">Publish</span>
+      <span class="hljs-attr">action:</span> <span class="hljs-string">publish:github</span>
+      <span class="hljs-attr">input:</span>
+        <span class="hljs-attr">allowedHosts:</span> <span class="hljs-string">['github.com']</span>
+        <span class="hljs-attr">description:</span> <span class="hljs-string">'This is <span class="hljs-template-variable">{{ parameters.name }}</span>'</span>
+        <span class="hljs-attr">repoUrl:</span> <span class="hljs-string">'<span class="hljs-template-variable">{{ parameters.repoUrl }}</span>'</span>
+
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">id:</span> <span class="hljs-string">register</span>
+      <span class="hljs-attr">name:</span> <span class="hljs-string">Register</span>
+      <span class="hljs-attr">action:</span> <span class="hljs-string">catalog:register</span>
+      <span class="hljs-attr">input:</span>
+        <span class="hljs-attr">repoContentsUrl:</span> <span class="hljs-string">'<span class="hljs-template-variable">{{ steps.publish.output.repoContentsUrl }}</span>'</span>
+        <span class="hljs-attr">catalogInfoPath:</span> <span class="hljs-string">'/catalog-info.yaml'</span>
 </code></pre>
 <p>In addition to the <a href="#common-to-all-kinds-the-metadata">common envelope metadata</a>
 shape, this kind has the following structure.</p>
 <h3><a class="anchor" aria-hidden="true" id="apiversion-and-kind-required-2"></a><a href="#apiversion-and-kind-required-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>apiVersion</code> and <code>kind</code> [required]</h3>
-<p>Exactly equal to <code>backstage.io/v1alpha1</code> and <code>Template</code>, respectively.</p>
+<p>Exactly equal to <code>backstage.io/v1beta2</code> and <code>Template</code>, respectively.</p>
 <h3><a class="anchor" aria-hidden="true" id="metadatatitle-required"></a><a href="#metadatatitle-required" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>metadata.title</code> [required]</h3>
 <p>The nice display name for the template as a string, e.g. <code>React SSR Template</code>.
 This field is required as is used to reference the template to the user instead
 of the <code>metadata.name</code> field.</p>
 <h3><a class="anchor" aria-hidden="true" id="metadatatags-optional"></a><a href="#metadatatags-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>metadata.tags</code> [optional]</h3>
 <p>A list of strings that can be associated with the template, e.g.
-<code>['Recommended', 'React']</code>.</p>
+<code>['recommended', 'react']</code>.</p>
 <p>This list will also be used in the frontend to display to the user so you can
 potentially search and group templates by these tags.</p>
 <h3><a class="anchor" aria-hidden="true" id="spectype-optional"></a><a href="#spectype-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.type</code> [optional]</h3>
@@ -400,26 +612,14 @@ that is specific to just websites.</p>
 <ul>
 <li><code>service</code> - a backend service, typically exposing an API</li>
 <li><code>website</code> - a website</li>
-<li><code>library</code> - a software library, such as an NPM module or a Java library</li>
+<li><code>library</code> - a software library, such as an npm module or a Java library</li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="spectemplater-required"></a><a href="#spectemplater-required" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.templater</code> [required]</h3>
-<p>The templating library that is supported by the template skeleton as a string,
-e.g <code>cookiecutter</code>.</p>
-<p>Different skeletons will use different templating syntax, so it's common that
-the template will need to be run with a particular piece of software.</p>
-<p>This key will be used to identify the correct templater which is registered into
-the <code>TemplatersBuilder</code>.</p>
-<p>The values which are available by default are:</p>
-<ul>
-<li><code>cookiecutter</code> - <a href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>.</li>
-</ul>
-<h3><a class="anchor" aria-hidden="true" id="specpath-optional"></a><a href="#specpath-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.path</code> [optional]</h3>
-<p>The string location where the templater should be run if it is not on the same
-level as the <code>template.yaml</code> definition, e.g. <code>./cookiecutter/skeleton</code>.</p>
-<p>This will set the <code>cwd</code> when running the templater to the folder path that you
-specify relative to the <code>template.yaml</code> definition.</p>
-<p>This is also particularly useful when you have multiple template definitions in
-the same repository but only a single <code>template.yaml</code> registered in backstage.</p>
+<h3><a class="anchor" aria-hidden="true" id="specparameters-required"></a><a href="#specparameters-required" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.parameters</code> [required]</h3>
+<p>You can find out more about the <code>parameters</code> key
+<a href="/docs/features/software-templates/writing-templates">here</a></p>
+<h3><a class="anchor" aria-hidden="true" id="specsteps-optional"></a><a href="#specsteps-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.steps</code> [optional]</h3>
+<p>You can find out more about the <code>steps</code> key
+<a href="/docs/features/software-templates/writing-templates">here</a></p>
 <h2><a class="anchor" aria-hidden="true" id="kind-api"></a><a href="#kind-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kind: API</h2>
 <p>Describes the following entity kind:</p>
 <table>
@@ -434,6 +634,7 @@ the same repository but only a single <code>template.yaml</code> registered in b
 <p>An API describes an interface that can be exposed by a component. The API can be
 defined in different formats, like <a href="https://swagger.io/specification/">OpenAPI</a>,
 <a href="https://www.asyncapi.com/docs/specifications/latest/">AsyncAPI</a>,
+<a href="https://graphql.org/learn/schema/">GraphQL</a>,
 <a href="https://developers.google.com/protocol-buffers">gRPC</a>, or other formats.</p>
 <p>Descriptor files for this kind may look as follows.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1alpha1</span>
@@ -443,6 +644,9 @@ defined in different formats, like <a href="https://swagger.io/specification/">O
   <span class="hljs-attr">description:</span> <span class="hljs-string">Retrieve</span> <span class="hljs-string">artist</span> <span class="hljs-string">details</span>
 <span class="hljs-attr">spec:</span>
   <span class="hljs-attr">type:</span> <span class="hljs-string">openapi</span>
+  <span class="hljs-attr">lifecycle:</span> <span class="hljs-string">production</span>
+  <span class="hljs-attr">owner:</span> <span class="hljs-string">artist-relations-team</span>
+  <span class="hljs-attr">system:</span> <span class="hljs-string">artist-engagement-portal</span>
   <span class="hljs-attr">definition:</span> <span class="hljs-string">|
     openapi: "3.0.0"
     info:
@@ -476,14 +680,416 @@ the Backstage interface.</p>
 <a href="https://swagger.io/specification/">OpenAPI</a> version 2 or version 3 spec.</li>
 <li><code>asyncapi</code> - An API definition based on the
 <a href="https://www.asyncapi.com/docs/specifications/latest/">AsyncAPI</a> spec.</li>
+<li><code>graphql</code> - An API definition based on
+<a href="https://spec.graphql.org/">GraphQL schemas</a> for consuming
+<a href="https://graphql.org/">GraphQL</a> based APIs.</li>
 <li><code>grpc</code> - An API definition based on
 <a href="https://developers.google.com/protocol-buffers">Protocol Buffers</a> to use with
 <a href="https://grpc.io/">gRPC</a>.</li>
 </ul>
+<h3><a class="anchor" aria-hidden="true" id="speclifecycle-required-1"></a><a href="#speclifecycle-required-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.lifecycle</code> [required]</h3>
+<p>The lifecycle state of the API, e.g. <code>production</code>. This field is required.</p>
+<p>The software catalog accepts any lifecycle value, but an organization should
+take great care to establish a proper taxonomy for these.</p>
+<p>The current set of well-known and common values for this field is:</p>
+<ul>
+<li><code>experimental</code> - an experiment or early, non-production API, signaling that
+users may not prefer to consume it over other more established APIs, or that
+there are low or no reliability guarantees</li>
+<li><code>production</code> - an established, owned, maintained API</li>
+<li><code>deprecated</code> - an API that is at the end of its lifecycle, and may disappear
+at a later point in time</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="specowner-required-1"></a><a href="#specowner-required-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.owner</code> [required]</h3>
+<p>An <a href="#string-references">entity reference</a> to the owner of the component, e.g.
+<code>artist-relations-team</code>. This field is required.</p>
+<p>In Backstage, the owner of an API is the singular entity (commonly a team) that
+bears ultimate responsibility for the API, and has the authority and capability
+to develop and maintain it. They will be the point of contact if something goes
+wrong, or if features are to be requested. The main purpose of this field is for
+display purposes in Backstage, so that people looking at catalog items can get
+an understanding of to whom this API belongs. It is not to be used by automated
+processes to for example assign authorization in runtime systems. There may be
+others that also develop or otherwise touch the API, but there will always be
+one ultimate owner.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-group"><code>Group</code></a> (default), <a href="#kind-user"><code>User</code></a></td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#ownedby-and-ownerof"><code>ownerOf</code>, and reverse <code>ownedBy</code></a></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="specsystem-optional-1"></a><a href="#specsystem-optional-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.system</code> [optional]</h3>
+<p>An <a href="#string-references">entity reference</a> to the system that the API belongs to,
+e.g. <code>artist-engagement-portal</code>. This field is optional.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-system"><code>System</code></a> (default)</td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#partof-and-haspart"><code>partOf</code>, and reverse <code>hasPart</code></a></td></tr>
+</tbody>
+</table>
 <h3><a class="anchor" aria-hidden="true" id="specdefinition-required"></a><a href="#specdefinition-required" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.definition</code> [required]</h3>
 <p>The definition of the API, based on the format defined by <code>spec.type</code>. This
 field is required.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/features/software-catalog/system-model"><span class="arrow-prev">← </span><span>System Model</span></a><a class="docs-next button" href="/docs/features/software-catalog/extending-the-model"><span>Extending the model</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#contents">Contents</a></li><li><a href="#overall-shape-of-an-entity">Overall Shape Of An Entity</a></li><li><a href="#common-to-all-kinds-the-envelope">Common to All Kinds: The Envelope</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#metadata-required"><code>metadata</code> [required]</a></li><li><a href="#spec-varies"><code>spec</code> [varies]</a></li></ul></li><li><a href="#common-to-all-kinds-the-metadata">Common to All Kinds: The Metadata</a><ul class="toc-headings"><li><a href="#name-required"><code>name</code> [required]</a></li><li><a href="#namespace-optional"><code>namespace</code> [optional]</a></li><li><a href="#description-optional"><code>description</code> [optional]</a></li><li><a href="#labels-optional"><code>labels</code> [optional]</a></li><li><a href="#annotations-optional"><code>annotations</code> [optional]</a></li><li><a href="#tags-optional"><code>tags</code> [optional]</a></li></ul></li><li><a href="#kind-component">Kind: Component</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required-1"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#spectype-required"><code>spec.type</code> [required]</a></li><li><a href="#speclifecycle-required"><code>spec.lifecycle</code> [required]</a></li><li><a href="#specowner-required"><code>spec.owner</code> [required]</a></li><li><a href="#specimplementsapis-optional"><code>spec.implementsApis</code> [optional]</a></li></ul></li><li><a href="#kind-template">Kind: Template</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required-2"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#metadatatitle-required"><code>metadata.title</code> [required]</a></li><li><a href="#metadatatags-optional"><code>metadata.tags</code> [optional]</a></li><li><a href="#spectype-optional"><code>spec.type</code> [optional]</a></li><li><a href="#spectemplater-required"><code>spec.templater</code> [required]</a></li><li><a href="#specpath-optional"><code>spec.path</code> [optional]</a></li></ul></li><li><a href="#kind-api">Kind: API</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required-3"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#spectype-required-1"><code>spec.type</code> [required]</a></li><li><a href="#specdefinition-required"><code>spec.definition</code> [required]</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/spotify/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+<h2><a class="anchor" aria-hidden="true" id="kind-group"></a><a href="#kind-group" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kind: Group</h2>
+<p>Describes the following entity kind:</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td><code>apiVersion</code></td><td><code>backstage.io/v1alpha1</code></td></tr>
+<tr><td><code>kind</code></td><td><code>Group</code></td></tr>
+</tbody>
+</table>
+<p>A group describes an organizational entity, such as for example a team, a
+business unit, or a loose collection of people in an interest group. Members of
+these groups are modeled in the catalog as kind <a href="#kind-user"><code>User</code></a>.</p>
+<p>Descriptor files for this kind may look as follows.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1alpha1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Group</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">infrastructure</span>
+  <span class="hljs-attr">description:</span> <span class="hljs-string">The</span> <span class="hljs-string">infra</span> <span class="hljs-string">business</span> <span class="hljs-string">unit</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">business-unit</span>
+  <span class="hljs-attr">profile:</span>
+    <span class="hljs-attr">displayName:</span> <span class="hljs-string">Infrastructure</span>
+    <span class="hljs-attr">email:</span> <span class="hljs-string">infrastructure@example.com</span>
+    <span class="hljs-attr">picture:</span> <span class="hljs-string">https://example.com/groups/bu-infrastructure.jpeg</span>
+  <span class="hljs-attr">parent:</span> <span class="hljs-string">ops</span>
+  <span class="hljs-attr">children:</span> <span class="hljs-string">[backstage,</span> <span class="hljs-string">other]</span>
+</code></pre>
+<p>In addition to the <a href="#common-to-all-kinds-the-metadata">common envelope metadata</a>
+shape, this kind has the following structure.</p>
+<h3><a class="anchor" aria-hidden="true" id="apiversion-and-kind-required-4"></a><a href="#apiversion-and-kind-required-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>apiVersion</code> and <code>kind</code> [required]</h3>
+<p>Exactly equal to <code>backstage.io/v1alpha1</code> and <code>Group</code>, respectively.</p>
+<h3><a class="anchor" aria-hidden="true" id="spectype-required-2"></a><a href="#spectype-required-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.type</code> [required]</h3>
+<p>The type of group as a string, e.g. <code>team</code>. There is currently no enforced set
+of values for this field, so it is left up to the adopting organization to
+choose a nomenclature that matches their org hierarchy.</p>
+<p>Some common values for this field could be:</p>
+<ul>
+<li><code>team</code></li>
+<li><code>business-unit</code></li>
+<li><code>product-area</code></li>
+<li><code>root</code> - as a common virtual root of the hierarchy, if desired</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="specprofile-optional"></a><a href="#specprofile-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.profile</code> [optional]</h3>
+<p>Optional profile information about the group, mainly for display purposes. All
+fields of this structure are also optional. The email would be a group email of
+some form, that the group may wish to be used for contacting them. The picture
+is expected to be a URL pointing to an image that's representative of the group,
+and that a browser could fetch and render on a group page or similar.</p>
+<h3><a class="anchor" aria-hidden="true" id="specparent-optional"></a><a href="#specparent-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.parent</code> [optional]</h3>
+<p>The immediate parent group in the hierarchy, if any. Not all groups must have a
+parent; the catalog supports multi-root hierarchies. Groups may however not have
+more than one parent.</p>
+<p>This field is an
+<a href="https://backstage.io/docs/features/software-catalog/references">entity reference</a>.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-group"><code>Group</code></a> (default)</td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#parentof-and-childof"><code>childOf</code>, and reverse <code>parentOf</code></a></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="specchildren-required"></a><a href="#specchildren-required" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.children</code> [required]</h3>
+<p>The immediate child groups of this group in the hierarchy (whose <code>parent</code> field
+points to this group). The list must be present, but may be empty if there are
+no child groups. The items are not guaranteed to be ordered in any particular
+way.</p>
+<p>The entries of this array are
+<a href="https://backstage.io/docs/features/software-catalog/references">entity references</a>.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-group"><code>Group</code></a> (default)</td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#memberof-and-hasmember"><code>hasMember</code>, and reverse <code>memberOf</code></a></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="kind-user"></a><a href="#kind-user" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kind: User</h2>
+<p>Describes the following entity kind:</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td><code>apiVersion</code></td><td><code>backstage.io/v1alpha1</code></td></tr>
+<tr><td><code>kind</code></td><td><code>User</code></td></tr>
+</tbody>
+</table>
+<p>A user describes a person, such as an employee, a contractor, or similar. Users
+belong to <a href="#kind-group"><code>Group</code></a> entities in the catalog.</p>
+<p>These catalog user entries are connected to the way that authentication within
+the Backstage ecosystem works. See the <a href="https://backstage.io/docs/auth">auth</a>
+section of the docs for a discussion of these concepts.</p>
+<p>Descriptor files for this kind may look as follows.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1alpha1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">User</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">jdoe</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">profile:</span>
+    <span class="hljs-attr">displayName:</span> <span class="hljs-string">Jenny</span> <span class="hljs-string">Doe</span>
+    <span class="hljs-attr">email:</span> <span class="hljs-string">jenny-doe@example.com</span>
+    <span class="hljs-attr">picture:</span> <span class="hljs-string">https://example.com/staff/jenny-with-party-hat.jpeg</span>
+  <span class="hljs-attr">memberOf:</span> <span class="hljs-string">[team-b,</span> <span class="hljs-string">employees]</span>
+</code></pre>
+<p>In addition to the <a href="#common-to-all-kinds-the-metadata">common envelope metadata</a>
+shape, this kind has the following structure.</p>
+<h3><a class="anchor" aria-hidden="true" id="apiversion-and-kind-required-5"></a><a href="#apiversion-and-kind-required-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>apiVersion</code> and <code>kind</code> [required]</h3>
+<p>Exactly equal to <code>backstage.io/v1alpha1</code> and <code>User</code>, respectively.</p>
+<h3><a class="anchor" aria-hidden="true" id="specprofile-optional-1"></a><a href="#specprofile-optional-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.profile</code> [optional]</h3>
+<p>Optional profile information about the user, mainly for display purposes. All
+fields of this structure are also optional. The email would be a primary email
+of some form, that the user may wish to be used for contacting them. The picture
+is expected to be a URL pointing to an image that's representative of the user,
+and that a browser could fetch and render on a profile page or similar.</p>
+<h3><a class="anchor" aria-hidden="true" id="specmemberof-required"></a><a href="#specmemberof-required" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.memberOf</code> [required]</h3>
+<p>The list of groups that the user is a direct member of (i.e., no transitive
+memberships are listed here). The list must be present, but may be empty if the
+user is not member of any groups. The items are not guaranteed to be ordered in
+any particular way.</p>
+<p>The entries of this array are
+<a href="https://backstage.io/docs/features/software-catalog/references">entity references</a>.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-group"><code>Group</code></a> (default)</td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#memberof-and-hasmember"><code>memberOf</code>, and reverse <code>hasMember</code></a></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="kind-resource"></a><a href="#kind-resource" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kind: Resource</h2>
+<p>Describes the following entity kind:</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td><code>apiVersion</code></td><td><code>backstage.io/v1alpha1</code></td></tr>
+<tr><td><code>kind</code></td><td><code>Resource</code></td></tr>
+</tbody>
+</table>
+<p>A resource describes the infrastructure a system needs to operate, like BigTable
+databases, Pub/Sub topics, S3 buckets or CDNs. Modelling them together with
+components and systems allows to visualize resource footprint, and create
+tooling around them.</p>
+<p>Descriptor files for this kind may look as follows.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1alpha1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Resource</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">artists-db</span>
+  <span class="hljs-attr">description:</span> <span class="hljs-string">Stores</span> <span class="hljs-string">artist</span> <span class="hljs-string">details</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">database</span>
+  <span class="hljs-attr">owner:</span> <span class="hljs-string">artist-relations-team</span>
+  <span class="hljs-attr">system:</span> <span class="hljs-string">artist-engagement-portal</span>
+</code></pre>
+<p>In addition to the <a href="#common-to-all-kinds-the-metadata">common envelope metadata</a>
+shape, this kind has the following structure.</p>
+<h3><a class="anchor" aria-hidden="true" id="apiversion-and-kind-required-6"></a><a href="#apiversion-and-kind-required-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>apiVersion</code> and <code>kind</code> [required]</h3>
+<p>Exactly equal to <code>backstage.io/v1alpha1</code> and <code>Resource</code>, respectively.</p>
+<h3><a class="anchor" aria-hidden="true" id="specowner-required-2"></a><a href="#specowner-required-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.owner</code> [required]</h3>
+<p>An <a href="#string-references">entity reference</a> to the owner of the resource, e.g.
+<code>artist-relations-team</code>. This field is required.</p>
+<p>In Backstage, the owner of a resource is the singular entity (commonly a team)
+that bears ultimate responsibility for the resource, and has the authority and
+capability to develop and maintain it. They will be the point of contact if
+something goes wrong, or if features are to be requested. The main purpose of
+this field is for display purposes in Backstage, so that people looking at
+catalog items can get an understanding of to whom this resource belongs. It is
+not to be used by automated processes to for example assign authorization in
+runtime systems. There may be others that also manage or otherwise touch the
+resource, but there will always be one ultimate owner.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-group"><code>Group</code></a> (default), <a href="#kind-user"><code>User</code></a></td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#ownedby-and-ownerof"><code>ownerOf</code>, and reverse <code>ownedBy</code></a></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="spectype-required-3"></a><a href="#spectype-required-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.type</code> [required]</h3>
+<p>The type of resource as a string, e.g. <code>database</code>. This field is required. There
+is currently no enforced set of values for this field, so it is left up to the
+adopting organization to choose a nomenclature that matches the resources used
+in their tech stack.</p>
+<p>Some common values for this field could be:</p>
+<ul>
+<li><code>database</code></li>
+<li><code>s3-bucket</code></li>
+<li><code>cluster</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="specsystem-optional-2"></a><a href="#specsystem-optional-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.system</code> [optional]</h3>
+<p>An <a href="#string-references">entity reference</a> to the system that the resource
+belongs to, e.g. <code>artist-engagement-portal</code>. This field is optional.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-system"><code>System</code></a> (default)</td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#partof-and-haspart"><code>partOf</code>, and reverse <code>hasPart</code></a></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="kind-system"></a><a href="#kind-system" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kind: System</h2>
+<p>Describes the following entity kind:</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td><code>apiVersion</code></td><td><code>backstage.io/v1alpha1</code></td></tr>
+<tr><td><code>kind</code></td><td><code>System</code></td></tr>
+</tbody>
+</table>
+<p>A system is a collection of resources and components. The system may expose or
+consume one or several APIs. It is viewed as abstraction level that provides
+potential consumers insights into exposed features without needing a too
+detailed view into the details of all components. This also gives the owning
+team the possibility to decide about published artifacts and APIs.</p>
+<p>Descriptor files for this kind may look as follows.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1alpha1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">System</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">artist-engagement-portal</span>
+  <span class="hljs-attr">description:</span> <span class="hljs-string">Handy</span> <span class="hljs-string">tools</span> <span class="hljs-string">to</span> <span class="hljs-string">keep</span> <span class="hljs-string">artists</span> <span class="hljs-string">in</span> <span class="hljs-string">the</span> <span class="hljs-string">loop</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">owner:</span> <span class="hljs-string">artist-relations-team</span>
+  <span class="hljs-attr">domain:</span> <span class="hljs-string">artists</span>
+</code></pre>
+<p>In addition to the <a href="#common-to-all-kinds-the-metadata">common envelope metadata</a>
+shape, this kind has the following structure.</p>
+<h3><a class="anchor" aria-hidden="true" id="apiversion-and-kind-required-7"></a><a href="#apiversion-and-kind-required-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>apiVersion</code> and <code>kind</code> [required]</h3>
+<p>Exactly equal to <code>backstage.io/v1alpha1</code> and <code>System</code>, respectively.</p>
+<h3><a class="anchor" aria-hidden="true" id="specowner-required-3"></a><a href="#specowner-required-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.owner</code> [required]</h3>
+<p>An <a href="#string-references">entity reference</a> to the owner of the system, e.g.
+<code>artist-relations-team</code>. This field is required.</p>
+<p>In Backstage, the owner of a system is the singular entity (commonly a team)
+that bears ultimate responsibility for the system, and has the authority and
+capability to develop and maintain it. They will be the point of contact if
+something goes wrong, or if features are to be requested. The main purpose of
+this field is for display purposes in Backstage, so that people looking at
+catalog items can get an understanding of to whom this system belongs. It is not
+to be used by automated processes to for example assign authorization in runtime
+systems. There may be others that also develop or otherwise touch the system,
+but there will always be one ultimate owner.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-group"><code>Group</code></a> (default), <a href="#kind-user"><code>User</code></a></td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#ownedby-and-ownerof"><code>ownerOf</code>, and reverse <code>ownedBy</code></a></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="specdomain-optional"></a><a href="#specdomain-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.domain</code> [optional]</h3>
+<p>An <a href="#string-references">entity reference</a> to the domain that the system belongs
+to, e.g. <code>artists</code>. This field is optional.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-domain"><code>Domain</code></a> (default)</td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#partof-and-haspart"><code>partOf</code>, and reverse <code>hasPart</code></a></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="kind-domain"></a><a href="#kind-domain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kind: Domain</h2>
+<p>Describes the following entity kind:</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td><code>apiVersion</code></td><td><code>backstage.io/v1alpha1</code></td></tr>
+<tr><td><code>kind</code></td><td><code>Domain</code></td></tr>
+</tbody>
+</table>
+<p>A Domain groups a collection of systems that share terminology, domain models,
+business purpose, or documentation, i.e. form a bounded context.</p>
+<p>Descriptor files for this kind may look as follows.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1alpha1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Domain</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">artists</span>
+  <span class="hljs-attr">description:</span> <span class="hljs-string">Everything</span> <span class="hljs-string">about</span> <span class="hljs-string">artists</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">owner:</span> <span class="hljs-string">artist-relations-team</span>
+</code></pre>
+<p>In addition to the <a href="#common-to-all-kinds-the-metadata">common envelope metadata</a>
+shape, this kind has the following structure.</p>
+<h3><a class="anchor" aria-hidden="true" id="apiversion-and-kind-required-8"></a><a href="#apiversion-and-kind-required-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>apiVersion</code> and <code>kind</code> [required]</h3>
+<p>Exactly equal to <code>backstage.io/v1alpha1</code> and <code>Domain</code>, respectively.</p>
+<h3><a class="anchor" aria-hidden="true" id="specowner-required-4"></a><a href="#specowner-required-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.owner</code> [required]</h3>
+<p>An <a href="#string-references">entity reference</a> to the owner of the domain, e.g.
+<code>artist-relations-team</code>. This field is required.</p>
+<p>In Backstage, the owner of a domain is the singular entity (commonly a team)
+that bears ultimate responsibility for the domain, and has the authority and
+capability to develop and maintain it. They will be the point of contact if
+something goes wrong, or if features are to be requested. The main purpose of
+this field is for display purposes in Backstage, so that people looking at
+catalog items can get an understanding of to whom this domain belongs. It is not
+to be used by automated processes to for example assign authorization in runtime
+systems. There may be others that also develop or otherwise touch the domain,
+but there will always be one ultimate owner.</p>
+<table>
+<thead>
+<tr><th><a href="#apiversion-and-kind-required"><code>kind</code></a></th><th>Default <a href="#namespace-optional"><code>namespace</code></a></th><th>Generated <a href="/docs/features/software-catalog/well-known-relations">relation</a> type</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#kind-group"><code>Group</code></a> (default), <a href="#kind-user"><code>User</code></a></td><td>Same as this entity, typically <code>default</code></td><td><a href="/docs/features/software-catalog/well-known-relations#ownedby-and-ownerof"><code>ownerOf</code>, and reverse <code>ownedBy</code></a></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="kind-location"></a><a href="#kind-location" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kind: Location</h2>
+<p>Describes the following entity kind:</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td><code>apiVersion</code></td><td><code>backstage.io/v1alpha1</code></td></tr>
+<tr><td><code>kind</code></td><td><code>Location</code></td></tr>
+</tbody>
+</table>
+<p>A location is a marker that references other places to look for catalog data.</p>
+<p>Descriptor files for this kind may look as follows.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">backstage.io/v1alpha1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Location</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">org-data</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">url</span>
+  <span class="hljs-attr">targets:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">http://github.com/myorg/myproject/org-data-dump/catalog-info-staff.yaml</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">http://github.com/myorg/myproject/org-data-dump/catalog-info-consultants.yaml</span>
+</code></pre>
+<p>In addition to the <a href="#common-to-all-kinds-the-metadata">common envelope metadata</a>
+shape, this kind has the following structure.</p>
+<h3><a class="anchor" aria-hidden="true" id="apiversion-and-kind-required-9"></a><a href="#apiversion-and-kind-required-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>apiVersion</code> and <code>kind</code> [required]</h3>
+<p>Exactly equal to <code>backstage.io/v1alpha1</code> and <code>Location</code>, respectively.</p>
+<h3><a class="anchor" aria-hidden="true" id="spectype-optional-1"></a><a href="#spectype-optional-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.type</code> [optional]</h3>
+<p>The single location type, that's common to the targets specified in the spec. If
+it is left out, it is inherited from the location type that originally read the
+entity data. For example, if you have a <code>url</code> type location, that when read
+results in a <code>Location</code> kind entity with no <code>spec.type</code>, then the referenced
+targets in the entity will implicitly also be of <code>url</code> type. This is useful
+because you can define a hierarchy of things in a directory structure using
+relative target paths (see below), and it will work out no matter if it's
+consumed locally on disk from a <code>file</code> location, or as uploaded on a VCS.</p>
+<h3><a class="anchor" aria-hidden="true" id="spectarget-optional"></a><a href="#spectarget-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.target</code> [optional]</h3>
+<p>A single target as a string. Can be either an absolute path/URL (depending on
+the type), or a relative path such as <code>./details/catalog-info.yaml</code> which is
+resolved relative to the location of this Location entity itself.</p>
+<h3><a class="anchor" aria-hidden="true" id="spectargets-optional"></a><a href="#spectargets-optional" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec.targets</code> [optional]</h3>
+<p>A list of targets as strings. They can all be either absolute paths/URLs
+(depending on the type), or relative paths such as <code>./details/catalog-info.yaml</code>
+which are resolved relative to the location of this Location entity itself.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/features/software-catalog/system-model"><span class="arrow-prev">← </span><span>System Model</span></a><a class="docs-next button" href="/docs/features/software-catalog/references"><span>Entity References</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#contents">Contents</a></li><li><a href="#overall-shape-of-an-entity">Overall Shape Of An Entity</a></li><li><a href="#substitutions-in-the-descriptor-format">Substitutions In The Descriptor Format</a></li><li><a href="#common-to-all-kinds-the-envelope">Common to All Kinds: The Envelope</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#metadata-required"><code>metadata</code> [required]</a></li><li><a href="#spec-varies"><code>spec</code> [varies]</a></li></ul></li><li><a href="#common-to-all-kinds-the-metadata">Common to All Kinds: The Metadata</a><ul class="toc-headings"><li><a href="#name-required"><code>name</code> [required]</a></li><li><a href="#namespace-optional"><code>namespace</code> [optional]</a></li><li><a href="#description-optional"><code>description</code> [optional]</a></li><li><a href="#labels-optional"><code>labels</code> [optional]</a></li><li><a href="#annotations-optional"><code>annotations</code> [optional]</a></li><li><a href="#tags-optional"><code>tags</code> [optional]</a></li><li><a href="#links-optional"><code>links</code> [optional]</a></li></ul></li><li><a href="#common-to-all-kinds-relations">Common to All Kinds: Relations</a></li><li><a href="#kind-component">Kind: Component</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required-1"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#spectype-required"><code>spec.type</code> [required]</a></li><li><a href="#speclifecycle-required"><code>spec.lifecycle</code> [required]</a></li><li><a href="#specowner-required"><code>spec.owner</code> [required]</a></li><li><a href="#specsystem-optional"><code>spec.system</code> [optional]</a></li><li><a href="#specsubcomponentof-optional"><code>spec.subcomponentOf</code> [optional]</a></li><li><a href="#specprovidesapis-optional"><code>spec.providesApis</code> [optional]</a></li><li><a href="#specconsumesapis-optional"><code>spec.consumesApis</code> [optional]</a></li></ul></li><li><a href="#kind-template">Kind: Template</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required-2"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#metadatatitle-required"><code>metadata.title</code> [required]</a></li><li><a href="#metadatatags-optional"><code>metadata.tags</code> [optional]</a></li><li><a href="#spectype-optional"><code>spec.type</code> [optional]</a></li><li><a href="#specparameters-required"><code>spec.parameters</code> [required]</a></li><li><a href="#specsteps-optional"><code>spec.steps</code> [optional]</a></li></ul></li><li><a href="#kind-api">Kind: API</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required-3"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#spectype-required-1"><code>spec.type</code> [required]</a></li><li><a href="#speclifecycle-required-1"><code>spec.lifecycle</code> [required]</a></li><li><a href="#specowner-required-1"><code>spec.owner</code> [required]</a></li><li><a href="#specsystem-optional-1"><code>spec.system</code> [optional]</a></li><li><a href="#specdefinition-required"><code>spec.definition</code> [required]</a></li></ul></li><li><a href="#kind-group">Kind: Group</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required-4"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#spectype-required-2"><code>spec.type</code> [required]</a></li><li><a href="#specprofile-optional"><code>spec.profile</code> [optional]</a></li><li><a href="#specparent-optional"><code>spec.parent</code> [optional]</a></li><li><a href="#specchildren-required"><code>spec.children</code> [required]</a></li></ul></li><li><a href="#kind-user">Kind: User</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required-5"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#specprofile-optional-1"><code>spec.profile</code> [optional]</a></li><li><a href="#specmemberof-required"><code>spec.memberOf</code> [required]</a></li></ul></li><li><a href="#kind-resource">Kind: Resource</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required-6"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#specowner-required-2"><code>spec.owner</code> [required]</a></li><li><a href="#spectype-required-3"><code>spec.type</code> [required]</a></li><li><a href="#specsystem-optional-2"><code>spec.system</code> [optional]</a></li></ul></li><li><a href="#kind-system">Kind: System</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required-7"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#specowner-required-3"><code>spec.owner</code> [required]</a></li><li><a href="#specdomain-optional"><code>spec.domain</code> [optional]</a></li></ul></li><li><a href="#kind-domain">Kind: Domain</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required-8"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#specowner-required-4"><code>spec.owner</code> [required]</a></li></ul></li><li><a href="#kind-location">Kind: Location</a><ul class="toc-headings"><li><a href="#apiversion-and-kind-required-9"><code>apiVersion</code> and <code>kind</code> [required]</a></li><li><a href="#spectype-optional-1"><code>spec.type</code> [optional]</a></li><li><a href="#spectarget-optional"><code>spec.target</code> [optional]</a></li><li><a href="#spectargets-optional"><code>spec.targets</code> [optional]</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a><a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://engineering.atspotify.com/">Spotify Engineering Blog</a><a href="https://developer.spotify.com/">Spotify for Developers</a><a href="https://github.com/backstage/backstage">GitHub</a><a class="github-button" href="https://github.com/backstage/backstage" data-icon="octicon-star" data-count-href="/backstage/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><p style="text-align:center"><a href="https://spotify.github.io">Made with ❤️  at Spotify</a></p><p class="copyright">Copyright © 2021 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
