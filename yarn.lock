@@ -217,12 +217,29 @@
   dependencies:
     debug "^4.1.1"
 
-"@azure/msal-node@1.0.0-beta.3", "@azure/msal-node@^1.0.0-beta.3":
+"@azure/msal-common@^4.0.2":
+  version "4.1.1"
+  resolved "https://registry.npmjs.org/@azure/msal-common/-/msal-common-4.1.1.tgz#c3d2c43b8078d280982c44f3b2753bc19e97d66c"
+  integrity sha512-CC/rlUl437mLEJVObKbiFSaG/JzSYWSo4lmePRXzZ7fQdLg91otWIGXlrIlrGuk5Htea6J6Wh43a5qXQuPv6GA==
+  dependencies:
+    debug "^4.1.1"
+
+"@azure/msal-node@1.0.0-beta.3":
   version "1.0.0-beta.3"
   resolved "https://registry.npmjs.org/@azure/msal-node/-/msal-node-1.0.0-beta.3.tgz#c84c7948028b39e48b901f5fac35bdedcbc8772e"
   integrity sha512-/KfYRfrsOIrZONvo/0Vi5umuqbPBtCWNtmRvkse64uI0C4CP/W4WXwRD42VMws/8LtKvr1I5rYlYgFzt5zDz/A==
   dependencies:
     "@azure/msal-common" "^2.1.0"
+    axios "^0.21.1"
+    jsonwebtoken "^8.5.1"
+    uuid "^8.3.0"
+
+"@azure/msal-node@^1.0.0-beta.3":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@azure/msal-node/-/msal-node-1.0.1.tgz#94f00b8ff44fb17d1dd1841ebafb7183f639a25e"
+  integrity sha512-6MEI4XItcvUE9Zns1W3aXt7Bzzhhitq56uhg36KzuaSWRxW+Zuu4wx4x5iJjv4WP8DLGeWpaWoRxN3UNXyQHfQ==
+  dependencies:
+    "@azure/msal-common" "^4.0.2"
     axios "^0.21.1"
     jsonwebtoken "^8.5.1"
     uuid "^8.3.0"
@@ -4236,7 +4253,7 @@
   dependencies:
     "@octokit/openapi-types" "^5.3.2"
 
-"@octokit/types@^6.13.0":
+"@octokit/types@^6.13.0", "@octokit/types@^6.8.2":
   version "6.13.0"
   resolved "https://registry.npmjs.org/@octokit/types/-/types-6.13.0.tgz#779e5b7566c8dde68f2f6273861dd2f0409480d0"
   integrity sha512-W2J9qlVIU11jMwKHUp5/rbVUeErqelCsO5vW5PKNb7wAXQVUz87Rc+imjlEvpvbH8yUb+KHmv8NEjVZdsdpyxA==
