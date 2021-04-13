@@ -119,7 +119,65 @@ done like this:</p>
 want to use the default themes, they are exported as <code>lightTheme</code> and
 <code>darkTheme</code> from
 <a href="https://www.npmjs.com/package/@backstage/theme">@backstage/theme</a>.</p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/8/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting-started/configure-app-with-plugins"><span class="arrow-prev">← </span><span>Configuring App with plugins</span></a><a class="docs-next button" href="/docs/getting-started/deployment-docker"><span>Docker</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#creating-a-custom-theme">Creating a Custom Theme</a></li><li><a href="#using-your-custom-theme">Using your Custom Theme</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a><a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://engineering.atspotify.com/">Spotify Engineering Blog</a><a href="https://developer.spotify.com/">Spotify for Developers</a><a href="https://github.com/backstage/backstage">GitHub</a><a class="github-button" href="https://github.com/backstage/backstage" data-icon="octicon-star" data-count-href="/backstage/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><p style="text-align:center"><a href="https://spotify.github.io">Made with ❤️  at Spotify</a></p><p class="copyright">Copyright © 2021 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+<h2><a class="anchor" aria-hidden="true" id="example-of-a-custom-theme"></a><a href="#example-of-a-custom-theme" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example of a custom theme</h2>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">const</span> themeOptions = createThemeOptions({
+  palette: {
+    ...lightTheme.palette,
+    primary: {
+      main: <span class="hljs-string">'#123456'</span>,
+    },
+    secondary: {
+      main: <span class="hljs-string">'#123456'</span>,
+    },
+    error: {
+      main: <span class="hljs-string">'#123456'</span>
+    },
+    warning: {
+      main: <span class="hljs-string">'#123456'</span>,
+    },
+    info: {
+      main: <span class="hljs-string">'#123456'</span>,
+    },
+    success: {
+      main: <span class="hljs-string">'#123456'</span>,
+    },
+    background: {
+      <span class="hljs-keyword">default</span>: <span class="hljs-string">'#123456'</span>,
+      paper: <span class="hljs-string">'#123456'</span>,
+    },
+    banner: {
+      info: <span class="hljs-string">'#123456'</span>,
+      error: <span class="hljs-string">'#123456'</span>
+      text: <span class="hljs-string">'#123456'</span>
+      link: <span class="hljs-string">'#123456'</span>,
+    },
+    errorBackground: <span class="hljs-string">'#123456'</span>
+    warningBackground: <span class="hljs-string">'#123456'</span>
+    infoBackground: <span class="hljs-string">'#123456'</span>
+    navigation: {
+      background: <span class="hljs-string">'#123456'</span>,
+      indicator: <span class="hljs-string">'#123456'</span>
+      color: <span class="hljs-string">'#123456'</span>
+      selectedColor: <span class="hljs-string">'#123456'</span>,
+    },
+  },
+  defaultPageTheme: <span class="hljs-string">'home'</span>,
+  fontFamily: <span class="hljs-string">'Comic Sans'</span>,
+  <span class="hljs-comment">/* below drives the header colors */</span>
+  pageTheme: {
+    home: genPageTheme([<span class="hljs-string">'#123456'</span>,<span class="hljs-string">'#123456'</span>], shapes.wave),
+    documentation: genPageTheme([<span class="hljs-string">'#123456'</span>,<span class="hljs-string">'#123456'</span>], shapes.wave2),
+    tool: genPageTheme([<span class="hljs-string">'#123456'</span>,<span class="hljs-string">'#123456'</span>], shapes.round),
+    service: genPageTheme([<span class="hljs-string">'#123456'</span>,<span class="hljs-string">'#123456'</span>], shapes.wave),
+    website: genPageTheme([<span class="hljs-string">'#123456'</span>,<span class="hljs-string">'#123456'</span>], shapes.wave),
+    library: genPageTheme([<span class="hljs-string">'#123456'</span>,<span class="hljs-string">'#123456'</span>] shapes.wave),
+    other: genPageTheme([<span class="hljs-string">'#123456'</span>,<span class="hljs-string">'#123456'</span>], shapes.wave),
+    app: genPageTheme([<span class="hljs-string">'#123456'</span>,<span class="hljs-string">'#123456'</span>], shapes.wave),
+    apis: genPageTheme([<span class="hljs-string">'#123456'</span>,<span class="hljs-string">'#123456'</span>], shapes.wave),
+  },
+});
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/13/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting-started/configure-app-with-plugins"><span class="arrow-prev">← </span><span>Configuring App with plugins</span></a><a class="docs-next button" href="/docs/getting-started/deployment-docker"><span>Docker</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#creating-a-custom-theme">Creating a Custom Theme</a></li><li><a href="#using-your-custom-theme">Using your Custom Theme</a></li><li><a href="#example-of-a-custom-theme">Example of a custom theme</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a><a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://engineering.atspotify.com/">Spotify Engineering Blog</a><a href="https://developer.spotify.com/">Spotify for Developers</a><a href="https://github.com/backstage/backstage">GitHub</a><a class="github-button" href="https://github.com/backstage/backstage" data-icon="octicon-star" data-count-href="/backstage/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><p style="text-align:center"><a href="https://spotify.github.io">Made with ❤️  at Spotify</a></p><p class="copyright">Copyright © 2021 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
