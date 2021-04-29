@@ -1,0 +1,487 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Deploying with Kubernetes · Backstage Service Catalog and Developer Platform</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="How to deploy Backstage to a Kubernetes cluster"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Deploying with Kubernetes · Backstage Service Catalog and Developer Platform"/><meta property="og:type" content="website"/><meta property="og:url" content="https://backstage.io/"/><meta property="og:description" content="How to deploy Backstage to a Kubernetes cluster"/><meta property="og:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://backstage.io/logo_assets/png/Backstage_Identity_Assets_Artwork_RGB_04_Icon_Teal.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><link rel="alternate" type="application/atom+xml" href="https://backstage.io/blog/atom.xml" title="Backstage Service Catalog and Developer Platform Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://backstage.io/blog/feed.xml" title="Backstage Service Catalog and Developer Platform Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-163836834-5', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://unpkg.com/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script><script type="text/javascript" src="/js/medium-zoom.js"></script><script type="text/javascript" src="/js/dismissable-banner.js"></script><script type="text/javascript" src="/js/scroll-nav-to-view-in-docs.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Backstage Service Catalog and Developer Platform</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://github.com/backstage/backstage" target="_self">GitHub</a></li><li class="siteNavGroupActive"><a href="/docs/overview/what-is-backstage" target="_self">Docs</a></li><li class=""><a href="/plugins" target="_self">Plugins</a></li><li class=""><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/demos" target="_self">Demos</a></li><li class=""><a href="https://mailchi.mp/spotify/backstage-community" target="_self">Newsletter</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Deployment</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Overview<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/overview/what-is-backstage">What is Backstage?</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/architecture-overview">Architecture overview</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/roadmap">Project roadmap</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/vision">Vision</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/background">The Spotify Story</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/adopting">Strategies for adopting</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/stability-index">Stability Index</a></li><li class="navListItem"><a class="navItem" href="/docs/overview/logos">Logo assets</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting-started/">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/create-an-app">Create an App</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/running-backstage-locally">Running Backstage Locally</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">App configuration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/configure-app-with-plugins">Configuring App with plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/app-custom-theme">Customize the look-and-feel of your App</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/getting-started/keeping-backstage-updated">Keeping Backstage Updated</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/concepts">Key Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/contributors">Contributors</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">CLI<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/cli/">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/cli/commands">Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Core Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Catalog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/configuration">Catalog Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/system-model">System Model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/descriptor-format">YAML File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/references">Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-annotations">Well-known Annotations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/well-known-relations">Well-known Relations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/extending-the-model">Extending the model</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/external-integrations">External integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-catalog/software-catalog-api">API</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Kubernetes</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/configuration">Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/features/kubernetes/troubleshooting">Troubleshooting</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Software Templates</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/software-templates-index">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/installation">Installing in your Backstage App</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/adding-templates">Adding your own Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-templates">Writing Templates</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/builtin-actions">Builtin actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/writing-custom-actions">Writing Custom Actions</a></li><li class="navListItem"><a class="navItem" href="/docs/features/software-templates/template-legacy">Writing Templates (Legacy)</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backstage Search</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/search/search-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/search/architecture">Search Architecture</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TechDocs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/techdocs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/concepts">Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/architecture">TechDocs Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/creating-and-publishing">Creating and Publishing Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuration">TechDocs Configuration Options</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/using-cloud-storage">Using Cloud Storage for TechDocs generated files</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/configuring-ci-cd">Configuring CI/CD to generate and publish TechDocs sites</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/how-to-guides">&quot;HOW TO&quot; guides</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/troubleshooting">Troubleshooting</a></li><li class="navListItem"><a class="navItem" href="/docs/features/techdocs/faqs">FAQ</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Integrations<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/integrations/">Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Azure DevOps</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/azure/locations">Locations</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Bitbucket</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/bitbucket/locations">Locations</a></li><li class="navListItem"><a class="navItem" href="/docs/integrations/bitbucket/discovery">Discovery</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Datadog</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/datadog-rum/installation">Installation</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">GitHub</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/github/locations">Locations</a></li><li class="navListItem"><a class="navItem" href="/docs/integrations/github/discovery">Discovery</a></li><li class="navListItem"><a class="navItem" href="/docs/integrations/github/org">Org Data</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">GitLab</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/gitlab/locations">Locations</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Google Analytics</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/google-analytics/installation">Installation</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Google GCS</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/google-cloud-storage/locations">Locations</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">LDAP</h4><ul><li class="navListItem"><a class="navItem" href="/docs/integrations/ldap/org">Org Data</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Plugins<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/plugins/">Intro to plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/existing-plugins">Existing plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/create-a-plugin">Create a Backstage Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/plugin-development">Plugin Development</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/structure-of-a-plugin">Structure of a Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/integrating-plugin-into-service-catalog">Integrate into the Service Catalog</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/composability">Composability System Migration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backends and APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/proxying">Proxying</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/backend-plugin">Backend plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/call-existing-api">Call Existing API</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/github-apps">GitHub Apps for Backend Authentication</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/testing">Testing with Jest</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Publishing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/plugins/publishing">Publishing</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/publish-private">Publish private</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/add-to-marketplace">Add to Marketplace</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/observability">Observability</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Configuration<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/conf/">Static Configuration in Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/reading">Reading Backstage Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/writing">Writing Backstage Configuration Files</a></li><li class="navListItem"><a class="navItem" href="/docs/conf/defining">Defining Configuration for your Plugin</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Auth and identity<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/auth/">Adding Authentication</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Included providers</h4><ul><li class="navListItem"><a class="navItem" href="/docs/auth/auth0/provider">Auth0</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/microsoft/provider">Azure</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/github/provider">GitHub</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/gitlab/provider">GitLab</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/google/provider">Google</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/okta/provider">Okta</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/onelogin/provider">OneLogin</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/auth/add-auth-provider">Adding authentication providers</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/using-auth">Using authentication and identity</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend">Auth backend</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/oauth">OAuth and OpenID Connect</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/auth-backend-classes">Auth backend classes</a></li><li class="navListItem"><a class="navItem" href="/docs/auth/glossary">Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Deployment<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/deployment/">Deploying Backstage</a></li><li class="navListItem"><a class="navItem" href="/docs/deployment/docker">Docker</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/deployment/k8s">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/deployment/helm">Helm</a></li><li class="navListItem"><a class="navItem" href="/docs/deployment/heroku">Heroku</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Designing for Backstage<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/dls/design">Design</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/contributing-to-storybook">Contributing to Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/dls/figma">Figma</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API references<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">TypeScript API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/utility-apis">Utility APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/utility-apis/README">reference/utility-apis/README</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin">createPlugin</a></li><li class="navListItem"><a class="navItem" href="/docs/reference/createPlugin-feature-flags">createPlugin - feature flags</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Backend APIs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/api/backend">Backend</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tutorials<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/tutorials/journey">Future developer journey</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-auth">Monorepo App Setup With Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/quickstart-app-plugin">Adding Custom Plugin to Existing Monorepo App</a></li><li class="navListItem"><a class="navItem" href="/docs/tutorials/switching-sqlite-postgres">Switching Backstage from SQLite to PostgreSQL</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Architecture Decision Records (ADRs)<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr001">ADR001: Architecture Decision Record (ADR) log</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr002">ADR002: Default Software Catalog File Format</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr003">ADR003: Avoid Default Exports and Prefer Named Exports</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr004">ADR004: Module Export Structure</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr005">ADR005: Catalog Core Entities</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr006">ADR006: Avoid React.FC and React.SFC</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr007">ADR007: Use MSW to mock http requests</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr008">ADR008: Default Catalog File Name</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr009">ADR009: Entity References</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr010">ADR010: Use the Luxon Date Library</a></li><li class="navListItem"><a class="navItem" href="/docs/architecture-decisions/adrs-adr011">ADR011: Plugin Package Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Support<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/support/support">Support and community</a></li><li class="navListItem"><a class="navItem" href="/docs/support/project-structure">Backstage Project Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Glossary<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/glossary">Backstage Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/FAQ">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/backstage/backstage/edit/master/docs/deployment/k8s.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Deploying with Kubernetes</h1></header><article><div><span><p><a href="https://kubernetes.io/">Kubernetes</a> is a system for deploying, scaling and
+managing containerized applications. Backstage is designed to fit this model and
+run as a stateless application with an external PostgreSQL database.</p>
+<p>There are many different tools and patterns for Kubernetes clusters, so the best
+way to deploy to an existing Kubernetes setup is <em>the same way</em> you deploy
+everything else.</p>
+<p>This guide covers basic Kubernetes definitions needed to get Backstage up and
+running in a typical cluster. The object definitions might look familiar, since
+the Backstage software catalog
+<a href="/docs/features/software-catalog/descriptor-format">also uses</a> the Kubernetes
+object format for its entity definition files!</p>
+<h2><a class="anchor" aria-hidden="true" id="testing-locally"></a><a href="#testing-locally" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing locally</h2>
+<p>To test out these concepts locally before deploying to a production Kubernetes
+cluster, first install <a href="https://kubernetes.io/docs/tasks/tools/">kubectl</a>, the
+Kubernetes command-line tool.</p>
+<p>Next, install <a href="https://minikube.sigs.k8s.io/docs/start/">minikube</a>. This creates
+a single-node Kubernetes cluster on your local machine:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> Assumes Mac + Homebrew; see the minikube site <span class="hljs-keyword">for</span> other installations</span>
+<span class="hljs-meta">$</span><span class="bash"> brew install minikube</span>
+<span class="hljs-meta">$</span><span class="bash"> minikube start</span>
+
+...
+Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default.
+</code></pre>
+<p>Now you can run <code>kubectl</code> commands and have changes applied to the minikube
+cluster. You should be able to see the <code>kube-system</code> Kubernetes pods running:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> kubectl get pods -A</span>
+</code></pre>
+<p>When you're done with the tutorial, use <code>minikube stop</code> to halt the cluster and
+free up resources.</p>
+<h2><a class="anchor" aria-hidden="true" id="creating-a-namespace"></a><a href="#creating-a-namespace" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a namespace</h2>
+<p>Deployments in Kubernetes are commonly assigned to their own
+<a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">namespace</a>
+to isolate services in a multi-tenant environment.</p>
+<p>This can be done through <code>kubectl</code> directly:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> kubectl create namespace backstage</span>
+namespace/backstage created
+</code></pre>
+<p>Alternatively, create and apply a Namespace definition:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-comment"># kubernetes/namespace.yaml</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Namespace</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">backstage</span>
+</code></pre>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> kubectl apply -f kubernetes/namespace.yaml</span>
+namespace/backstage created
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="creating-the-postgresql-database"></a><a href="#creating-the-postgresql-database" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating the PostgreSQL database</h2>
+<p>Backstage in production uses PostgreSQL as a database. To isolate the database
+from Backstage app deployments, we can create a separate Kubernetes deployment
+for PostgreSQL.</p>
+<h3><a class="anchor" aria-hidden="true" id="creating-a-postgresql-secret"></a><a href="#creating-a-postgresql-secret" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a PostgreSQL secret</h3>
+<p>First, create a Kubernetes Secret for the PostgreSQL username and password. This
+will be used by both the PostgreSQL database and Backstage deployments:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-comment"># kubernetes/postgres-secrets.yaml</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Secret</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">postgres-secrets</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">backstage</span>
+<span class="hljs-attr">type:</span> <span class="hljs-string">Opaque</span>
+<span class="hljs-attr">data:</span>
+  <span class="hljs-attr">POSTGRES_USER:</span> <span class="hljs-string">YmFja3N0YWdl</span>
+  <span class="hljs-attr">POSTGRES_PASSWORD:</span> <span class="hljs-string">aHVudGVyMg==</span>
+</code></pre>
+<p>The data in Kubernetes secrets are base64-encoded. The values can be generated
+on the command line:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> -n <span class="hljs-string">"backstage"</span> | base64</span>
+YmFja3N0YWdl
+</code></pre>
+<blockquote>
+<p>Note: Secrets are base64-encoded, but not encrypted. Be sure to enable
+<a href="https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/">Encryption at Rest</a>
+for the cluster. For storing secrets in Git, consider
+<a href="https://learnk8s.io/kubernetes-secrets-in-git">SealedSecrets or other solutions</a>.</p>
+</blockquote>
+<p>The secrets can now be applied to the Kubernetes cluster:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> kubectl apply -f kubernetes/postgres-secrets.yaml</span>
+secret/postgres-secrets created
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="creating-a-postgresql-persistent-volume"></a><a href="#creating-a-postgresql-persistent-volume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a PostgreSQL persistent volume</h3>
+<p>PostgreSQL needs a persistent volume to store data; we'll create one along with
+a <code>PersistentVolumeClaim</code>. In this case, we're claiming the whole volume - but
+claims can ask for only part of a volume as well.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-comment"># kubernetes/postgres-storage.yaml</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">PersistentVolume</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">postgres-storage</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">backstage</span>
+  <span class="hljs-attr">labels:</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">local</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">storageClassName:</span> <span class="hljs-string">manual</span>
+  <span class="hljs-attr">capacity:</span>
+    <span class="hljs-attr">storage:</span> <span class="hljs-string">2G</span>
+  <span class="hljs-attr">accessModes:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">ReadWriteOnce</span>
+  <span class="hljs-attr">persistentVolumeReclaimPolicy:</span> <span class="hljs-string">Retain</span>
+  <span class="hljs-attr">hostPath:</span>
+    <span class="hljs-attr">path:</span> <span class="hljs-string">'/mnt/data'</span>
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">PersistentVolumeClaim</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">postgres-storage-claim</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">backstage</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">storageClassName:</span> <span class="hljs-string">manual</span>
+  <span class="hljs-attr">accessModes:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">ReadWriteOnce</span>
+  <span class="hljs-attr">resources:</span>
+    <span class="hljs-attr">requests:</span>
+      <span class="hljs-attr">storage:</span> <span class="hljs-string">2G</span>
+</code></pre>
+<p>This file contains definitions for two different kinds, separated by a line with
+a triple dash. This syntax is helpful if you want to consolidate related
+Kubernetes definitions in a single file and apply them at the same time.</p>
+<p>Note the volume <code>type: local</code>; this creates a volume using local disk on
+Kubernetes nodes. More likely in a production scenario, you'd want to use a more
+highly available
+<a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes">type of PersistentVolume</a>.</p>
+<p>Apply the storage volume and claim to the Kubernetes cluster:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> kubectl apply -f kubernetes/postgres-storage.yaml</span>
+persistentvolume/postgres-storage created
+persistentvolumeclaim/postgres-storage-claim created
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="creating-a-postgresql-deployment"></a><a href="#creating-a-postgresql-deployment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a PostgreSQL deployment</h3>
+<p>Now we can create a Kubernetes Deployment descriptor for the PostgreSQL database
+deployment itself:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-comment"># kubernetes/postgres.yaml</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">apps/v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Deployment</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">postgres</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">backstage</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">replicas:</span> <span class="hljs-number">1</span>
+  <span class="hljs-attr">selector:</span>
+    <span class="hljs-attr">matchLabels:</span>
+      <span class="hljs-attr">app:</span> <span class="hljs-string">postgres</span>
+  <span class="hljs-attr">template:</span>
+    <span class="hljs-attr">metadata:</span>
+      <span class="hljs-attr">labels:</span>
+        <span class="hljs-attr">app:</span> <span class="hljs-string">postgres</span>
+    <span class="hljs-attr">spec:</span>
+      <span class="hljs-attr">containers:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">postgres</span>
+          <span class="hljs-attr">image:</span> <span class="hljs-string">postgres:13.2-alpine</span>
+          <span class="hljs-attr">imagePullPolicy:</span> <span class="hljs-string">'IfNotPresent'</span>
+          <span class="hljs-attr">ports:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">containerPort:</span> <span class="hljs-number">5432</span>
+          <span class="hljs-attr">envFrom:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">secretRef:</span>
+                <span class="hljs-attr">name:</span> <span class="hljs-string">postgres-secrets</span>
+          <span class="hljs-attr">volumeMounts:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">mountPath:</span> <span class="hljs-string">/var/lib/postgresql/data</span>
+              <span class="hljs-attr">name:</span> <span class="hljs-string">postgresdb</span>
+      <span class="hljs-attr">volumes:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">postgresdb</span>
+          <span class="hljs-attr">persistentVolumeClaim:</span>
+            <span class="hljs-attr">claimName:</span> <span class="hljs-string">postgres-storage-claim</span>
+</code></pre>
+<p>If you're not used to Kubernetes, this is a lot to take in. We're describing a
+Deployment (one or more instances of an application) that we'd like Kubernetes
+to know about in the <code>metadata</code> block.</p>
+<p>The <code>spec</code> block describes the desired state. Here we've requested Kubernetes
+create 1 replica (running instance of PostgreSQL), and to create the replica
+with the given pod <code>template</code>, which again contains Kubernetes metadata and a
+desired state. The template <code>spec</code> shows one container, created from the
+<a href="https://hub.docker.com/_/postgres">published</a> <code>postgres:13.2-alpine</code> Docker
+image.</p>
+<p>Note the <code>envFrom</code> and <code>secretRef</code> - this tells Kubernetes to fill environment
+variables in the container with values from the Secret we created. We've also
+referenced the volume created for the deployment, and given it the mount path
+expected by PostgreSQL.</p>
+<p>Apply the PostgreSQL deployment to the Kubernetes cluster:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> kubectl apply -f kubernetes/postgres.yaml</span>
+deployment.apps/postgres created
+<span class="hljs-meta">
+$</span><span class="bash"> kubectl get pods --namespace=backstage</span>
+NAME                        READY   STATUS    RESTARTS   AGE
+postgres-56c86b8bbc-66pt2   1/1     Running   0          21s
+</code></pre>
+<p>Verify the deployment by connecting to the pod:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> kubectl <span class="hljs-built_in">exec</span> -it --namespace=backstage postgres-56c86b8bbc-66pt2 -- /bin/bash</span>
+bash-5.1# psql -U $POSTGRES_USER
+psql (13.2)
+backstage=# \q
+bash-5.1# exit
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="creating-a-postgresql-service"></a><a href="#creating-a-postgresql-service" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a PostgreSQL service</h3>
+<p>The database pod is running, but how does another pod connect to it?</p>
+<p>Kubernetes pods are transient - they can be killed, restarted, or created
+dynamically. Therefore we don't want to try to connect to pods directly, but
+rather create a Kubernetes Service. Services keep track of pods and direct
+traffic to the right place.</p>
+<p>The final step for our database is to create the service descriptor:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-comment"># kubernetes/postgres-service.yaml</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Service</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">postgres</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">backstage</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">selector:</span>
+    <span class="hljs-attr">app:</span> <span class="hljs-string">postgres</span>
+  <span class="hljs-attr">ports:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">port:</span> <span class="hljs-number">5432</span>
+</code></pre>
+<p>Apply the service to the Kubernetes cluster:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> kubectl apply -f kubernetes/postgres-service.yaml</span>
+service/postgres created
+<span class="hljs-meta">
+$</span><span class="bash"> kubectl get services --namespace=backstage</span>
+NAME       TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)    AGE
+postgres   ClusterIP   10.96.5.103   &lt;none&gt;        5432/TCP   29s
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="creating-the-backstage-instance"></a><a href="#creating-the-backstage-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating the Backstage instance</h2>
+<p>Now that we have PostgreSQL up and ready to store data, we can create the
+Backstage instance. This follows similar steps as the PostgreSQL deployment.</p>
+<h3><a class="anchor" aria-hidden="true" id="creating-a-backstage-secret"></a><a href="#creating-a-backstage-secret" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a Backstage secret</h3>
+<p>For any Backstage configuration secrets, such as authorization tokens, we can
+create a similar Kubernetes Secret as we did
+<a href="#creating-a-postgresql-secret">for PostgreSQL</a>, remembering to base64 encode
+the values:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-comment"># kubernetes/backstage-secrets.yaml</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Secret</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">backstage-secrets</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">backstage</span>
+<span class="hljs-attr">type:</span> <span class="hljs-string">Opaque</span>
+<span class="hljs-attr">data:</span>
+  <span class="hljs-attr">GITHUB_TOKEN:</span> <span class="hljs-string">VG9rZW5Ub2tlblRva2VuVG9rZW5NYWxrb3ZpY2hUb2tlbg==</span>
+</code></pre>
+<p>Apply the secret to the Kubernetes cluster:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> kubectl apply -f kubernetes/backstage-secrets.yaml</span>
+secret/backstage-secrets created
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="creating-a-backstage-deployment"></a><a href="#creating-a-backstage-deployment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a Backstage deployment</h3>
+<p>To create the Backstage deployment, first create a <a href="/docs/deployment/docker">Docker image</a>.
+We'll use this image to create a Kubernetes deployment. For this example, we'll
+use the standard host build with the frontend bundled and served from the
+backend.</p>
+<p>First, create a Kubernetes Deployment descriptor:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-comment"># kubernetes/backstage.yaml</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">apps/v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Deployment</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">backstage</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">backstage</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">replicas:</span> <span class="hljs-number">1</span>
+  <span class="hljs-attr">selector:</span>
+    <span class="hljs-attr">matchLabels:</span>
+      <span class="hljs-attr">app:</span> <span class="hljs-string">backstage</span>
+  <span class="hljs-attr">template:</span>
+    <span class="hljs-attr">metadata:</span>
+      <span class="hljs-attr">labels:</span>
+        <span class="hljs-attr">app:</span> <span class="hljs-string">backstage</span>
+    <span class="hljs-attr">spec:</span>
+      <span class="hljs-attr">containers:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">backstage</span>
+          <span class="hljs-attr">image:</span> <span class="hljs-string">backstage:1.0.0</span>
+          <span class="hljs-attr">imagePullPolicy:</span> <span class="hljs-string">IfNotPresent</span>
+          <span class="hljs-attr">ports:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">http</span>
+              <span class="hljs-attr">containerPort:</span> <span class="hljs-number">7000</span>
+          <span class="hljs-attr">envFrom:</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">secretRef:</span>
+                <span class="hljs-attr">name:</span> <span class="hljs-string">postgres-secrets</span>
+            <span class="hljs-bullet">-</span> <span class="hljs-attr">secretRef:</span>
+                <span class="hljs-attr">name:</span> <span class="hljs-string">backstage-secrets</span>
+<span class="hljs-comment"># Uncomment if health checks are enabled in your app:</span>
+<span class="hljs-comment"># https://backstage.io/docs/plugins/observability#health-checks</span>
+<span class="hljs-comment">#          readinessProbe:</span>
+<span class="hljs-comment">#            httpGet:</span>
+<span class="hljs-comment">#              port: 7000</span>
+<span class="hljs-comment">#              path: /healthcheck</span>
+<span class="hljs-comment">#          livenessProbe:</span>
+<span class="hljs-comment">#            httpGet:</span>
+<span class="hljs-comment">#              port: 7000</span>
+<span class="hljs-comment">#              path: /healthcheck</span>
+</code></pre>
+<p>For production deployments, the <code>image</code> reference will usually be a full URL to
+a repository on a container registry (for example, ECR on AWS).</p>
+<p>For testing locally with <code>minikube</code>, you can point the local Docker daemon to
+the <code>minikube</code> internal Docker registry and then rebuild the image to install
+it:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">eval</span> $(minikube docker-env)</span>
+<span class="hljs-meta">$</span><span class="bash"> yarn build-image --tag backstage:1.0.0</span>
+</code></pre>
+<p>There is no special wiring needed to access the PostgreSQL service. Since it's
+running on the same cluster, Kubernetes will inject <code>POSTGRES_SERVICE_HOST</code> and
+<code>POSTGRES_SERVICE_PORT</code> environment variables into our Backstage container.
+These can be used in the Backstage <code>app-config.yaml</code> along with the secrets:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">backend:</span>
+  <span class="hljs-attr">database:</span>
+    <span class="hljs-attr">client:</span> <span class="hljs-string">pg</span>
+    <span class="hljs-attr">connection:</span>
+      <span class="hljs-attr">host:</span> <span class="hljs-string">${POSTGRES_SERVICE_HOST}</span>
+      <span class="hljs-attr">port:</span> <span class="hljs-string">${POSTGRES_SERVICE_PORT}</span>
+      <span class="hljs-attr">user:</span> <span class="hljs-string">${POSTGRES_USER}</span>
+      <span class="hljs-attr">password:</span> <span class="hljs-string">${POSTGRES_PASSWORD}</span>
+</code></pre>
+<p>Make sure to rebuild the Docker image after applying <code>app-config.yaml</code> changes.</p>
+<p>Apply this Deployment to the Kubernetes cluster:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> kubectl apply -f kubernetes/backstage.yaml</span>
+deployment.apps/backstage created
+<span class="hljs-meta">
+$</span><span class="bash"> kubectl get deployments --namespace=backstage</span>
+NAME        READY   UP-TO-DATE   AVAILABLE   AGE
+backstage   1/1     1            1           1m
+postgres    1/1     1            1           10m
+<span class="hljs-meta">
+$</span><span class="bash"> kubectl get pods --namespace=backstage</span>
+NAME                                 READY   STATUS    RESTARTS   AGE
+backstage-54bfcd6476-n2jkm           1/1     Running   0          58s
+postgres-56c86b8bbc-66pt2            1/1     Running   0          9m
+</code></pre>
+<p>Beautiful! 🎉 The deployment and pod are running in the cluster. If you run into
+any trouble, check the container logs from the pod:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> -f to tail, &lt;pod&gt; -c &lt;container&gt;</span>
+<span class="hljs-meta">$</span><span class="bash"> kubectl logs --namespace=backstage -f backstage-54bfcd6476-n2jkm -c backstage</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="creating-a-backstage-service"></a><a href="#creating-a-backstage-service" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a Backstage service</h3>
+<p>Like the <a href="#creating-a-postgresql-service">PostgreSQL service</a> above, we need to
+create a Kubernetes Service for Backstage to handle connecting requests to the
+correct pods.</p>
+<p>Create the Kubernetes Service descriptor:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-comment"># kubernetes/backstage-service.yaml</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Service</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">backstage</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">backstage</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">selector:</span>
+    <span class="hljs-attr">app:</span> <span class="hljs-string">backstage</span>
+  <span class="hljs-attr">ports:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">http</span>
+      <span class="hljs-attr">port:</span> <span class="hljs-number">80</span>
+      <span class="hljs-attr">targetPort:</span> <span class="hljs-string">http</span>
+</code></pre>
+<p>The <code>selector</code> here is telling the Service which pods to target, and the port
+mapping translates normal HTTP port 80 to the backend http port (7000) on the
+pod.</p>
+<p>Apply this Service to the Kubernetes cluster:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> kubectl apply -f kubernetes/backstage-service.yaml</span>
+service/backstage created
+</code></pre>
+<p>Now we have a fully operational Backstage deployment! 🎉 For a <em><strong>grand
+reveal</strong></em>, you can forward a local port to the service:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> sudo kubectl port-forward --namespace=backstage svc/backstage 80:80</span>
+Forwarding from 127.0.0.1:80 -&gt; 7000
+</code></pre>
+<p>This shows port 7000 since <code>port-forward</code> doesn't <em>really</em> support services, so
+it cheats by looking up the first pod for a service and connecting to the mapped
+pod port.</p>
+<p>Note that <code>app.baseUrl</code> and <code>backend.baseUrl</code> in your <code>app-config.yaml</code> should
+match what we're forwarding here (port omitted in this example since we're using
+the default HTTP port 80):</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-comment"># app-config.yaml</span>
+<span class="hljs-attr">app:</span>
+  <span class="hljs-attr">baseUrl:</span> <span class="hljs-string">http://localhost</span>
+
+<span class="hljs-attr">organization:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">Spotify</span>
+
+<span class="hljs-attr">backend:</span>
+  <span class="hljs-attr">baseUrl:</span> <span class="hljs-string">http://localhost</span>
+  <span class="hljs-attr">listen:</span>
+    <span class="hljs-attr">port:</span> <span class="hljs-number">7000</span>
+  <span class="hljs-attr">cors:</span>
+    <span class="hljs-attr">origin:</span> <span class="hljs-string">http://localhost</span>
+</code></pre>
+<p>If you're using an <a href="/docs/auth/">auth provider</a>, it should also have this
+address configured for the authentication pop-up to work properly.</p>
+<p>Now you can open a browser on your machine to <a href="http://localhost">localhost</a> and
+browse your Kubernetes-deployed Backstage instance. 🚢🚢🚢</p>
+<h2><a class="anchor" aria-hidden="true" id="further-steps"></a><a href="#further-steps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Further steps</h2>
+<p>This is most of the way to a full production deployment of Backstage on
+Kubernetes. There's a few additional steps to that will likely be needed beyond
+the scope of this document.</p>
+<h3><a class="anchor" aria-hidden="true" id="set-up-a-more-reliable-volume"></a><a href="#set-up-a-more-reliable-volume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set up a more reliable volume</h3>
+<p>The <code>PersistentVolume</code> configured above uses <code>local</code> Kubernetes node storage.
+This should be replaced with a cloud volume, network attached storage, or
+something more persistent beyond a Kubernetes node.</p>
+<h3><a class="anchor" aria-hidden="true" id="expose-the-backstage-service"></a><a href="#expose-the-backstage-service" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Expose the Backstage service</h3>
+<p>The Kubernetes Service is not exposed for external connections from outside the
+cluster. This is generally done with a Kubernetes
+<a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">ingress</a> or
+an
+<a href="https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/">external load balancer</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="update-the-deployment-image"></a><a href="#update-the-deployment-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Update the Deployment image</h3>
+<p>To update the Kubernetes deployment to a newly published version of your
+Backstage Docker image, update the image tag reference in <code>backstage.yaml</code> and
+then apply the changes with <code>kubectl apply -f kubernetes/backstage.yaml</code>.</p>
+<p>For production purposes, this image tag will generally be a full-fledged URL
+pointing to a container registry where built Docker images are hosted. This can
+be hosted internally in your infrastructure, or a managed one offered by a cloud
+provider.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/29/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/deployment/docker"><span class="arrow-prev">← </span><span>Docker</span></a><a class="docs-next button" href="/docs/deployment/helm"><span>Helm</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#testing-locally">Testing locally</a></li><li><a href="#creating-a-namespace">Creating a namespace</a></li><li><a href="#creating-the-postgresql-database">Creating the PostgreSQL database</a><ul class="toc-headings"><li><a href="#creating-a-postgresql-secret">Creating a PostgreSQL secret</a></li><li><a href="#creating-a-postgresql-persistent-volume">Creating a PostgreSQL persistent volume</a></li><li><a href="#creating-a-postgresql-deployment">Creating a PostgreSQL deployment</a></li><li><a href="#creating-a-postgresql-service">Creating a PostgreSQL service</a></li></ul></li><li><a href="#creating-the-backstage-instance">Creating the Backstage instance</a><ul class="toc-headings"><li><a href="#creating-a-backstage-secret">Creating a Backstage secret</a></li><li><a href="#creating-a-backstage-deployment">Creating a Backstage deployment</a></li><li><a href="#creating-a-backstage-service">Creating a Backstage service</a></li></ul></li><li><a href="#further-steps">Further steps</a><ul class="toc-headings"><li><a href="#set-up-a-more-reliable-volume">Set up a more reliable volume</a></li><li><a href="#expose-the-backstage-service">Expose the Backstage service</a></li><li><a href="#update-the-deployment-image">Update the Deployment image</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a><a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://engineering.atspotify.com/">Spotify Engineering Blog</a><a href="https://developer.spotify.com/">Spotify for Developers</a><a href="https://github.com/backstage/backstage">GitHub</a><a class="github-button" href="https://github.com/backstage/backstage" data-icon="octicon-star" data-count-href="/backstage/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><p style="text-align:center"><a href="https://spotify.github.io">Made with ❤️  at Spotify</a></p><p class="copyright">Copyright © 2021 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '8d115c9875ba0f4feaee95bab55a1645',
+                indexName: 'backstage',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
