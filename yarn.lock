@@ -272,12 +272,10 @@
   dependencies:
     debug "^4.1.1"
 
-"@azure/msal-common@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.npmjs.org/@azure/msal-common/-/msal-common-5.0.1.tgz#234030b340cc63575e84190b96a8a336b69c7698"
-  integrity sha512-CmPR3XM9+CGUu7V/+bAwDxyN6XqWJJhVLmv7utT3sbgay4l5roVXsD1t4wURTs8PwzxmmnJOrhvvGhoDxUW69g==
-  dependencies:
-    debug "^4.1.1"
+"@azure/msal-common@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.npmjs.org/@azure/msal-common/-/msal-common-6.2.0.tgz#715fd68df92ed230913d1d725e9f9b09f799a66c"
+  integrity sha512-SU2/vfbKn1WvtKM8tsBKZAbmRJvO8E3H773ZT0GGKuO9rwLfxP5qOzTHV5crCEm8DgvL/IppmWh2lsUFieDi1A==
 
 "@azure/msal-node@1.0.0-beta.6":
   version "1.0.0-beta.6"
@@ -290,12 +288,13 @@
     uuid "^8.3.0"
 
 "@azure/msal-node@^1.1.0":
-  version "1.3.2"
-  resolved "https://registry.npmjs.org/@azure/msal-node/-/msal-node-1.3.2.tgz#17665397c04b9cad57b42eb6e21d5d6f35d9b83a"
-  integrity sha512-aKU2lVRKhZa1IJ/Za/Ir6qlythQ3FHz0g0px3SbM4iC1otyr3ANS4mIn/6fmkpZDIHc8eAgJh2KMep1Yn2zpig==
+  version "1.8.0"
+  resolved "https://registry.npmjs.org/@azure/msal-node/-/msal-node-1.8.0.tgz#b119362e756a2a214853b9e8d0a1bec2e00dacef"
+  integrity sha512-rA5KzhvNuNef6Bzap8Sm/LbuesvA1yY2dj/W+QZuKMtT5nboZ4n4w8LRjwMMxucvYfizybPbLGTFpbq2IJtOfQ==
   dependencies:
-    "@azure/msal-common" "^5.0.1"
+    "@azure/msal-common" "^6.2.0"
     axios "^0.21.4"
+    https-proxy-agent "^5.0.0"
     jsonwebtoken "^8.5.1"
     uuid "^8.3.0"
 
@@ -2541,6 +2540,24 @@
     react "^16.13.1"
     react-router "6.0.0-beta.0"
     react-use "^17.2.4"
+
+"@backstage/test-utils@^0.1.24":
+  version "0.1.24"
+  resolved "https://registry.npmjs.org/@backstage/test-utils/-/test-utils-0.1.24.tgz#1af2ea1fe3daa7df5545cc6d41271d59c2076f48"
+  integrity sha512-zfqhY5AS8tNOFoP8Kmpb3zE1vCbbHCXwsvxtTEq7UsRJiGpzTMN7pn+GQpddMgMHJc+IB0y25Xflw3grNEKTbA==
+  dependencies:
+    "@backstage/core-app-api" "^0.2.0"
+    "@backstage/core-plugin-api" "^0.3.0"
+    "@backstage/theme" "^0.2.14"
+    "@backstage/types" "^0.1.1"
+    "@material-ui/core" "^4.12.2"
+    "@material-ui/icons" "^4.11.2"
+    "@testing-library/jest-dom" "^5.10.1"
+    "@testing-library/react" "^11.2.5"
+    "@testing-library/user-event" "^13.1.8"
+    react-router "6.0.0-beta.0"
+    react-router-dom "6.0.0-beta.0"
+    zen-observable "^0.8.15"
 
 "@bcoe/v8-coverage@^0.2.3":
   version "0.2.3"
