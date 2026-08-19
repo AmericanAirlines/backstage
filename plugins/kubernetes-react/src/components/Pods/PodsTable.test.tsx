@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import { screen } from '@testing-library/react';
+import React from 'react';
+import { screen, fireEvent } from '@testing-library/react';
 import * as pod from './__fixtures__/pod.json';
 import * as crashingPod from './__fixtures__/crashing-pod.json';
 import { renderInTestApp } from '@backstage/test-utils';
@@ -177,4 +178,24 @@ describe('PodsTable', () => {
     expect(screen.getByText('Container: other-side-car')).toBeInTheDocument();
     expect(screen.getAllByText('CrashLoopBackOff')).toHaveLength(2);
   });
+
+  it('should have pointer cursor style on rows', async () => {
+    await renderInTestApp(<PodsTable pods={[pod as any]} />);
+
+    const row = screen.getByText('dice-roller-6c8646bfd-2m5hv').closest('tr');
+    expect(row).toHaveStyle({ cursor: 'pointer' });
+  });
+
+  it('should trigger the row button when clicking a non-button cell', async () => {
+    await renderInTestApp(<PodsTable pods={[pod as any]} />);
+
+    const row = screen.getByText('dice-roller-6c8646bfd-2m5hv').closest('tr')!;
+    const button = row.querySelector('button');
+    const clickSpy = jest.spyOn(button!, 'click');
+
+    fireEvent.click(screen.getByText('dice-roller-6c8646bfd-2m5hv'));
+
+    expect(clickSpy).toHaveBeenCalledTimes(1);
+  });
+
 });
